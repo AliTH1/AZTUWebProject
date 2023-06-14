@@ -45,7 +45,7 @@ public class AnnouncementService : IAnnouncementService
         await _announcementRepository.DeleteAsync(announcement);
     }
 
-    public async Task<List<AnnouncementGetDto>> GetAll()
+    public async Task<List<AnnouncementGetDto>> GetAllAsync()
     {
         List<Announcement> announcements = await _announcementRepository.GetAllAsync();
         if (announcements.Count == 0)

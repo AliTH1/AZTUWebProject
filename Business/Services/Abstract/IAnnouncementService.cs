@@ -10,7 +10,7 @@ namespace Business.Services.Abstract
 {
     public interface IAnnouncementService
     {
-        Task<List<AnnouncementGetDto>> GetAll();
+        Task<List<AnnouncementGetDto>> GetAllAsync();
         Task<AnnouncementGetDto> GetById(int id);
         Task<AnnouncementGetDto> GetByTitle(string title);
         Task AddAsync(AnnouncementCreateDto announcementCreate);

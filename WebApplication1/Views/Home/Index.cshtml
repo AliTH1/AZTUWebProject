@@ -1,4 +1,8 @@
-﻿@using Entities.Dtos.Panel;
+﻿@using Entities.Dtos.Announcement;
+@using Entities.Dtos.Events;
+@using Entities.Dtos.News;
+@using Entities.Dtos.Panel;
+@using Entities.Dtos.Projects;
 @using WebApplication1.ViewModels;
 @model HomeVM
 @{
@@ -67,349 +71,349 @@
 
                 panelDataWowDelay += 0.2;
             }
-            
+
         </div>
     </div>
 </div>
 <!-- Facts End -->
 <!-- About Start -->
-<div class="container-xxl py-6">
-    <div class="container">
-        <div class="row g-5">
-            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="position-relative overflow-hidden ps-5 pt-5 h-100" style="min-height: 400px;">
-                    <img class="position-absolute w-100 h-100" src="~/assets/img/about-1.jpg" alt="" style="object-fit: cover;">
-                    <img class="position-absolute top-0 start-0 bg-white pe-3 pb-3" src="~/assets/img/about-2.jpg" alt="" style="width: 200px; height: 200px;">
-                </div>
-            </div>
-            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="h-100">
-                    <h6 class="text-primary text-uppercase mb-2">About Us</h6>
-                    <h1 class="display-6 mb-4">We Help Students To Pass Test & Get A License On The First Try</h1>
-                    <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
-                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
-                    <div class="row g-2 mb-4 pb-2">
-                        <div class="col-sm-6">
-                            <i class="fa fa-check text-primary me-2"></i>Fully Licensed
-                        </div>
-                        <div class="col-sm-6">
-                            <i class="fa fa-check text-primary me-2"></i>Online Tracking
-                        </div>
-                        <div class="col-sm-6">
-                            <i class="fa fa-check text-primary me-2"></i>Afordable Fee
-                        </div>
-                        <div class="col-sm-6">
-                            <i class="fa fa-check text-primary me-2"></i>Best Trainers
-                        </div>
-                    </div>
-                    <div class="row g-4">
-                        <div class="col-sm-6">
-                            <a class="btn btn-primary py-3 px-5" href="">Read More</a>
-                        </div>
-                        <div class="col-sm-6">
-                            <a class="d-inline-flex align-items-center btn btn-outline-primary border-2 p-2" href="tel:+0123456789">
-                                <span class="flex-shrink-0 btn-square bg-primary">
-                                    <i class="fa fa-phone-alt text-white"></i>
-                                </span>
-                                <span class="px-3">+012 345 6789</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<div class="container-fluid bg-primary">
+    <div class="row">
+        <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 r_panel_div wow fadeInUp d-flex align-items-center" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.2s; animation-name: fadeInUp; text-align: left;" data-wow-duration=".5s" data-wow-delay=".20s">
+            <h2 class="text_white" style="text-align: left; color: white; margin-left: 60px;">Heydər Əliyev ili - 2023</h2>
+        </div>
+        <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 ">
+            <div class="r_panel_img" style="background-attachment: scroll; background-position:right; background-repeat: no-repeat; background-size: 100%; margin-top: 0px; margin-left: 100px;"><img src="https://www.aztu.edu.az/web_admin/upload/files/aztu.edu.az/menus/sekil.png" alt="" width="465" height="397"></div>
         </div>
     </div>
 </div>
 <!-- About End -->
-<!-- Courses Start -->
-<div class="container-xxl courses my-6 py-6 pb-0">
+<!-- Services Start -->
+<div class="service2-area">
     <div class="container">
-        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-            <h6 class="text-primary text-uppercase mb-2">Tranding Courses</h6>
-            <h1 class="display-6 mb-4">Our Courses Upskill You With Driving Training</h1>
-        </div>
-        <div class="row g-4 justify-content-center">
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="courses-item d-flex flex-column bg-white overflow-hidden h-100">
-                    <div class="text-center p-4 pt-0">
-                        <div class="d-inline-block bg-primary text-white fs-5 py-1 px-4 mb-4">$99</div>
-                        <h5 class="mb-3">Automatic Car Lessons</h5>
-                        <p>Tempor erat elitr rebum at clita dolor diam ipsum sit diam amet diam et eos</p>
-                        <ol class="breadcrumb justify-content-center mb-0">
-                            <li class="breadcrumb-item small"><i class="fa fa-signal text-primary me-2"></i>Beginner</li>
-                            <li class="breadcrumb-item small"><i class="fa fa-calendar-alt text-primary me-2"></i>3 Week</li>
-                        </ol>
-                    </div>
-                    <div class="position-relative mt-auto">
-                        <img class="img-fluid" src="~/assets/img/courses-1.jpg" alt="">
-                        <div class="courses-overlay">
-                            <a class="btn btn-outline-primary border-2 text-light" href="">Read More</a>
-                        </div>
-                    </div>
+        <div class="row f_panel_boxes">
+
+
+
+            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-4 col-4 wow fadeIn f_panel_box" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.05s; animation-name: fadeIn;" data-wow-duration="0.5s" data-wow-delay=".05s">
+                <div class="">
+                    <div class="service-box-icon"><a href="#"><img class="f_panel_img" src="https://www.aztu.edu.az/assets/dist/img/f_panel/k.svg" alt="..."></a></div>
+                    <h4><a href="#">Kitabxana</a></h4>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="courses-item d-flex flex-column bg-white overflow-hidden h-100">
-                    <div class="text-center p-4 pt-0">
-                        <div class="d-inline-block bg-primary text-white fs-5 py-1 px-4 mb-4">$99</div>
-                        <h5 class="mb-3">Highway Driving Lesson</h5>
-                        <p>Tempor erat elitr rebum at clita dolor diam ipsum sit diam amet diam et eos</p>
-                        <ol class="breadcrumb justify-content-center mb-0">
-                            <li class="breadcrumb-item small"><i class="fa fa-signal text-primary me-2"></i>Beginner</li>
-                            <li class="breadcrumb-item small"><i class="fa fa-calendar-alt text-primary me-2"></i>3 Week</li>
-                        </ol>
-                    </div>
-                    <div class="position-relative mt-auto">
-                        <img class="img-fluid" src="~/assets/img/courses-2.jpg" alt="">
-                        <div class="courses-overlay">
-                            <a class="btn btn-outline-primary border-2 text-light" href="">Read More</a>
-                        </div>
-                    </div>
+            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-4 col-4 wow fadeIn f_panel_box" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.05s; animation-name: fadeIn;" data-wow-duration="0.5s" data-wow-delay=".05s">
+                <div class="">
+                    <div class="service-box-icon"><a href="https://www.aztu.edu.az/az/page/fakulteler-113"><img class="f_panel_img" src="https://www.aztu.edu.az/assets/dist/img/f_panel/f.svg" alt="..."></a></div>
+                    <h4><a href="https://www.aztu.edu.az/az/page/fakulteler-113" target="_blank" rel="noopener">Fakultələr</a></h4>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="courses-item d-flex flex-column bg-white overflow-hidden h-100">
-                    <div class="text-center p-4 pt-0">
-                        <div class="d-inline-block bg-primary text-white fs-5 py-1 px-4 mb-4">$99</div>
-                        <h5 class="mb-3">International Driving</h5>
-                        <p>Tempor erat elitr rebum at clita dolor diam ipsum sit diam amet diam et eos</p>
-                        <ol class="breadcrumb justify-content-center mb-0">
-                            <li class="breadcrumb-item small"><i class="fa fa-signal text-primary me-2"></i>Beginner</li>
-                            <li class="breadcrumb-item small"><i class="fa fa-calendar-alt text-primary me-2"></i>3 Week</li>
-                        </ol>
-                    </div>
-                    <div class="position-relative mt-auto">
-                        <img class="img-fluid" src="~/assets/img/courses-3.jpg" alt="">
-                        <div class="courses-overlay">
-                            <a class="btn btn-outline-primary border-2 text-light" href="">Read More</a>
-                        </div>
-                    </div>
+            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-4 col-4 wow fadeIn f_panel_box" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.05s; animation-name: fadeIn;" data-wow-duration="0.5s" data-wow-delay=".05s">
+                <div class="">
+                    <div class="service-box-icon"><a href="#"><img class="f_panel_img" src="https://www.aztu.edu.az/assets/dist/img/f_panel/t.svg" alt="..."></a></div>
+                    <h4><a href="#">Əcnəbi tələbələr</a></h4>
                 </div>
             </div>
-            <div class="col-lg-8 my-6 mb-0 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="bg-primary text-center p-5">
-                    <h1 class="mb-4 text-light">Make Appointment</h1>
-                    <form>
-                        <div class="row g-3">
-                            <div class="col-sm-6">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control border-0" id="gname" placeholder="Gurdian Name">
-                                    <label for="gname">Your Name</label>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-floating">
-                                    <input type="email" class="form-control border-0" id="gmail" placeholder="Gurdian Email">
-                                    <label for="gmail">Your Email</label>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control border-0" id="cname" placeholder="Child Name">
-                                    <label for="cname">Courses Type</label>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control border-0" id="cage" placeholder="Child Age">
-                                    <label for="cage">Car Type</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-floating">
-                                    <textarea class="form-control border-0" placeholder="Leave a message here" id="message" style="height: 100px"></textarea>
-                                    <label for="message">Message</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <button class="btn btn-dark w-100 py-3" type="submit">Submit</button>
-                            </div>
-                        </div>
-                    </form>
+            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-4 col-4 wow fadeIn f_panel_box" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.05s; animation-name: fadeIn;" data-wow-duration="0.5s" data-wow-delay=".05s">
+                <div class="">
+                    <div class="service-box-icon"><a href="https://www.aztu.edu.az/az/page/onlayn-imtahan-114"><img class="f_panel_img" src="https://www.aztu.edu.az/assets/dist/img/f_panel/oi.svg" alt="..."></a></div>
+                    <h4><a href="https://www.aztu.edu.az/az/page/onlayn-imtahan-114">Online imtahan</a></h4>
                 </div>
             </div>
+            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-4 col-4 wow fadeIn f_panel_box" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.05s; animation-name: fadeIn;" data-wow-duration="0.5s" data-wow-delay=".05s">
+                <div class="">
+                    <div class="service-box-icon"><a href="http://online-apellyasiya.aztu.edu.az:9696/" target="_blank"><img class="f_panel_img" src="https://www.aztu.edu.az/assets/dist/img/f_panel/oa.svg" alt="..."></a></div>
+                    <h4><a href="http://online-apellyasiya.aztu.edu.az:9696/" target="_blank">Online apelyasiya</a></h4>
+                </div>
+            </div>
+
+            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-4 col-4 wow fadeIn f_panel_box" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.05s; animation-name: fadeIn;" data-wow-duration="0.5s" data-wow-delay=".05s">
+                <div class="">
+                    <div class="service-box-icon"><a href="https://www.aztu.edu.az/sub_site/az/tekrar-ali-tehsil-93"><img class="f_panel_img" src="https://www.aztu.edu.az/assets/dist/img/f_panel/d.svg" alt="..."></a></div>
+                    <h4><a href="https://www.aztu.edu.az/sub_site/az/tekrar-ali-tehsil-93" target="_blank" rel="noopener">Təkrar ali təhsil</a></h4>
+                </div>
+            </div>
+
+
         </div>
     </div>
 </div>
-<!-- Courses End -->
+<!-- Services End -->
 <!-- Features Start -->
-<div class="container-xxl py-6">
+<div class="news-event-area">
     <div class="container">
-        <div class="row g-5">
-            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="text-primary text-uppercase mb-2">Why Choose Us!</h6>
-                <h1 class="display-6 mb-4">Best Driving Training Agency In Your City</h1>
-                <p class="mb-5">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
-                <div class="row gy-5 gx-4">
-                    <div class="col-sm-6 wow fadeIn" data-wow-delay="0.1s">
-                        <div class="d-flex align-items-center mb-3">
-                            <div class="flex-shrink-0 btn-square bg-primary me-3">
-                                <i class="fa fa-check text-white"></i>
-                            </div>
-                            <h5 class="mb-0">Fully Licensed</h5>
-                        </div>
-                        <span>Magna sea eos sit dolor, ipsum amet ipsum lorem diam eos</span>
+        <div class="row">
+            <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">
+                <div class="row">
+                    <div class="col-12 col-xl-6 col-lg-12 col-md-12 col-sm-12">
+                        <h3 class="area_h_title">Xəbərlər</h3>
                     </div>
-                    <div class="col-sm-6 wow fadeIn" data-wow-delay="0.2s">
-                        <div class="d-flex align-items-center mb-3">
-                            <div class="flex-shrink-0 btn-square bg-primary me-3">
-                                <i class="fa fa-check text-white"></i>
-                            </div>
-                            <h5 class="mb-0">Online Tracking</h5>
-                        </div>
-                        <span>Magna sea eos sit dolor, ipsum amet ipsum lorem diam eos</span>
+
+                    <div class="col-12 col-xl-6 col-lg-12 col-md-12 col-sm-12 text_right d-none d-sm-block">
+                        <span class="all_view_link">
+                            <img src="https://www.aztu.edu.az/assets/dist/img/tools/nnb.svg" alt="product">
+                            <a href="https://www.aztu.edu.az/az/news" class="color_444">Bütün xəbərlər</a>
+                        </span>
                     </div>
-                    <div class="col-sm-6 wow fadeIn" data-wow-delay="0.3s">
-                        <div class="d-flex align-items-center mb-3">
-                            <div class="flex-shrink-0 btn-square bg-primary me-3">
-                                <i class="fa fa-check text-white"></i>
-                            </div>
-                            <h5 class="mb-0">Afordable Fee</h5>
+                </div>
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                    <div class="row wow news_panel_area fadeInUp" data-wow-duration="0.5s" data-wow-delay=".05s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.05s; animation-name: fadeInUp;">
+                        @foreach (NewsGetDto news in Model.News)
+                        {
+                            @if (news.IsMain)
+                            {
+                                <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
+                                    <div class="img-area bg-common-style">
+                                        <img src="https://www.aztu.edu.az/web_admin/upload/files/aztu.edu.az/news/6-2023/aztu_foto%20(1).jpg"
+                                             style="width: 450px; height: 350px">
+                                    </div>
+                                    <div class="news-inner-area">
+                                        <ul class="news-wrapper news-wrapper-responsive ">
+                                            <li>
+                                                <div class="news-img-holder">
+                                                    <div class="news_panel_date">@Html.Raw(news.Date)</div>
+                                                </div>
+                                                <div class="news-content-holder">
+                                                    <span class="fw-bold">
+                                                        <a href="@news.Url" class="color_444">
+                                                            @news.Title
+                                                        </a>
+                                                    </span>
+                                                    <p class="p_tb_5">@news.Description</p>
+
+
+
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            }
+
+                        }
+
+
+                        <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 news-inner-area">
+                            <ul class="news-wrapper news-wrapper-responsive">
+                                @foreach (NewsGetDto news in Model.News)
+                                {
+                                    <li>
+                                        <div class="news-img-holder">
+                                            <div class="news_panel_date">@Html.Raw(news.Date)</div>
+                                        </div>
+                                        <div class="news-content-holder">
+                                            <a title="@news.Title" href="@news.Url" class="color_444">
+                                                @news.Title
+                                            </a>
+                                        </div>
+                                    </li>
+                                }
+                            </ul>
                         </div>
-                        <span>Magna sea eos sit dolor, ipsum amet ipsum lorem diam eos</span>
                     </div>
-                    <div class="col-sm-6 wow fadeIn" data-wow-delay="0.4s">
-                        <div class="d-flex align-items-center mb-3">
-                            <div class="flex-shrink-0 btn-square bg-primary me-3">
-                                <i class="fa fa-check text-white"></i>
-                            </div>
-                            <h5 class="mb-0">Best Trainers</h5>
-                        </div>
-                        <span>Magna sea eos sit dolor, ipsum amet ipsum lorem diam eos</span>
+
+                    <div class="col-12 col-xl-6 col-lg-12 col-md-12 col-sm-12 text_right m_t_10  d-block d-sm-none">
+                        <a href="https://www.aztu.edu.az/az/news" class="color_444">
+                            <span class="all_view_link">
+                                <img src="https://www.aztu.edu.az/assets/dist/img/tools/nnb.svg" alt="product"> Bütün xəbərlər
+                            </span>
+                        </a>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="position-relative overflow-hidden pe-5 pt-5 h-100" style="min-height: 400px;">
-                    <img class="position-absolute w-100 h-100" src="~/assets/img/about-1.jpg" alt="" style="object-fit: cover;">
-                    <img class="position-absolute top-0 end-0 bg-white ps-3 pb-3" src="~/assets/img/about-2.jpg" alt="" style="width: 200px; height: 200px">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+                <div class="row">
+                    <div class="col-6 col-xl-6 col-lg-12 col-md-12 col-sm-12">
+                        <h3 class="area_h_title">Elanlar</h3>
+                    </div>
+
+                    <div class="col-6 col-xl-6 col-lg-12 col-md-12 col-sm-12 text_right d-none d-sm-block">
+                        <span class="all_view_link">
+                            <img src="https://www.aztu.edu.az/assets/dist/img/tools/nnb.svg" alt="product">
+                            <a href="https://www.aztu.edu.az/az/announcements" class="color_444">Bütün elanlar</a>
+                        </span>
+                    </div>
                 </div>
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 news-inner-area wow fadeInUp advert_panel" data-wow-duration="0.5s" data-wow-delay=".05s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.05s; animation-name: fadeInUp;">
+                    <ul class="news-wrapper news-wrapper-responsive wow fadeInUp" data-wow-duration="0.5s" data-wow-delay=".05s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.05s; animation-name: fadeInUp;">
+                        @foreach (AnnouncementGetDto announcement in Model.Announcements)
+                        {
+                            <li>
+                                <div class="news-img-holder">
+                                    <div class="ad_panel_date">@Html.Raw(announcement.Date)</div>
+                                </div>
+                                <div class="news-content-holder">
+                                    <span class="hp_event_p p_tb_5">
+                                        <a href="@announcement.Url" class="color_444">
+                                            @announcement.Title
+                                        </a>
+                                    </span>
+                                </div>
+                            </li>
+                        }
+                    </ul>
+                </div>
+
+                <div class="col-12 col-xl-6 col-lg-12 col-md-12 col-sm-12 text_right   d-block d-sm-none">
+                    <a href="https://www.aztu.edu.az/az/announcements" class="color_444">
+                        <span class="all_view_link">
+                            <img src="https://www.aztu.edu.az/assets/dist/img/tools/nnb.svg" alt="product"> Bütün elanlar
+                        </span>
+                    </a>
+                </div>
+
             </div>
         </div>
     </div>
 </div>
 <!-- Features End -->
 <!-- Team Start -->
-<div class="container-xxl py-6">
+<div class="service2-area mt-30">
     <div class="container">
-        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-            <h6 class="text-primary text-uppercase mb-2">Meet The Team</h6>
-            <h1 class="display-6 mb-4">We Have Great Experience Of Driving</h1>
+        <div class="row">
+            <div class="col-6 col-xl-6 col-lg-12 col-md-12 col-sm-12 text_left d-none d-sm-block">
+                <h3 class="area_h_title">Layihələr</h3>
+            </div>
+
+            <div class="col-6 col-xl-6 col-lg-12 col-md-12 col-sm-12 text_right d-none d-sm-block">
+                <a href="https://www.aztu.edu.az/az/projects" class="t_m_color all_view_link">
+                    <img src="https://www.aztu.edu.az/assets/dist/img/tools/nnb.svg" alt="product"> Bütün layihələr
+                </a>
+            </div>
+
+
+            @foreach (ProjectGetDto project in Model.Projects)
+            {
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6 wow fadeIn m_t_b_5" data-wow-duration="0.5s" data-wow-delay=".05s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.05s; animation-name: fadeIn;">
+                    <a href="@project.Url" class="color_444">
+                        <div class="card mp_card_plus_s" style="min-height: 350px">
+                            <img class="card-img-top mp_card_img_plus_s ob_f_200px" src="@project.ImagePath" alt="Card image cap">
+                            <div class="card-body">
+                                <b class="card-title">
+                                    @project.Title
+                                </b>
+                                <p class="card-text">
+                                    @project.Description
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            }
         </div>
-        <div class="row g-0 team-items">
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="team-item position-relative">
-                    <div class="position-relative">
-                        <img class="img-fluid" src="~/assets/img/team-1.jpg" alt="">
-                        <div class="team-social text-center">
-                            <a class="btn btn-square btn-outline-primary border-2 m-1" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square btn-outline-primary border-2 m-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square btn-outline-primary border-2 m-1" href=""><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                    <div class="bg-light text-center p-4">
-                        <h5 class="mt-2">Full Name</h5>
-                        <span>Trainer</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="team-item position-relative">
-                    <div class="position-relative">
-                        <img class="img-fluid" src="~/assets/img/team-2.jpg" alt="">
-                        <div class="team-social text-center">
-                            <a class="btn btn-square btn-outline-primary border-2 m-1" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square btn-outline-primary border-2 m-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square btn-outline-primary border-2 m-1" href=""><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                    <div class="bg-light text-center p-4">
-                        <h5 class="mt-2">Full Name</h5>
-                        <span>Trainer</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="team-item position-relative">
-                    <div class="position-relative">
-                        <img class="img-fluid" src="~/assets/img/team-3.jpg" alt="">
-                        <div class="team-social text-center">
-                            <a class="btn btn-square btn-outline-primary border-2 m-1" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square btn-outline-primary border-2 m-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square btn-outline-primary border-2 m-1" href=""><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                    <div class="bg-light text-center p-4">
-                        <h5 class="mt-2">Full Name</h5>
-                        <span>Trainer</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                <div class="team-item position-relative">
-                    <div class="position-relative">
-                        <img class="img-fluid" src="~/assets/img/team-4.jpg" alt="">
-                        <div class="team-social text-center">
-                            <a class="btn btn-square btn-outline-primary border-2 m-1" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square btn-outline-primary border-2 m-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square btn-outline-primary border-2 m-1" href=""><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                    <div class="bg-light text-center p-4">
-                        <h5 class="mt-2">Full Name</h5>
-                        <span>Trainer</span>
-                    </div>
-                </div>
-            </div>
+
+        <div class="col-12 col-xl-6 col-lg-12 col-md-12 col-sm-12 text_right m_t_10  d-block d-sm-none">
+            <a href="https://www.aztu.edu.az/az/projects" class="all_view_link t_m_color">
+                <img src="https://www.aztu.edu.az/assets/dist/img/tools/nnb.svg" alt="product"> Bütün layihələr
+            </a>
         </div>
     </div>
 </div>
 <!-- Team End -->
 <!-- Testimonial Start -->
-<div class="container-xxl py-6">
+<div class="conf_area m_t_50">
     <div class="container">
-        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-            <h6 class="text-primary text-uppercase mb-2">Testimonial</h6>
-            <h1 class="display-6 mb-4">What Our Clients Say!</h1>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-lg-8 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="owl-carousel testimonial-carousel">
-                    <div class="testimonial-item text-center">
-                        <div class="position-relative mb-5">
-                            <img class="img-fluid rounded-circle mx-auto" src="~/assets/img/testimonial-1.jpg" alt="">
-                            <div class="position-absolute top-100 start-50 translate-middle d-flex align-items-center justify-content-center bg-white rounded-circle" style="width: 60px; height: 60px;">
-                                <i class="fa fa-quote-left fa-2x text-primary"></i>
-                            </div>
+        <div class="row">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 wow fadeInUp" data-wow-duration="0.5s" data-wow-delay=".5s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.5s; animation-name: fadeInUp;">
+                <div class="countdown-content">
+
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+                            <h3 class="text_white">Tədbirlər</h3>
                         </div>
-                        <p class="fs-4">Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat.</p>
-                        <hr class="w-25 mx-auto">
-                        <h5>Client Name</h5>
-                        <span>Profession</span>
+
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 text_right">
+                            <a href="https://www.aztu.edu.az/az/events" class="text_white all_view_link">
+                                <img src="https://www.aztu.edu.az/assets/dist/img/tools/nn.svg" alt="product"> Bütün tədbirlər
+                            </a>
+                        </div>
                     </div>
-                    <div class="testimonial-item text-center">
-                        <div class="position-relative mb-5">
-                            <img class="img-fluid rounded-circle mx-auto" src="~/assets/img/testimonial-2.jpg" alt="">
-                            <div class="position-absolute top-100 start-50 translate-middle d-flex align-items-center justify-content-center bg-white rounded-circle" style="width: 60px; height: 60px;">
-                                <i class="fa fa-quote-left fa-2x text-primary"></i>
-                            </div>
-                        </div>
-                        <p class="fs-4">Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat.</p>
-                        <hr class="w-25 mx-auto">
-                        <h5>Client Name</h5>
-                        <span>Profession</span>
+
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 news-inner-area">
+                        <ul class="news-wrapper news-wrapper-responsive">
+                            @foreach (EventGetDto eventGetDto in Model.Events)
+                            {
+                                <li>
+                                    <div class="news-img-holder">
+                                        <div class="event_panel_date">@Html.Raw(eventGetDto.Date)</div>
+                                    </div>
+                                    <div class="news-content-holder">
+                                        <a href="@eventGetDto.Url" class="color_444">
+                                            @eventGetDto.Title
+                                        </a>
+                                    </div>
+                                </li>
+                            }
+                        </ul>
                     </div>
-                    <div class="testimonial-item text-center">
-                        <div class="position-relative mb-5">
-                            <img class="img-fluid rounded-circle mx-auto" src="~/assets/img/testimonial-3.jpg" alt="">
-                            <div class="position-absolute top-100 start-50 translate-middle d-flex align-items-center justify-content-center bg-white rounded-circle" style="width: 60px; height: 60px;">
-                                <i class="fa fa-quote-left fa-2x text-primary"></i>
+                </div>
+            </div>            <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8  wow fadeInUp" data-wow-duration="0.5s" data-wow-delay=".5s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.5s; animation-name: fadeInUp;">
+
+                <div class="row">
+
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+                        <h3 class="text_white">Konfranslar</h3>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 text_right">
+
+                        <a href="https://www.aztu.edu.az/az/conferences" class="text_white all_view_link">
+                            <img src="https://www.aztu.edu.az/assets/dist/img/tools/nn.svg" alt="product"> Bütün Konfranslar
+                        </a>
+                    </div>
+
+                </div>
+
+                <div class="owl-carousel owl-theme owl-carousel-conference">
+                    <div class="single-item item">
+                        <div class="single-item-wrapper">
+                            <div class="publications-img-wrapper">
+                                <a href="https://www.aztu.edu.az/az/conference/ii-masinqayirma-ve-energetika-yeni-konsepsiyalar-ve-texnologiyalar-18"><img class="img-responsive ob_f_300px" src="https://www.aztu.edu.az/web_admin/upload/files/aztu.edu.az/conferences/6-2023/aztu-masinqayirma-konfrans-ana-sehife.jpg" alt="product"></a>
+                                <div class="overlay bottom-overlay">
+                                    <div class="overlay_body">
+                                        II Maşınqayırma və energetika: yeni konsepsiyalar və texnologiyalar
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <p class="fs-4">Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat.</p>
-                        <hr class="w-25 mx-auto">
-                        <h5>Client Name</h5>
-                        <span>Profession</span>
+                    </div>
+
+                    <div class="single-item item">
+                        <div class="single-item-wrapper">
+                            <div class="publications-img-wrapper">
+                                <a href="az/conference/mudafie-senayesi-uzre-ixtisasli-kadr-hazirligi-radioelektron-aerokosmik-sistemler-ve-robotlar-17.html"><img class="img-responsive ob_f_300px" src="https://www.aztu.edu.az/web_admin/upload/files/aztu.edu.az/conferences/4-2023/konfrans.jpg" alt="product"></a>
+                                <div class="overlay bottom-overlay">
+                                    <div class="overlay_body">
+                                        “Müdafiə sənayesi üzrə ixtisaslı kadr hazırlığı: radioelektron, aerokosmik sistemlər və robotlar”
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="single-item item">
+                        <div class="single-item-wrapper">
+                            <div class="publications-img-wrapper">
+                                <a href="az/conference/mutereqqi-texnologiyalar-ve-innovasiyalar-15.html"><img class="img-responsive ob_f_300px" src="https://www.aztu.edu.az/web_admin/upload/files/aztu.edu.az/news/konfrans-aztu-121.jpg" alt="product"></a>
+                                <div class="overlay bottom-overlay">
+                                    <div class="overlay_body">
+                                        Mütərəqqi texnologiyalar və innovasiyalar
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="single-item item">
+                        <div class="single-item-wrapper">
+                            <div class="publications-img-wrapper">
+                                <a href="az/conference/inkisaf-etmekde-olan-sahibkarlarin-6-ci-code-beynelxalq-baki-2023-movzusunda-beynelxalq-konfransi-16.html"><img class="img-responsive ob_f_300px" src="https://www.aztu.edu.az/web_admin/upload/files/aztu.edu.az/conferences/3-2023/WhatsApp%20Image%202023-03-17%20at%2012-53-35.jpg" alt="product"></a>
+                                <div class="overlay bottom-overlay">
+                                    <div class="overlay_body">
+                                        İnkişaf etməkdə olan sahibkarların “6-cı CODE Beynəlxalq Bakı 2023” mövzusunda beynəlxalq konfransı
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -417,3 +421,48 @@
     </div>
 </div>
 <!-- Testimonial End -->
+<!-- ƏMƏKDAŞLIQLAR Start -->
+<div class="brand-area mt-5">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-6 col-xl-6 col-lg-12 col-md-12 col-sm-12 text_left d-none d-sm-block">
+                <h3 class="area_h_title">ƏMƏKDAŞLIQLAR</h3>
+            </div>
+            <div class="col-6 col-xl-6 col-lg-12 col-md-12 col-sm-12 text_right d-none d-sm-block">
+                <a href="https://www.aztu.edu.az/az/partners" class="t_m_color all_view_link">
+                    <img src="https://www.aztu.edu.az/assets/dist/img/tools/nnb.svg" alt="product"> Bütün əməkdaşlıqlar
+                </a>
+            </div>
+        </div>
+
+        <div class="owl-carousel owl-theme owl-carousel-partners">
+            <div class="item">
+                <a href="#">
+                    <img src="https://www.aztu.edu.az/web_admin/upload/files/aztu.edu.az/partners/9-2022/Bog%CC%86azic%CC%A7i-Universiteti.png" alt="brand">
+                </a>
+            </div>
+            <div class="item">
+                <a href="#">
+                    <img src="https://www.aztu.edu.az/web_admin/upload/files/aztu.edu.az/partners/9-2022/Gazi-Univeristeti.png" alt="brand">
+                </a>
+            </div>
+            <div class="item">
+                <a href="#">
+                    <img src="https://www.aztu.edu.az/web_admin/upload/files/aztu.edu.az/partners/9-2022/Y%C4%B1ld%C4%B1z-Teknik-U%CC%88niversitesi.png" alt="brand">
+                </a>
+            </div>
+            <div class="item">
+                <a href="#">
+                    <img src="https://www.aztu.edu.az/web_admin/upload/files/aztu.edu.az/partners/9-2022/Brandenburq-Texniki-Universiteti.png" alt="brand">
+                </a>
+            </div>
+            <div class="item">
+                <a href="#">
+                    <img src="https://www.aztu.edu.az/web_admin/upload/files/aztu.edu.az/partners/9-2022/Ankara-Universiteti.png" alt="brand">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+

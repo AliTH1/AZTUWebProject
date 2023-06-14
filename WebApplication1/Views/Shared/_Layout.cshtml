@@ -16,13 +16,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
     <link href="~/assets/lib/animate/animate.min.css" rel="stylesheet">
-    <link href="~/assets/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    @*<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.css" integrity="sha512-phGxLIsvHFArdI7IyLjv14dchvbVkEDaH95efvAae/y2exeWBQCQDpNFbOTdV1p4/pIa/XtbuDCnfhDEIXhvGQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />*@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="~/assets/css/bootstrap.min.css" rel="stylesheet">
@@ -143,83 +149,223 @@
 
     @RenderBody()
 
-    <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-light footer my-6 mb-0 py-6 wow fadeIn" data-wow-delay="0.1s">
+    <!-- Footer Area Start Here -->
+    <div class="b_panel_area">
         <div class="container">
-            <div class="row g-5">
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-4">Get In Touch</h4>
-                    <h2 class="text-primary mb-4"><i class="fa fa-car text-white me-2"></i>Drivin</h2>
-                    <p class="mb-2 text-light"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
-                    <p class="mb-2 text-light"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
+            <hr>
+            <div class="row">
+                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-6 col-6 text_left m_t_b_10">
+
+                    <a href="/az/page/universitetin-tarixi-10" class="b_link"> Universitetin tarixi</a><br>
+
+                    <a href="/az/page/rektor-88" class="b_link"> Rektor</a><br>
+
+                    <a href="/az/page/prorektorlar-107" class="b_link"> Prorektorlar</a><br>
+
+                    <a href="/az/page/rektorlarimiz-55" class="b_link"> Sabiq rektorlarımız</a><br>
+
+                    <a href="/az/page/fexri-mezunlarimiz-12" class="b_link"> Fəxri məzunlarımız</a><br>
+
+                    <a href="https://www.aztu.edu.az/az/page/fexri-doktorlarimiz-13" class="b_link"> Fəxri doktorlarımız</a><br>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-light mb-4">Quick Links</h4>
-                    <a class="btn btn-link" href="">About Us</a>
-                    <a class="btn btn-link" href="">Contact Us</a>
-                    <a class="btn btn-link" href="">Our Services</a>
-                    <a class="btn btn-link" href="">Terms & Condition</a>
-                    <a class="btn btn-link" href="">Support</a>
+                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-6 col-6 text_left m_t_b_10">
+
+                    <a href="/az/page/tedris-hissesi-27" class="b_link"> Tədris hissəsi</a><br>
+
+                    <a href="/az/page/abituriyent-145" class="b_link"> Abituriyent</a><br>
+
+                    <a href="/az/page/fakulteler-113" class="b_link"> Fakültələr</a><br>
+
+                    <a href="https://www.aztu.edu.az/az/page/onlayn-imtahan-114" class="b_link"> Onlayn imtahan</a><br>
+
+                    <a href="https://www.aztu.edu.az/az/page/kafedralar-94" class="b_link"> Kafedralar</a><br>
+
+                    <a href="https://www.aztu.edu.az/az/page/magistratura-139" class="b_link"> Magistratura</a><br>
+
+                    <a href="https://www.aztu.edu.az/az/page/doktorantura-147" class="b_link"> Doktorantura</a><br>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-light mb-4">Popular Links</h4>
-                    <a class="btn btn-link" href="">About Us</a>
-                    <a class="btn btn-link" href="">Contact Us</a>
-                    <a class="btn btn-link" href="">Our Services</a>
-                    <a class="btn btn-link" href="">Terms & Condition</a>
-                    <a class="btn btn-link" href="">Support</a>
+                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-6 col-6 text_left m_t_b_10">
+
+                    <a href="/az/page/elmi-sura-16" class="b_link"> Elmi şura</a><br>
+
+                    <a href="/az/page/suralar-16" class="b_link"> İctimai şura</a><br>
+
+                    <a href="/az/page/suralar-16" class="b_link"> Rəqəmsal şura</a><br>
+
+                    <a href="/az/page/hemkarlar-ittifaqi-komitesi-143" class="b_link"> Həmkarlar İttifaqı Komitəsi</a><br>
+
+                    <a href="/az/page/telebe-elmi-cemiyyeti-43" class="b_link"> Tələbə elmi cəmiyyəti</a><br>
+
+                    <a href="https://www.aztu.edu.az/az/page/etik-davranis-mecellesi-162" class="b_link"> Etik Davranış Məcəlləsi</a><br>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-light mb-4">Newsletter</h4>
-                    <form action="">
-                        <div class="input-group">
-                            <input type="text" class="form-control p-3 border-0" placeholder="Your Email Address">
-                            <button class="btn btn-primary">Sign Up</button>
+                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-6 col-6 text_left m_t_b_10">
+
+                    <a href="https://www.aztu.edu.az/sub_site/az/beynelxalq-elaqeler-90" target="blank" class="b_link"> Beynəlxalq əlaqələr</a><br>
+
+                    <a href="https://www.aztu.edu.az/az/page/milli-qehremanlarimiz-146" class="b_link"> Milli Qəhrəmanlarımız</a><br>
+
+                    <a href="/az/page/telebe-rektor-36" class="b_link"> Tələbə rektor</a><br>
+
+                    <a href="/az/page/tgt-38" class="b_link"> TGT</a><br>
+
+                    <a href="/az/page/thik-37" class="b_link"> THİK</a><br>
+
+                    <a href="/az/page/veten-muharibesi-93" class="b_link"> Vətən müharibəsi</a><br>
+
+                    <a href="/az/page/institutlar-91" class="b_link"> İnstitutlar</a><br>
+                </div>
+                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-6 col-6 text_left m_t_b_10">
+
+                    <a href="https://www.aztu.edu.az/sub_site/az/creng-88" target="blank" class="b_link"> CRENG</a><br>
+
+                    <a href="https://www.aztu.edu.az/sub_site/az/movlane-mubadile-proqrami-87" target="blank" class="b_link"> Mövlanə Mübadilə Proqramı</a><br>
+
+                    <a href="https://www.aztu.edu.az/sub_site/az/akkreditasiya-olunmus-ixtisaslar-86" target="blank" class="b_link"> Akkreditasiya olunmuş ixtisaslar</a><br>
+
+                    <a href="https://www.aztu.edu.az/sub_site/az/elmi-eserler-jurnali-89" target="blank" class="b_link"> Elmi əsərlər jurnalı</a><br>
+
+                    <a href="/az/page/beynelxalq-elaqeler-26" class="b_link"> Beynəlxalq əlaqələr</a><br>
+
+                    <a href="/az/page/cdio-110" class="b_link"> CDIO</a><br>
+                </div>
+                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-6 col-6 text_left m_t_b_10">
+
+                    <a href="https://www.aztu.edu.az/sub_site/az/tekrar-ali-tehsil-93" target="blank" class="b_link"> Təkrar ali təhsil</a><br>
+
+                    <a href="https://www.aztu.edu.az/az/page/normativ-senedler-148" class="b_link"> Normativ sənədlər</a><br>
+
+                    <a href="https://rabitakolleci.edu.az/az/ana-s%c9%99hif%c9%99/" target="blank" class="b_link"> Bakı Dövlət Rabitə və Nəqliyyat kolleci</a><br>
+
+                    <a href="https://bakitexnikikolleci.edu.az/" target="blank" class="b_link"> Bakı Texniki kolleci</a><br>
+
+                    <a href="/az/page/aztu-radio-101" class="b_link"> AzTU Radio</a><br>
+
+                    <a href="/az/page/elaqe-15" class="b_link"> Əlaqə</a><br>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer start -->
+    <div class="mb-5">
+        <div class="container">
+
+            <hr>
+            <div class="row">
+
+
+
+
+                <div class="col-6 col-xl-3 col-lg-12 col-md-6 col-sm-6">
+                    <a target="_blank" href="https://president.az/">
+                        <img src="https://www.aztu.edu.az/assets/dist/img/gov_links/president.png" class="gov_link_img">
+                    </a>
+                </div>
+
+
+                <div class="col-6 col-xl-3 col-lg-12 col-md-6 col-sm-6">
+                    <a target="_blank" href="https://heydar-aliyev-foundation.org/az">
+                        <img src="https://www.aztu.edu.az/assets/dist/img/gov_links/heydar-aliyev-foundation.png" class="gov_link_img">
+                    </a>
+                </div>
+
+
+                <div class="col-6 col-xl-3 col-lg-12 col-md-6 col-sm-6">
+                    <a target="_blank" href="https://mehriban-aliyeva.az/">
+                        <img src="https://www.aztu.edu.az/assets/dist/img/gov_links/first_lady.png" class="gov_link_img">
+                    </a>
+                </div>
+
+                <div class="col-6 col-xl-3 col-lg-12 col-md-6 col-sm-6">
+                    <a target="_blank" href="https://www.virtualkarabakh.az/">
+                        <img src="https://www.aztu.edu.az/assets/dist/img/gov_links/virtual_qarabaq.png" class="gov_link_img">
+                    </a>
+                </div>
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <footer>
+
+        <div class="footer-area-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12   d-none d-lg-block">
+                        <div class="footer-box text_left">
+                            <a href="https://www.aztu.edu.az/az">
+                                <img class="w_45_f" src="https://www.aztu.edu.az/web_admin/upload/files/aztu.edu.az/sitesettings/5-2022/logo.png" alt="logo">
+                            </a>
                         </div>
-                    </form>
-                    <h6 class="text-white mt-4 mb-3">Follow Us</h6>
-                    <div class="d-flex pt-2">
-                        <a class="btn btn-square btn-outline-light me-1" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-square btn-outline-light me-1" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square btn-outline-light me-1" href=""><i class="fab fa-youtube"></i></a>
-                        <a class="btn btn-square btn-outline-light me-0" href=""><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-box text_center">
+                            <ul class="footer-social">
+                                
+                                <li><a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href=""><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href=""><i class="fab fa-twitter"></i></a></li>
+                                <li><a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href=""><i class="fab fa-linkedin-in"></i></a></li>
+                                <li><a class="btn btn-square btn-link rounded-0" href=""><i class="fab fa-instagram"></i></a></li>
+                            </ul>
+                            <br>
+                            <p>H.Cavid prospekti 25, Bakı, Azərbaycan AZ 1073 Azərbaycan Texniki Universiteti.</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 d-none  d-lg-block">
+                        <div class="footer-box text_right">
+                            <p class="m_0">Tel: (+994 12) 538-33-83</p>
+                            <p class="m_0">Qaynar xətt: (+994 12) 539-13-05</p>
+                            <p class="m_0">E-poçt: aztu@aztu.edu.az</p>
+                        </div>
+                    </div>
+                    <div class="col-12	d-block d-lg-none">
+                        <div class="footer-box text_center">
+                            <p class="m_0">Tel: (+994 12) 538-33-83</p>
+                            <p class="m_0">Qaynar xətt: (+994 12) 539-13-05</p>
+                            <p class="m_0">E-poçt: aztu@aztu.edu.az</p>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+        </div>
+        <div class="footer-area-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">
+                        <p>Copyright ⓒ 2022 - 23 Azərbaycan Texniki Universiteti. Bütün hüquqlar qorunur.</p>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Footer End -->
-    <!-- Copyright Start -->
-    <div class="container-fluid copyright text-light py-4 wow fadeIn" data-wow-delay="0.1s">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    &copy; <a href="#">Your Site Name</a>, All Right Reserved.
-                </div>
-                <div class="col-md-6 text-center text-md-end">
-                    <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                    Designed By <a href="https://htmlcodex.com">HTML Codex</a>
-                    <br>Distributed By: <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Copyright End -->
+    </footer>
+    <!-- Footer end -->
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
 
     <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/assets/lib/wow/wow.min.js"></script>
     <script src="~/assets/lib/easing/easing.min.js"></script>
     <script src="~/assets/lib/waypoints/waypoints.min.js"></script>
-    <script src="~/assets/lib/owlcarousel/owl.carousel.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
     <!-- Template Javascript -->
     <script src="~/assets/js/main.js"></script>
+
 </body>
 
 </html>
+

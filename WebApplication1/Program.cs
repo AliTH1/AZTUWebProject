@@ -25,7 +25,22 @@ builder.Services.AddAutoMapper(Assembly.GetAssembly(typeof(Business.Utilities.Pr
 
 builder.Services.AddScoped<IPanelRepository, PanelRepository>();
 builder.Services.AddScoped<IPanelService, PanelService>();
-//builder.Services.AddScoped<IAnnouncementRepository, AnnouncementRepository>();
+
+builder.Services.AddScoped<INewsRepository, NewsRepository>();
+builder.Services.AddScoped<INewsService, NewsService>();
+
+builder.Services.AddScoped<IAnnouncementRepository, AnnouncementRepository>();
+builder.Services.AddScoped<IAnnouncementService, AnnouncementService>();
+
+builder.Services.AddScoped<IProjectRepository, ProjectRepository>();
+builder.Services.AddScoped<IProjectService, ProjectService>();
+
+builder.Services.AddScoped<IEventRepository, EventRepository>();
+builder.Services.AddScoped<IEventService, EventService>();
+
+builder.Services.AddScoped<IConferenceRepository, ConferenceRepository>();
+builder.Services.AddScoped<IConferenceService, ConferenceService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

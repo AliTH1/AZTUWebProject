@@ -16,4 +16,7 @@ public class AppDbContext : IdentityDbContext<AppUser>
     public DbSet<Panel> Panels { get; set; }
     public DbSet<Service> Services { get; set; }
     public DbSet<Slider> Sliders { get; set; }
+    public DbSet<Project> Projects { get; set; }
+    public DbSet<Event> Events { get; set; }
+    public DbSet<Conference> Conferences { get; set; }
 }

@@ -4,13 +4,13 @@
 
 namespace DataAccess.Migrations
 {
-    public partial class createdPropForPanel : Migration
+    public partial class AddUrlAnnouncements : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AddColumn<string>(
-                name: "ImagePath",
-                table: "Panels",
+                name: "Url",
+                table: "Announcements",
                 type: "nvarchar(max)",
                 nullable: false,
                 defaultValue: "");
@@ -19,8 +19,8 @@ namespace DataAccess.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropColumn(
-                name: "ImagePath",
-                table: "Panels");
+                name: "Url",
+                table: "Announcements");
         }
     }
 }
