@@ -1,0 +1,86 @@
+﻿@{
+    Layout = null;
+}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Giriş</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="~/loginAssets/css/style.css">
+    <link rel="stylesheet" href="~/loginAssets/css/iziToast.min.css">
+
+</head>
+<body onload="OnLoad()">
+    <script>
+        function OnLoad() {
+            var el = document.getElementById("Username");
+            if (typeof el == "undefined") return;
+            if (el.value != "") {
+                var elPsw = document.getElementById("Password");
+                elPsw.focus();
+            }
+            else el.focus();
+        }
+    </script>
+    <section class="ftco-section">
+        <div class="container">
+
+
+
+            <div class="row justify-content-center">
+                <div class="col-md-7 col-lg-5">
+                    <div class="login-wrap p-4 p-md-5">
+                        <div class="row mb-4">
+                            <div class="col-6">
+                                <img src="~/loginAssets/images/aztu_logo_az.png" height="60" />
+                            </div>
+                            <div class="col-6">
+                                <img src="~/loginAssets/images/logo-koica.png" class="float-right" height="60" />
+                            </div>
+                        </div>
+                        <h4 class="text-center mb-4">Giriş</h4>
+                        <form action="/Home/Login" method="post" class="login-form">
+                            <div class="form-group">
+                                <input type="text" class="form-control rounded-left" name="UserId" id="Username" placeholder="İstifadə&#231;i adı" required value="202006132">
+                            </div>
+                            <div class="form-group d-flex">
+                                <input type="password" class="form-control rounded-left" id="Password" placeholder="Şifrə" name="Password" required>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="form-control btn btn-primary rounded submit px-3">Daxil ol</button>
+                            </div>
+                            <div class="form-group d-md-flex">
+
+                                <div class="w-100 text-md-right">
+                                    <a href="/Home/ForgotPassword">Şifrəni unutdum</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-7 col-lg-5 alert alert-danger mt-4 text-justify">
+                    <b>KOICA</b>-ya yeni giriş sistemi ilə daxil olmaq üçün professor-müəllim heyəti şifrəni Tədris Hissəsindən, tələbələr isə dekanlıqlardan əldə edə bilər.<br />
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="~/loginAssets/js/jquery.min.js"></script>
+    <script src="~/loginAssets/js/popper.js"></script>
+    <script src="~/loginAssets/js/bootstrap.min.js"></script>
+    <script src="~/loginAssets/js/main.js"></script>
+    <script src="~/loginAssets/js/iziToast.min.js"></script>
+
+
+</body>
+</html>

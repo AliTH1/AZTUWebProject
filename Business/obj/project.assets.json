@@ -867,11 +867,9 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "Core": "1.0.0",
           "Entities": "1.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.16",
-          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.16",
-          "Microsoft.Extensions.Identity.Stores": "6.0.16"
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.16"
         },
         "compile": {
           "bin/placeholder/DataAccess.dll": {}
@@ -883,6 +881,10 @@
       "Entities/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Core": "1.0.0",
+          "Microsoft.Extensions.Identity.Stores": "6.0.16"
+        },
         "compile": {
           "bin/placeholder/Entities.dll": {}
         },

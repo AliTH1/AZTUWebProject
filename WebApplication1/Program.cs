@@ -16,9 +16,10 @@ builder.Services.AddDbContext<AppDbContext>(opt =>
 {
     opt.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
 });
-builder.Services.AddIdentity<AppUser, IdentityRole>()
+builder.Services.AddIdentity<AppUser, IdentityRole<int>>()
     .AddEntityFrameworkStores<AppDbContext>()
     .AddDefaultTokenProviders();
+
 
 
 builder.Services.AddAutoMapper(Assembly.GetAssembly(typeof(Business.Utilities.Profiles.PanelProfile)));
@@ -61,6 +62,11 @@ app.UseAuthorization();
 
 app.UseEndpoints(opt =>
 {
+    opt.MapControllerRoute(
+        name: "areas",
+        pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+        );
+
     opt.MapDefaultControllerRoute();
 });
 
