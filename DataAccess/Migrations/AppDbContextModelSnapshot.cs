@@ -17,12 +17,12 @@ namespace DataAccess.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.16")
+                .HasAnnotation("ProductVersion", "6.0.18")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("Core.Entities.Account.AppUser", b =>
+            modelBuilder.Entity("Entities.Account.AppUser", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -70,9 +70,6 @@ namespace DataAccess.Migrations
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("StudentInfoId")
-                        .HasColumnType("int");
-
                     b.Property<bool>("TwoFactorEnabled")
                         .HasColumnType("bit");
 
@@ -90,8 +87,6 @@ namespace DataAccess.Migrations
                         .HasDatabaseName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
-                    b.HasIndex("StudentInfoId");
-
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
@@ -107,10 +102,6 @@ namespace DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Gender")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Group")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -120,7 +111,41 @@ namespace DataAccess.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("UserId")
+                        .IsUnique();
+
                     b.ToTable("StudentsInfo");
+                });
+
+            modelBuilder.Entity("Entities.Account.TeacherInfo", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Degree")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FullName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Profession")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId")
+                        .IsUnique();
+
+                    b.ToTable("TeachersInfo");
                 });
 
             modelBuilder.Entity("Entities.Announcement", b =>
@@ -462,15 +487,26 @@ namespace DataAccess.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("Core.Entities.Account.AppUser", b =>
+            modelBuilder.Entity("Entities.Account.StudentInfo", b =>
                 {
-                    b.HasOne("Entities.Account.StudentInfo", "StudentInfo")
-                        .WithMany()
-                        .HasForeignKey("StudentInfoId")
+                    b.HasOne("Entities.Account.AppUser", "AppUser")
+                        .WithOne("StudentInfo")
+                        .HasForeignKey("Entities.Account.StudentInfo", "UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("StudentInfo");
+                    b.Navigation("AppUser");
+                });
+
+            modelBuilder.Entity("Entities.Account.TeacherInfo", b =>
+                {
+                    b.HasOne("Entities.Account.AppUser", "AppUser")
+                        .WithOne("TeacherInfo")
+                        .HasForeignKey("Entities.Account.TeacherInfo", "UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("AppUser");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
@@ -484,7 +520,7 @@ namespace DataAccess.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<int>", b =>
                 {
-                    b.HasOne("Core.Entities.Account.AppUser", null)
+                    b.HasOne("Entities.Account.AppUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -493,7 +529,7 @@ namespace DataAccess.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<int>", b =>
                 {
-                    b.HasOne("Core.Entities.Account.AppUser", null)
+                    b.HasOne("Entities.Account.AppUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -508,7 +544,7 @@ namespace DataAccess.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Core.Entities.Account.AppUser", null)
+                    b.HasOne("Entities.Account.AppUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -517,10 +553,19 @@ namespace DataAccess.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<int>", b =>
                 {
-                    b.HasOne("Core.Entities.Account.AppUser", null)
+                    b.HasOne("Entities.Account.AppUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Entities.Account.AppUser", b =>
+                {
+                    b.Navigation("StudentInfo")
+                        .IsRequired();
+
+                    b.Navigation("TeacherInfo")
                         .IsRequired();
                 });
 #pragma warning restore 612, 618

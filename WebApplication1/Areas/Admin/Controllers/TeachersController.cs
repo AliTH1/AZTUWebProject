@@ -1,13 +1,22 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using DataAccess;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace WebApplication1.Areas.Admin.Controllers
 {
     [Area("Admin")]
     public class TeachersController : Controller
     {
-        public IActionResult Index()
+        private readonly AppDbContext _context;
+
+        public TeachersController(AppDbContext context)
         {
-            return View();
+            _context = context;
+        }
+
+        public async Task<IActionResult> Index()
+        {
+            return View(await _context.TeachersInfo.Include(c => c.AppUser).ToListAsync());
         }
     }
 }

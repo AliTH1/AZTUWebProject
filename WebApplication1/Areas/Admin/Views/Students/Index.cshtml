@@ -1,0 +1,41 @@
+﻿@using Entities.Account;
+@model ICollection<StudentInfo>
+@{
+    int count = 1;
+}
+
+
+<div class="d-flex justify-content-end">
+    <a class="btn btn-success" asp-controller="Account" asp-action="Register">Register</a>
+</div>
+
+
+<table class="table table-striped">
+    <thead class="thead">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Full name</th>
+            <th scope="col">Username</th>
+            <th scope="col">Group</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (StudentInfo student in Model)
+        {
+            <tr>
+                <th scope="row">@count</th>
+                <td>@student.FullName</td>
+                <td>@student.AppUser.UserName</td>
+                <td>@student.Group</td>
+                <td>
+                    <div class="d-flex justify-content-end">
+                        <a class="btn btn-warning text-light ml-3" asp-action="Edit">Edit</a>
+                        <a class="btn btn-danger text-light ml-3" asp-action="Delete">Delete</a>
+                    </div>
+                </td>
+            </tr>
+            count++;
+        }
+        
+    </tbody>
+</table>

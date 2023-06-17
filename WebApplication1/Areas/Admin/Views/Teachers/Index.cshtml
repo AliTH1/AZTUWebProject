@@ -1,53 +1,44 @@
-﻿<div class="d-flex justify-content-end">
+﻿@using Entities.Account;
+@model ICollection<TeacherInfo>
+@{
+    int count = 1;
+}
+
+
+<div class="d-flex justify-content-end">
     <a class="btn btn-success" asp-controller="Account" asp-action="Register">Register</a>
 </div>
 
 
-<table class="table">
-    <thead class="thead-dark">
+<table class="table table-striped">
+    <thead class="thead">
         <tr>
             <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
+            <th scope="col">Full name</th>
+            <th scope="col">Username</th>
+            <th scope="col">Degree</th>
             <th scope="col">Profession</th>
+
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>NRT</td>
-            <td>
-                <div class="d-flex justify-content-end">
-                    <a class="btn btn-warning text-light ml-3" asp-action="Edit">Edit</a>
-                    <a class="btn btn-danger text-light ml-3" asp-action="Delete">Delete</a>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Otto</td>
-            <td>EQQ</td>
-            <td>
-                <div class="d-flex justify-content-end">
-                    <a class="btn btn-warning text-light ml-3" asp-action="Edit">Edit</a>
-                    <a class="btn btn-danger text-light ml-3" asp-action="Delete">Delete</a>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>Otto</td>
-            <td>Mulki Mudafie</td>
-            <td>
-                <div class="d-flex justify-content-end">
-                    <a class="btn btn-warning text-light ml-3" asp-action="Edit">Edit</a>
-                    <a class="btn btn-danger text-light ml-3" asp-action="Delete">Delete</a>
-                </div>
-            </td>
-        </tr>
+        @foreach (TeacherInfo teacher in Model)
+        {
+            <tr>
+                <th scope="row">@count</th>
+                <td>@teacher.FullName</td>
+                <td>@teacher.AppUser.UserName</td>
+                <td>@teacher.Degree</td>
+                <td>@teacher.Profession</td>
+                <td>
+                    <div class="d-flex justify-content-end">
+                        <a class="btn btn-warning text-light ml-3" asp-action="Edit">Edit</a>
+                        <a class="btn btn-danger text-light ml-3" asp-action="Delete">Delete</a>
+                    </div>
+                </td>
+            </tr>
+            count++;
+        }
+
     </tbody>
 </table>

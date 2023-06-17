@@ -1,9 +1,9 @@
 using Business.Services.Abstract;
 using Business.Services.Concrete;
-using Core.Entities.Account;
 using DataAccess;
 using DataAccess.Repositories.Abstract;
 using DataAccess.Repositories.Concrete;
+using Entities.Account;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
