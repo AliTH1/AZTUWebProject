@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "/bPpHJpCJQEpfQZnZK8FlVQLG+AwR4Oyxr1E8x/tcPw=",
+  "Hash": "lYoVuYILxfOhOD8wKPGmkDvEtJjdtx9jw/4I/TFQaDA=",
   "Source": "WebApplication1",
   "BasePath": "_content/WebApplication1",
   "Mode": "Default",
@@ -64972,6 +64972,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\koica\\css\\vertical-layout-light\\style.css"
+    },
+    {
+      "Identity": "C:\\Users\\alita\\source\\repos\\AZTUWebProject\\WebApplication1\\wwwroot\\koica\\font-awesome\\css\\all.min.css",
+      "SourceId": "WebApplication1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\alita\\source\\repos\\AZTUWebProject\\WebApplication1\\wwwroot\\",
+      "BasePath": "_content/WebApplication1",
+      "RelativePath": "koica/font-awesome/css/all.min.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\koica\\font-awesome\\css\\all.min.css"
+    },
+    {
+      "Identity": "C:\\Users\\alita\\source\\repos\\AZTUWebProject\\WebApplication1\\wwwroot\\koica\\font-awesome\\js\\all.min.js",
+      "SourceId": "WebApplication1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\alita\\source\\repos\\AZTUWebProject\\WebApplication1\\wwwroot\\",
+      "BasePath": "_content/WebApplication1",
+      "RelativePath": "koica/font-awesome/js/all.min.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\koica\\font-awesome\\js\\all.min.js"
     },
     {
       "Identity": "C:\\Users\\alita\\source\\repos\\AZTUWebProject\\WebApplication1\\wwwroot\\koica\\fonts\\Poppins\\Poppins-Black.eot",

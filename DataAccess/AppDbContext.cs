@@ -3,6 +3,9 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using Entities.Account;
+using System.Text.RegularExpressions;
+using Koica = Entities.Koica;
+using Entities.Koica;
 
 namespace DataAccess;
 
@@ -26,6 +29,11 @@ public class AppDbContext : IdentityDbContext<AppUser, IdentityRole<int>, int>
             .WithOne(s => s.AppUser)
             .HasForeignKey<TeacherInfo>(c => c.UserId);
         base.OnModelCreating(builder);
+
+        builder.Entity<Koica.Group>()
+            .HasMany(g => g.Subjects)
+            .WithMany(s => s.Groups)
+            .UsingEntity<GroupSubject>();
     }
 
 
@@ -38,6 +46,9 @@ public class AppDbContext : IdentityDbContext<AppUser, IdentityRole<int>, int>
     public DbSet<Project> Projects { get; set; }
     public DbSet<Event> Events { get; set; }
     public DbSet<Conference> Conferences { get; set; }
+    public DbSet<Entities.Koica.Group> Groups { get; set; }
+    public DbSet<Entities.Koica.Subject> Subjects { get; set; }
+    public DbSet<Entities.Koica.GroupSubject> GroupSubjects { get; set; }
 
     //Core
     public DbSet<StudentInfo> StudentsInfo { get; set; }

@@ -12,10 +12,11 @@ namespace WebApplication1.Controllers
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
 
-        public AccountController(AppDbContext context, UserManager<AppUser> userManager)
+        public AccountController(AppDbContext context, UserManager<AppUser> userManager, SignInManager<AppUser> signInManager)
         {
             _context = context;
             _userManager = userManager;
+            _signInManager = signInManager;
         }
 
 
@@ -106,19 +107,33 @@ namespace WebApplication1.Controllers
 
         public IActionResult Login()
         {
-            return View(); 
+            return View(new LoginVM());
         }
 
         [HttpPost]
-        public IActionResult Login(LoginVM login)
+        public async Task<IActionResult> Login(LoginVM login)
         {
             if (!ModelState.IsValid) return View(login);
 
+            AppUser user = await _userManager.FindByNameAsync(login.UserName);
 
+            if (user == null)
+            {
+                ModelState.AddModelError("", "Username or password is wrong");
+                return View(login);
+            }
 
+            Microsoft.AspNetCore.Identity.SignInResult signInResult = await _signInManager.CheckPasswordSignInAsync(user, login.Password, false);
 
+            if (!signInResult.Succeeded)
+            {
+                ModelState.AddModelError("", "Username or password is wrong");
+                return View(login);
+            }
 
-            return View();
+            await _signInManager.SignInAsync(user, isPersistent: false);
+
+            return RedirectToAction("Index", "Home", new {Area = "Koica"});
         }
     }
 }

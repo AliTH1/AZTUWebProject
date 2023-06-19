@@ -15281,6 +15281,14 @@
       "PackagePath": "staticwebassets\\koica\\css\\vertical-layout-light\\style.css"
     },
     {
+      "Id": "C:\\Users\\alita\\source\\repos\\AZTUWebProject\\WebApplication1\\wwwroot\\koica\\font-awesome\\css\\all.min.css",
+      "PackagePath": "staticwebassets\\koica\\font-awesome\\css\\all.min.css"
+    },
+    {
+      "Id": "C:\\Users\\alita\\source\\repos\\AZTUWebProject\\WebApplication1\\wwwroot\\koica\\font-awesome\\js\\all.min.js",
+      "PackagePath": "staticwebassets\\koica\\font-awesome\\js\\all.min.js"
+    },
+    {
       "Id": "C:\\Users\\alita\\source\\repos\\AZTUWebProject\\WebApplication1\\wwwroot\\koica\\fonts\\Poppins\\Poppins-Black.eot",
       "PackagePath": "staticwebassets\\koica\\fonts\\Poppins\\Poppins-Black.eot"
     },

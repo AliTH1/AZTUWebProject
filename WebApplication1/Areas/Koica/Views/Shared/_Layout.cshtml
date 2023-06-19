@@ -13,6 +13,7 @@
     <!-- plugin css for this page -->
     <!-- End plugin css for this page -->
     <!-- inject:css -->
+    <link href="~/koica/font-awesome/css/all.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/koica/css/vertical-layout-light/style.css">
     <!-- endinject -->
     <link rel="shortcut icon" href="~/koica/images/favicon.png" />
@@ -333,18 +334,19 @@
             <nav class="sidebar sidebar-offcanvas" id="sidebar">
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link" asp-controller="Koica" asp-action="Index">
+                        <a class="nav-link" asp-controller="Home" asp-action="Index">
                             <i class="typcn typcn-document-text menu-icon"></i>
                             <span class="menu-title">Elanlar</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                        <a class="nav-link" asp-controller="PersonalInformations" asp-action="Index">
+                            <i class="fas fa-user-check"></i>
                             <span class="menu-title">Şəxsi məlumatlar</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
+                        <a class="nav-link" asp-controller="Schedules" asp-action="Index">
                             <i class="typcn typcn-film menu-icon"></i>
                             <span class="menu-title">Dərs cədvəli</span>
                         </a>
@@ -355,27 +357,7 @@
                             <span class="menu-title">Transkript</span>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
-                            <i class="typcn typcn-th-small-outline menu-icon"></i>
-                            <span class="menu-title">Fənlər</span>
-                            <i class="menu-arrow"></i>
-                        </a>
-                        <div class="collapse" id="tables">
-                            <ul class="nav flex-column sub-menu">
-                                <li><a style="font-size: 13.5px">Elektrik qida qurğuları[610r] </a></li>
-
-                                <li><a href="#" style="font-size: 13.5px">Mülki müdafiə[610r] </a></li>
-
-                                <li><a href="#" style="font-size: 13.5px">Naqilsiz rabitə texnologiyaları[610r] </a></li>
-
-                                <li><a href="#" style="font-size: 13.5px">Radiotexniki vasitələrin konstruksiyası və texnologiyası[610r] </a></li>
-
-                                <li><a href="#" style="font-size: 13.5px">Sxemotexnikanın əsasları[610r] </a></li>
-
-                                <li><a href="#" style="font-size: 13.5px">Telekommunikasiya şəbəkələri və sistemləri[610r] </a></li>
-                            </ul>
-                        </div>
+                    @await Component.InvokeAsync("Subject")
 
                 </ul>
             </nav>
@@ -415,6 +397,7 @@
     <script src="~/koica/js/template.js"></script>
     <script src="~/koica/js/settings.js"></script>
     <script src="~/koica/js/todolist.js"></script>
+    <script src="~/koica/font-awesome/js/all.min.js"></script>
     <!-- endinject -->
     <!-- Custom js for this page-->
     <script src="~/koica/js/dashboard.js"></script>
