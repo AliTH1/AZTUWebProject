@@ -1,0 +1,37 @@
+﻿@using Entities.Koica;
+@model Subject
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div style="padding: 10px 0;">
+                <h6 style="font-size: 13px" class="page-title float-left">@Model.Name</h6>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <!-- end row -->
+
+
+    <div class="button-list text-center">
+        <a onclick="set_active(this)" asp-controller="Subjects" asp-action="Notification" asp-route-id="@Model.Id" class="btn btn-sm btn-rounded w-md waves-effect btn-danger">
+            Bildiriş
+        </a>
+
+        <a onclick="set_active(this)" asp-controller="Subjects" asp-action="Forum" asp-route-id="@Model.Id" class="btn btn-sm btn-rounded w-md waves-effect btn-primary">
+            Forum
+        </a>
+
+        <a onclick="set_active(this)" asp-controller="Subjects" asp-action="DidacticMaterials" asp-route-id="@Model.Id" class="btn btn-sm btn-rounded w-md waves-effect btn-primary">
+            Didaktik materiallar
+        </a>
+
+        <a onclick="set_active(this)" asp-controller="Subjects" asp-action="Evaluation" asp-route-id="@Model.Id" class="btn btn-sm btn-rounded w-md waves-effect btn-primary">
+            Qiymətləndirmə
+        </a>
+
+        <a onclick="set_active(this)" asp-controller="Subjects" asp-action="Notification" asp-route-id="@Model.Id" class="btn btn-sm btn-rounded w-md waves-effect btn-primary">
+            Cari müvəffəqiyyət
+        </a>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+﻿@using Entities.Koica;
+@model Subject
+
+@await Html.PartialAsync("_SubjectsPartialView")
+
+
+
+<div class="container-fluid mt-3">
+	<div class="row">
+		<!-- <div class="col-12"> -->
+		<div class="card">
+
+			<div class="card-body table-responsive">
+				<div class="text-right">
+					<input type="button" style="margin-bottom: 10px" value="Əlavə et" onclick="blur(); send_add();" class="btn btn-primary btn-rounded btn-bordered waves-effect btn-sm waves-light" onmouseout="this.style.color='#FFFFFF'">
+					<!--  <input type="button"	onClick="set_active(this)"  value="Əlavə et" data-pjax2 href="?lec_open_idx=50979&lecture_code=1529&sem_code=20231">  -->
+
+
+				</div>
+
+
+
+				<table class="table table-bordered " id="op_list" border="1" cellspacing="0" cellpadding="0" width="100%" bordercolor="#b6bbc0" style="border-collapse:collapse;">
+					<thead>
+						<tr>
+							<th nowrap="" width="50px" align="center" class="list_title1">Nömrə</th>
+							<th width="350px" align="center" valign="middle" class="list_title1 text-center" style="word-break:keep-all;  ">Movzu</th>
+							<th width="350px" align="center" valign="middle" class="list_title1 text-center" style="word-break:keep-all;  ">Müəllif</th>
+							<th width="350px" align="center" valign="middle" class="list_title1 text-center" style="word-break:keep-all;  ">Tarix</th>
+							<th width="350px" align="center" valign="middle" class="list_title1 text-center" style="word-break:keep-all;  ">Müraciətlərin sayı</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td align="center" colspan="5" class="list_text1">Qeyd olunmuş material yoxdur</td>
+						</tr>
+						<input type="hidden" name="str_list" value="">
+					</tbody>
+				</table>
+
+
+			</div>
+		</div>
+	</div>
+</div>

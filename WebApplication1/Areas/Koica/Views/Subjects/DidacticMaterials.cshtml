@@ -1,0 +1,93 @@
+﻿@using Entities.Koica;
+@model Subject
+
+@await Html.PartialAsync("_SubjectsPartialView")
+
+
+<div class="container-fluid mt-3">
+	<div class="row">
+		<div class="col-12">
+			<div class="card">
+				<div class="card-body table-responsive">
+
+					<div id="preview" class="noprint">
+						<table id="t_list_item" border="1" cellspacing="0" cellpadding="0" width="100%" bordercolor="#b6bbc0" class="noprint" style="border-collapse:collapse; display:none;">
+							<tbody>
+								<tr>
+									<td width="110px" align="center" class="list_title2" style="padding-top:5px;padding-bottom:5px;"><a onclick="item_edit('L03000000', '', 'list', '')">Bənd</a><br>Seçmək<input type="checkbox" name="" value="" onclick="check_all_input2(eeaa.check_item, this, 'list_item', 'list_txt');"></td>
+									<td class="list_text1" style="padding-left:5px;">
+										<input type="checkbox" name="check_item" onclick="check_one_input2(this, 'list_item', 'list_txt');" value="cre_date|Tarix" checked=""><a onclick="item_edit('L03000000', 'cre_date', 'list', 'edit')">Tarix</a>
+										<input type="checkbox" name="check_item" onclick="check_one_input2(this, 'list_item', 'list_txt');" value="cre_name|Müəllif" checked=""><a onclick="item_edit('L03000000', 'cre_name', 'list', 'edit')">Müəllif</a>
+										<input type="checkbox" name="check_item" onclick="check_one_input2(this, 'list_item', 'list_txt');" value="wr_category|Təyinatı"><a onclick="item_edit('L03000000', 'wr_category', 'list', 'edit')">Təyinatı</a>
+										<input type="checkbox" name="check_item" onclick="check_one_input2(this, 'list_item', 'list_txt');" value="wr_content|Məzmunu"><a onclick="item_edit('L03000000', 'wr_content', 'list', 'edit')">Məzmunu</a>
+										<input type="checkbox" name="check_item" onclick="check_one_input2(this, 'list_item', 'list_txt');" value="wr_file|Qoşma"><a onclick="item_edit('L03000000', 'wr_file', 'list', 'edit')">Qoşma</a>
+										<input type="checkbox" name="check_item" onclick="check_one_input2(this, 'list_item', 'list_txt');" value="wr_file1|Qoşma1"><a onclick="item_edit('L03000000', 'wr_file1', 'list', 'edit')">Qoşma1</a>
+										<input type="checkbox" name="check_item" onclick="check_one_input2(this, 'list_item', 'list_txt');" value="wr_file2|Qoşma2"><a onclick="item_edit('L03000000', 'wr_file2', 'list', 'edit')">Qoşma2</a>
+										<input type="checkbox" name="check_item" onclick="check_one_input2(this, 'list_item', 'list_txt');" value="wr_hit|Müraciətlərin sayı" checked=""><a onclick="item_edit('L03000000', 'wr_hit', 'list', 'edit')">Müraciətlərin sayı</a>
+										<input type="checkbox" name="check_item" onclick="check_one_input2(this, 'list_item', 'list_txt');" value="wr_title|Movzu" checked=""><a onclick="item_edit('L03000000', 'wr_title', 'list', 'edit')">Movzu</a>
+										<input type="checkbox" name="check_item" onclick="check_one_input2(this, 'list_item', 'list_txt');" value="wr_type|Qrupların birləşdirilməsi"><a onclick="item_edit('L03000000', 'wr_type', 'list', 'edit')">Qrupların birləşdirilməsi</a>
+									</td>
+								</tr>
+								<tr>
+									<td width="110px" align="center" class="list_title2" style="padding-top:5px;padding-bottom:5px;">Seçilənlərin sıralanması</td>
+									<td class="list_text1" id="list_txt" style="padding-left:5px;font-weight:bold;">|Movzu|Müəllif|Tarix|Müraciətlərin sayı|</td>
+								</tr>
+							</tbody>
+						</table>
+						<table border="0" cellspacing="0" width="100%" class="noprint">
+							<tbody>
+								<tr>
+									<!--
+									<td><select id="page_list" name="page_list" onchange="send_page_list();">
+											<option value="">Sıra</option>
+											<option value="10" >10</option>
+											<option value="15" >15</option>
+											<option value="20" >20</option>
+											<option value="30" selected>30</option>
+											<option value="50" >50</option>
+											<option value="100" >100</option>
+											<option value="41" >Umumi</option>
+										</select>
+
+										<select id="search_item" name="search_item">
+											<option value="wr_title" >Movzu</option>
+											<option value="wr_content" >Məzmunu</option>
+										</select>
+										<input type="text" id="search_word" name="search_word" class="list_inp1" style="width:100px;" value="" onkeypress="if(event.keyCode == 13) {send_search('','');}">
+										<input type="button" style="width:70px;" value="Axtarış" onclick="send_search('','');" class="list_btn1" onMouseOver=this.style.color='#FF7D0A' onMouseOut=this.style.color='#FFFFFF'>
+									</td> -->
+									<td></td>
+									<td align="right">
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<!-- 		<table border="0" cellspacing="0" width="100%">
+						<tr><td height="3px"></td></tr>
+					</table> -->
+					<table id="op_list" class="table table-striped table-bordered" border="1" cellspacing="0" cellpadding="0" width="100%">
+						<thead class="text-center">
+							<tr>
+								<th width="50px" class="text-center">Nömrə</th>
+								<th width="500px" class="text-center" style="word-break:keep-all;  ">Movzu</th>
+								<th width="500px" class="text-center" style="word-break:keep-all;  ">Müəllif</th>
+								<th width="500px" class="text-center" style="word-break:keep-all;  ">Tarix</th>
+								<th width="500px" class="text-center" style="word-break:keep-all;  ">Müraciətlərin sayı</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr id="op199873" onmouseover="this.style.backgroundColor='#99FF99'" onmouseout="this.style.backgroundColor=''" style="">
+								<td align="center" colspan="5" class="list_text1">Qeyd olunmuş material yoxdur</td>
+							</tr>
+						</tbody>
+						<input type="hidden" name="str_list" value="">
+					</table>
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
