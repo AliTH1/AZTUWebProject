@@ -14,23 +14,24 @@
 
 
     <div class="button-list text-center">
-        <a onclick="set_active(this)" asp-controller="Subjects" asp-action="Notification" asp-route-id="@Model.Id" class="btn btn-sm btn-rounded w-md waves-effect btn-danger">
+        <a asp-controller="Subjects" asp-action="Notification" asp-route-id="@Model.Id" class="btn btn-sm btn-rounded w-md waves-effect btn-danger">
             Bildiriş
         </a>
 
-        <a onclick="set_active(this)" asp-controller="Subjects" asp-action="Forum" asp-route-id="@Model.Id" class="btn btn-sm btn-rounded w-md waves-effect btn-primary">
+        <a asp-controller="Subjects" asp-action="Forum" asp-route-id="@Model.Id" class="btn btn-sm btn-rounded w-md waves-effect btn-primary">
             Forum
         </a>
 
-        <a onclick="set_active(this)" asp-controller="Subjects" asp-action="DidacticMaterials" asp-route-id="@Model.Id" class="btn btn-sm btn-rounded w-md waves-effect btn-primary">
+        <a asp-controller="Subjects" asp-action="DidacticMaterials" asp-route-id="@Model.Id" class="btn btn-sm btn-rounded w-md waves-effect btn-primary">
             Didaktik materiallar
         </a>
 
-        <a onclick="set_active(this)" asp-controller="Subjects" asp-action="Evaluation" asp-route-id="@Model.Id" class="btn btn-sm btn-rounded w-md waves-effect btn-primary">
+
+        <a asp-controller="Subjects" asp-action="Evaluation" asp-route-id="@Model.Id" class="btn btn-sm btn-rounded w-md waves-effect btn-primary">
             Qiymətləndirmə
         </a>
 
-        <a onclick="set_active(this)" asp-controller="Subjects" asp-action="Notification" asp-route-id="@Model.Id" class="btn btn-sm btn-rounded w-md waves-effect btn-primary">
+        <a asp-controller="Subjects" asp-action="Notification" asp-route-id="@Model.Id" class="btn btn-sm btn-rounded w-md waves-effect btn-primary">
             Cari müvəffəqiyyət
         </a>
     </div>

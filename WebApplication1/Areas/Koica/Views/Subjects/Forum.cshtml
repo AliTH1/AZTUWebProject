@@ -1,45 +1,87 @@
-﻿@using Entities.Koica;
-@model Subject
-
-@await Html.PartialAsync("_SubjectsPartialView")
+﻿@using Entities.Koica.SubjectMaterials;
+@using WebApplication1.Areas.Koica.ViewModels;
+@model HomeVM
+@{
+    int count = 1;
+}
+@await Html.PartialAsync("_SubjectsPartialView", Model.Subject)
 
 
 
 <div class="container-fluid mt-3">
-	<div class="row">
-		<!-- <div class="col-12"> -->
-		<div class="card">
+    <div class="row">
+        <!-- <div class="col-12"> -->
+        <div class="card">
+            @await Html.PartialAsync("_SubjectModalPartialView", new CreateForumVM())
+            <div class="card-body table-responsive">
+                <div class="text-right">
+                    <button type="button" class="btn btn-primary btn-rounded btn-bordered waves-effect btn-sm waves-light" data-toggle="modal" data-target="#exampleModalLive">
+                        Əlavə et
+                    </button>
+                </div>
 
-			<div class="card-body table-responsive">
-				<div class="text-right">
-					<input type="button" style="margin-bottom: 10px" value="Əlavə et" onclick="blur(); send_add();" class="btn btn-primary btn-rounded btn-bordered waves-effect btn-sm waves-light" onmouseout="this.style.color='#FFFFFF'">
-					<!--  <input type="button"	onClick="set_active(this)"  value="Əlavə et" data-pjax2 href="?lec_open_idx=50979&lecture_code=1529&sem_code=20231">  -->
+                <table class="table table-bordered mt-3" id="op_list" border="1" cellspacing="0" cellpadding="0" width="100%" bordercolor="#b6bbc0" style="border-collapse:collapse;">
+                    <thead>
+                        <tr>
+                            <th nowrap="" width="50px" align="center" class="list_title1">Nömrə</th>
+                            <th width="350px" align="center" valign="middle" class="list_title1 text-center" style="word-break:keep-all;  ">Movzu</th>
+                            <th width="350px" align="center" valign="middle" class="list_title1 text-center" style="word-break:keep-all;  ">Müəllif</th>
+                            <th width="350px" align="center" valign="middle" class="list_title1 text-center" style="word-break:keep-all;  ">Tarix</th>
+                            <th width="350px" align="center" valign="middle" class="list_title1 text-center" style="word-break:keep-all;  ">Müraciətlərin sayı</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model.Forums.Count == 0)
+                        {
+                            <tr>
+                                <td align="center" colspan="5" class="list_text1">Qeyd olunmuş material yoxdur</td>
+                            </tr>
+                        }
+                        else
+                        {
+                            @foreach (Forum forum in Model.Forums)
+                            {
+                                <tr>
+                                    <td>@count</td>
+                                    <td class="list_text1">@forum.Topic</td>
+                                    <td class="list_text1">@forum.Author</td>
+                                    <td class="list_text1">@forum.Date.ToString("dd MMMM")</td>
+                                    <td class="list_text1">@forum.NumOfApplications</td>
+                                </tr>
+
+                                count++;
+                            }
+                        }
+                        <input type="hidden" name="str_list" value="">
+                    </tbody>
+                </table>
 
 
-				</div>
-
-
-
-				<table class="table table-bordered " id="op_list" border="1" cellspacing="0" cellpadding="0" width="100%" bordercolor="#b6bbc0" style="border-collapse:collapse;">
-					<thead>
-						<tr>
-							<th nowrap="" width="50px" align="center" class="list_title1">Nömrə</th>
-							<th width="350px" align="center" valign="middle" class="list_title1 text-center" style="word-break:keep-all;  ">Movzu</th>
-							<th width="350px" align="center" valign="middle" class="list_title1 text-center" style="word-break:keep-all;  ">Müəllif</th>
-							<th width="350px" align="center" valign="middle" class="list_title1 text-center" style="word-break:keep-all;  ">Tarix</th>
-							<th width="350px" align="center" valign="middle" class="list_title1 text-center" style="word-break:keep-all;  ">Müraciətlərin sayı</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td align="center" colspan="5" class="list_text1">Qeyd olunmuş material yoxdur</td>
-						</tr>
-						<input type="hidden" name="str_list" value="">
-					</tbody>
-				</table>
-
-
-			</div>
-		</div>
-	</div>
+            </div>
+        </div>
+    </div>
 </div>
+
+
+<script src="~/tinymce/js/tinymce/tinymce.min.js"></script>
+
+<script>
+    tinymce.init({
+        selector: 'textarea#default',
+        width: 650,
+        height: 400,
+        plugins: [
+            'advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'prewiew', 'anchor', 'pagebreak',
+            'searchreplace', 'wordcount', 'visualblocks', 'code', 'fullscreen', 'insertdatetime', 'media',
+            'table', 'emoticons', 'template', 'codesample'
+        ],
+        toolbar: 'undo redo | styles | bold italic underline | alignleft aligncenter alignright alignjustify |' +
+            'bullist numlist outdent indent | link image | print preview media fullscreen | ' +
+            'forecolor backcolor emoticons',
+        menu: {
+            favs: { title: 'menu', items: 'code visualaid | searchreplace | emoticons' }
+        },
+        menubar: 'edit insert format',
+        content_style: 'body{font-family:Helvetica,Arial,sans-serif; font-size:16px}'
+    });
+</script>

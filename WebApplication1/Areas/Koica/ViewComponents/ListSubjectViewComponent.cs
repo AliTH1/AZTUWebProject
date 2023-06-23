@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace WebApplication1.Areas.Koica.ViewComponents
 {
-    public class ListSubjectViewComponent : ViewComponent
+	public class ListSubjectViewComponent : ViewComponent
     {
         private readonly AppDbContext _context;
 

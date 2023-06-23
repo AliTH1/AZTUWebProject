@@ -1,7 +1,10 @@
-﻿@using Entities.Koica;
-@model Subject
-
-@await Html.PartialAsync("_SubjectsPartialView")
+﻿@using Entities.Koica.SubjectMaterials;
+@using WebApplication1.Areas.Koica.ViewModels;
+@model HomeVM
+@{
+	int count = 1;
+}
+@await Html.PartialAsync("_SubjectsPartialView", Model.Subject)
 
 
 <div class="container-fluid mt-3">
@@ -37,25 +40,6 @@
 						<table border="0" cellspacing="0" width="100%" class="noprint">
 							<tbody>
 								<tr>
-									<!--
-									<td><select id="page_list" name="page_list" onchange="send_page_list();">
-											<option value="">Sıra</option>
-											<option value="10" >10</option>
-											<option value="15" >15</option>
-											<option value="20" >20</option>
-											<option value="30" selected>30</option>
-											<option value="50" >50</option>
-											<option value="100" >100</option>
-											<option value="41" >Umumi</option>
-										</select>
-
-										<select id="search_item" name="search_item">
-											<option value="wr_title" >Movzu</option>
-											<option value="wr_content" >Məzmunu</option>
-										</select>
-										<input type="text" id="search_word" name="search_word" class="list_inp1" style="width:100px;" value="" onkeypress="if(event.keyCode == 13) {send_search('','');}">
-										<input type="button" style="width:70px;" value="Axtarış" onclick="send_search('','');" class="list_btn1" onMouseOver=this.style.color='#FF7D0A' onMouseOut=this.style.color='#FFFFFF'>
-									</td> -->
 									<td></td>
 									<td align="right">
 									</td>
@@ -77,9 +61,27 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr id="op199873" onmouseover="this.style.backgroundColor='#99FF99'" onmouseout="this.style.backgroundColor=''" style="">
-								<td align="center" colspan="5" class="list_text1">Qeyd olunmuş material yoxdur</td>
-							</tr>
+							@if (Model.DidacticMaterials.Count == 0)
+							{
+								<tr>
+									<td align="center" colspan="5" class="list_text1">Qeyd olunmuş material yoxdur</td>
+                                </tr>
+                            }
+                            else
+                            {
+                                @foreach (DidacticMaterial didacticMaterial in Model.DidacticMaterials)
+                                {
+									<tr>
+										<td>@count</td>
+										<td class="list_text1">@didacticMaterial.Topic</td>
+										<td class="list_text1">@didacticMaterial.Author</td>
+										<td class="list_text1">@didacticMaterial.Date</td>
+										<td class="list_text1">@didacticMaterial.NumOfApplications</td>
+									</tr>
+
+									count++;
+								}
+							}
 						</tbody>
 						<input type="hidden" name="str_list" value="">
 					</table>

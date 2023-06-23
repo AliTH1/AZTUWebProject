@@ -1,7 +1,11 @@
-﻿@using Entities.Koica;
-@model Subject
+﻿@using Entities.Koica.SubjectMaterials;
+@using WebApplication1.Areas.Koica.ViewModels;
+@model HomeVM
+@{
+	int count = 1;
+}
 
-@await Html.PartialAsync("_SubjectsPartialView")
+@await Html.PartialAsync("_SubjectsPartialView", Model.Subject)
 
 
 
@@ -35,9 +39,28 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<td align="center" colspan="5" class="list_text1">Qeyd olunmuş material yoxdur</td>
-							</tr>
+							@if(Model.Notifications.Count == 0)
+							{
+								<tr>
+									<td align="center" colspan="5" class="list_text1">Qeyd olunmuş material yoxdur</td>
+								</tr>
+							}
+							else
+							{
+								@foreach (Notification notification in Model.Notifications)
+								{
+									<tr>
+										<td>@count</td>
+										<td class="list_text1">@notification.Topic</td>
+										<td class="list_text1">@notification.Author</td>
+										<td class="list_text1">@notification.Date</td>
+										<td class="list_text1">@notification.NumOfApplications</td>
+									</tr>
+
+									count++;
+								}
+							}
+							
 						</tbody>
 						<input type="hidden" name="str_list" value="">
 					</table>

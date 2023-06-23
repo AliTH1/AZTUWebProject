@@ -1,7 +1,10 @@
-﻿@using Entities.Koica;
-@model Subject
-
-@await Html.PartialAsync("_SubjectsPartialView")
+﻿@using Entities.Koica.SubjectMaterials;
+@using WebApplication1.Areas.Koica.ViewModels;
+@model HomeVM
+@{
+    int count = 1;
+}
+@await Html.PartialAsync("_SubjectsPartialView", Model.Subject)
 
 
 <div class="container-fluid mt-3">
@@ -27,9 +30,30 @@
 
 
                         <tbody>
-                            <tr style="overflow: hidden; white-space: nowrap;" id="op580517">
-                                <td align="center" colspan="7" class="list_text1">Qeyd olunmuş material yoxdur</td>
-                            </tr>
+                            @if (Model.Evaluations.Count == 0)
+                            {
+                                <tr>
+                                    <td align="center" colspan="7" class="list_text1">Qeyd olunmuş material yoxdur</td>
+                                </tr>
+                            }
+                            else
+                            {
+                                @foreach (Evaluation evaluation in Model.Evaluations)
+                                {
+                                    <tr>
+                                        <td>@count</td>
+                                        <td class="list_text1">@evaluation.TypeOfTeaching</td>
+                                        <td class="list_text1">@evaluation.EvaluationStudent</td>
+                                        <td class="list_text1">@evaluation.Topic</td>
+                                        <td class="list_text1">@evaluation.Author</td>
+                                        <td class="list_text1">@evaluation.Start.ToString("dd MMMM")</td>
+                                        <td class="list_text1">@evaluation.End.ToString("dd MMMM")</td>
+
+                                    </tr>
+
+                                    count++;
+                                }
+                            }
                         </tbody>
                     </table>
 

@@ -6,6 +6,7 @@ using Entities.Account;
 using System.Text.RegularExpressions;
 using Koica = Entities.Koica;
 using Entities.Koica;
+using Entities.Koica.SubjectMaterials;
 
 namespace DataAccess;
 
@@ -34,7 +35,32 @@ public class AppDbContext : IdentityDbContext<AppUser, IdentityRole<int>, int>
             .HasMany(g => g.Subjects)
             .WithMany(s => s.Groups)
             .UsingEntity<GroupSubject>();
-    }
+
+        builder.Entity<Subject>()
+            .HasMany(n => n.Notifications)
+            .WithOne(n => n.Subject)
+            .HasForeignKey(f => f.SubjectId);
+
+		builder.Entity<Subject>()
+			.HasMany(n => n.Forums)
+			.WithOne(n => n.Subject)
+			.HasForeignKey(f => f.SubjectId);
+
+		builder.Entity<Subject>()
+			.HasMany(n => n.DidacticMaterials)
+			.WithOne(n => n.Subject)
+			.HasForeignKey(f => f.SubjectId);
+
+		builder.Entity<Subject>()
+			.HasMany(n => n.Evaluations)
+			.WithOne(n => n.Subject)
+			.HasForeignKey(f => f.SubjectId);
+
+		builder.Entity<Subject>()
+			.HasMany(n => n.Progresses)
+			.WithOne(n => n.Subject)
+			.HasForeignKey(f => f.SubjectId);
+	}
 
 
     //Entities
@@ -46,9 +72,20 @@ public class AppDbContext : IdentityDbContext<AppUser, IdentityRole<int>, int>
     public DbSet<Project> Projects { get; set; }
     public DbSet<Event> Events { get; set; }
     public DbSet<Conference> Conferences { get; set; }
+
+    // Koica
     public DbSet<Entities.Koica.Group> Groups { get; set; }
     public DbSet<Entities.Koica.Subject> Subjects { get; set; }
     public DbSet<Entities.Koica.GroupSubject> GroupSubjects { get; set; }
+    public DbSet<Notification> Notifications { get; set; }
+    public DbSet<Forum> Forums { get; set; }
+    public DbSet<DidacticMaterial> DidacticMaterials { get; set; }
+    public DbSet<Evaluation> Evaluations { get; set; }
+    public DbSet<Progress> Progresses { get; set; }
+
+
+
+
 
     //Core
     public DbSet<StudentInfo> StudentsInfo { get; set; }
