@@ -12,7 +12,7 @@
     <div class="row">
         <!-- <div class="col-12"> -->
         <div class="card">
-            @await Html.PartialAsync("_SubjectModalPartialView", new CreateForumVM())
+            @await Html.PartialAsync("_CreateForumModalPartialView", new CreateForumVM())
             <div class="card-body table-responsive">
                 <div class="text-right">
                     <button type="button" class="btn btn-primary btn-rounded btn-bordered waves-effect btn-sm waves-light" data-toggle="modal" data-target="#exampleModalLive">
@@ -67,7 +67,7 @@
 
 <script>
     tinymce.init({
-        selector: 'textarea#default',
+        selector: 'textarea#Content',
         width: 650,
         height: 400,
         plugins: [

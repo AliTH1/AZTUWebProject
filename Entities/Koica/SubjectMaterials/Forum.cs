@@ -4,6 +4,7 @@
     {
         public int Id { get; set; }
         public string Topic { get; set; }
+        public string Content { get; set; }
         public string Author { get; set; }
         public DateTime Date { get; set; }
         public int NumOfApplications { get; set; } = 0;

@@ -50,8 +50,6 @@ namespace WebApplication1.Areas.Koica.Controllers
             string resultPath = Path.Combine(rootPath, fileName);
 
 
-
-
             using (FileStream fileStream = new FileStream(resultPath, FileMode.Create))
             {
                 await createForum.File.CopyToAsync(fileStream);
@@ -60,6 +58,7 @@ namespace WebApplication1.Areas.Koica.Controllers
             Forum newForum = new Forum()
             {
                 Topic = createForum.Topic,
+                Content = createForum.Content,
                 Author = User.Identity.Name,
                 FilePath = fileName,
                 NumOfApplications = 0,

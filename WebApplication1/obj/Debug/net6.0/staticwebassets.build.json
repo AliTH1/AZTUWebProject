@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "/Z8oTL/VRmP2MIJ33b/tNE6gmI107Y8PhtCdVWlFEsk=",
+  "Hash": "q1ljUINn4te0jGRxUPges35HIvuTJn9YRCo+jYH1eZ0=",
   "Source": "WebApplication1",
   "BasePath": "_content/WebApplication1",
   "Mode": "Default",
@@ -65042,6 +65042,23 @@
       "OriginalItemSpec": "wwwroot\\koica\\files\\32f0a644-2f0a-4fc8-9266-75b303f51669File"
     },
     {
+      "Identity": "C:\\Users\\alita\\source\\repos\\AZTUWebProject\\WebApplication1\\wwwroot\\koica\\files\\3697341d-70d9-4f7a-b65b-fe4f1c9264a4File",
+      "SourceId": "WebApplication1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\alita\\source\\repos\\AZTUWebProject\\WebApplication1\\wwwroot\\",
+      "BasePath": "_content/WebApplication1",
+      "RelativePath": "koica/files/3697341d-70d9-4f7a-b65b-fe4f1c9264a4File",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\koica\\files\\3697341d-70d9-4f7a-b65b-fe4f1c9264a4File"
+    },
+    {
       "Identity": "C:\\Users\\alita\\source\\repos\\AZTUWebProject\\WebApplication1\\wwwroot\\koica\\files\\8afdde98-1575-4ce3-a60f-8d2417b92b30File",
       "SourceId": "WebApplication1",
       "SourceType": "Discovered",
@@ -65125,6 +65142,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\koica\\files\\e363fa97-cb63-4c82-907f-4f0e728778deFile"
+    },
+    {
+      "Identity": "C:\\Users\\alita\\source\\repos\\AZTUWebProject\\WebApplication1\\wwwroot\\koica\\files\\e77c1e05-199a-4344-81dc-20f0f5da2a82File",
+      "SourceId": "WebApplication1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\alita\\source\\repos\\AZTUWebProject\\WebApplication1\\wwwroot\\",
+      "BasePath": "_content/WebApplication1",
+      "RelativePath": "koica/files/e77c1e05-199a-4344-81dc-20f0f5da2a82File",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\koica\\files\\e77c1e05-199a-4344-81dc-20f0f5da2a82File"
     },
     {
       "Identity": "C:\\Users\\alita\\source\\repos\\AZTUWebProject\\WebApplication1\\wwwroot\\koica\\files\\f2ee4207-d85b-451e-89ed-767116d96dceFile",
