@@ -1,0 +1,44 @@
+﻿@using WebApplication1.Areas.Koica.ViewModels;
+@model GetForumVM
+
+
+<div id="getModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="getModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="getModalLabel">Forum</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <table border="1" cellspacing="0" cellpadding="0" width="100%" bordercolor="#b6bbc0" style="border-collapse:collapse;">
+                    <tbody>
+                        <tr>
+                            <td bgcolor="#F9F9FB" align="center" height="25"><font class="title1">Movzu</font></td>
+                            <td colspan="3">&nbsp;&nbsp;asdasad</td>
+                        </tr>
+                        <tr>
+                            <td width="15%" bgcolor="#F9F9FB" align="center" height="25"><font class="title1">Müəllif</font></td>
+                            <td colspan="3">&nbsp;&nbsp;202006132</td>
+                        </tr>
+                        <tr>
+                            <td width="15%" bgcolor="#F9F9FB" align="center" height="25"><font class="title1">Tarix</font></td>
+                            <td>&nbsp;&nbsp;<font class="basic4">2023-06-23 10:30:19</font></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                    <textarea asp-for="Content" cols="50" rows="10"></textarea>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Bağla</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

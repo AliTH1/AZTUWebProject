@@ -42,6 +42,7 @@ namespace WebApplication1.Areas.Koica.Controllers
         }
 
 
+
         [HttpPost]
         public async Task<IActionResult> CreateForum(CreateForumVM createForum, int id)
         {
