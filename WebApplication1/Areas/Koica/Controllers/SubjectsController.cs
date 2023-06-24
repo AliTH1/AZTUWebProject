@@ -4,6 +4,7 @@ using Entities.Koica.SubjectMaterials;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using System;
 using WebApplication1.Areas.Koica.ViewModels;
 
 namespace WebApplication1.Areas.Koica.Controllers
@@ -42,12 +43,11 @@ namespace WebApplication1.Areas.Koica.Controllers
         }
 
 
-
         [HttpPost]
-        public async Task<IActionResult> CreateForum(CreateForumVM createForum, int id)
+        public async Task<IActionResult> CreateForum(CreateForumVM createForum)
         {
             string rootPath = Path.Combine(_webHostEnvironment.WebRootPath, "koica", "files");
-            string fileName = Guid.NewGuid().ToString() + createForum.File.Name;
+            string fileName = Guid.NewGuid().ToString() + createForum.File.FileName;
             string resultPath = Path.Combine(rootPath, fileName);
 
 
@@ -72,6 +72,7 @@ namespace WebApplication1.Areas.Koica.Controllers
             return RedirectToAction(nameof(Forum), new { id = createForum.RouteId });
         }
 
+
         public async Task<IActionResult> DidacticMaterials(int id)
         {
             HomeVM homeVM = new HomeVM()
@@ -92,6 +93,12 @@ namespace WebApplication1.Areas.Koica.Controllers
             };
 
             return View(homeVM);
+        }
+        public IActionResult DownloadFile(string fileName)
+        {
+            var filepath = Path.Combine(_webHostEnvironment.WebRootPath, "koica", "files", fileName);
+            return File(System.IO.File.ReadAllBytes(filepath), System.Net.Mime.MediaTypeNames.Application.Octet,
+                Path.GetFileName(filepath));
         }
     }
 }

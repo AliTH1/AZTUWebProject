@@ -13,7 +13,6 @@
         <!-- <div class="col-12"> -->
         <div class="card">
             @await Html.PartialAsync("_CreateForumModalPartialView", new CreateForumVM())
-            @await Html.PartialAsync("_GetForumModalPartialView", new GetForumVM())
 
             <div class="card-body table-responsive">
                 <div class="text-right">
@@ -46,10 +45,11 @@
                                 <tr>
                                     <td>@count</td>
                                     <td class="list_text1">
-                                        <a data-toggle="modal" data-target="#getModal">
+                                        <a href="#" data-toggle="modal" data-target="#getModal@(forum.Id)">
                                             @forum.Topic
                                         </a>
-                                        </td>
+                                        @await Html.PartialAsync("_GetForumModalPartialView", forum)
+                                    </td>
                                     <td class="list_text1">@forum.Author</td>
                                     <td class="list_text1">@forum.Date.ToString("dd MMMM")</td>
                                     <td class="list_text1">@forum.NumOfApplications</td>

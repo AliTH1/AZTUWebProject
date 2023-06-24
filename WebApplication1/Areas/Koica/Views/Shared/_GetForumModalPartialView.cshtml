@@ -1,12 +1,12 @@
-﻿@using WebApplication1.Areas.Koica.ViewModels;
-@model GetForumVM
+﻿@using Entities.Koica.SubjectMaterials;
+@model Forum
 
 
-<div id="getModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="getModalLabel" aria-hidden="true" style="display: none;">
+<div id="getModal@(Model.Id)" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="getModalLabel@(Model.Id)" aria-hidden="true" style="display: none;">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="getModalLabel">Forum</h5>
+                <h5 class="modal-title" id="getModalLabel@(Model.Id)">Forum</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </button>
@@ -17,20 +17,29 @@
                     <tbody>
                         <tr>
                             <td bgcolor="#F9F9FB" align="center" height="25"><font class="title1">Movzu</font></td>
-                            <td colspan="3">&nbsp;&nbsp;asdasad</td>
+                            <td colspan="3">@Model.Topic</td>
                         </tr>
                         <tr>
                             <td width="15%" bgcolor="#F9F9FB" align="center" height="25"><font class="title1">Müəllif</font></td>
-                            <td colspan="3">&nbsp;&nbsp;202006132</td>
+                            <td colspan="3">@Model.Author</td>
                         </tr>
                         <tr>
                             <td width="15%" bgcolor="#F9F9FB" align="center" height="25"><font class="title1">Tarix</font></td>
-                            <td>&nbsp;&nbsp;<font class="basic4">2023-06-23 10:30:19</font></td>
+                            <td>&nbsp;&nbsp;<font class="basic4">@Model.Date</font></td>
+                        </tr>
+                        <tr>
+                            <td width="15%" bgcolor="#F9F9FB" align="center" height="75"><font class="title1">Qoşma</font></td>
+                            <td colspan="3">
+                                <a asp-controller="Subjects" asp-action="DownloadFile" asp-route-fileName="@Model.FilePath"
+                                    class="btn btn-sm btn-primary btn-rounded btn-bordered waves-effect w-md waves-light">
+                                    <font class="basic4"> @Model.FilePath</font>
+                                </a>
+                            </td>
                         </tr>
 
                     </tbody>
                 </table>
-                    <textarea asp-for="Content" cols="50" rows="10"></textarea>
+                <textarea cols="50" asp-for="Content" rows="10">@Html.Raw(Model.Content)</textarea>
 
             </div>
             <div class="modal-footer">
@@ -39,6 +48,3 @@
         </div>
     </div>
 </div>
-
-
-
