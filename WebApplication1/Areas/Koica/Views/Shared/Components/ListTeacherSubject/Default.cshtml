@@ -1,0 +1,22 @@
+﻿@using Entities.Koica;
+@model ICollection<Subject>
+
+<li class="nav-item">
+    <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
+        <i class="typcn typcn-th-small-outline menu-icon"></i>
+        <span class="menu-title">Fənlər</span>
+        <i class="menu-arrow"></i>
+    </a>
+    <div class="collapse" id="tables">
+        <ul class="nav flex-column sub-menu">
+
+            @foreach (Subject subject in Model)
+            {
+                <li>
+                    <a style="font-size: 13.5px" asp-route-id="@subject.Id" asp-controller="Subjects"
+                       asp-action="Notification">@subject.Name</a>
+                </li>
+            }
+        </ul>
+    </div>
+</li>

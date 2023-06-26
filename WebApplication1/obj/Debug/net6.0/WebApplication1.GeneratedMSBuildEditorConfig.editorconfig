@@ -52,8 +52,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcS29pY2FcVmlld3NcU2NoZWR1bGVzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alita/source/repos/AZTUWebProject/WebApplication1/Areas/Koica/Views/Shared/Components/ListSubject/Default.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcS29pY2FcVmlld3NcU2hhcmVkXENvbXBvbmVudHNcTGlzdFN1YmplY3RcRGVmYXVsdC5jc2h0bWw=
+[C:/Users/alita/source/repos/AZTUWebProject/WebApplication1/Areas/Koica/Views/Shared/Components/ListStudentSubject/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcS29pY2FcVmlld3NcU2hhcmVkXENvbXBvbmVudHNcTGlzdFN0dWRlbnRTdWJqZWN0XERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alita/source/repos/AZTUWebProject/WebApplication1/Areas/Koica/Views/Shared/Components/ListTeacherSubject/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcS29pY2FcVmlld3NcU2hhcmVkXENvbXBvbmVudHNcTGlzdFRlYWNoZXJTdWJqZWN0XERlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/alita/source/repos/AZTUWebProject/WebApplication1/Areas/Koica/Views/Shared/_CreateForumModalPartialView.cshtml]
@@ -86,6 +90,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/alita/source/repos/AZTUWebProject/WebApplication1/Areas/Koica/Views/Subjects/Notification.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcS29pY2FcVmlld3NcU3ViamVjdHNcTm90aWZpY2F0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alita/source/repos/AZTUWebProject/WebApplication1/Areas/Koica/Views/Subjects/Progress.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcS29pY2FcVmlld3NcU3ViamVjdHNcUHJvZ3Jlc3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/alita/source/repos/AZTUWebProject/WebApplication1/Areas/Koica/Views/_ViewImports.cshtml]

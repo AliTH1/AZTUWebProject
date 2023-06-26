@@ -1,4 +1,6 @@
-﻿namespace Entities.Account
+﻿using Entities.Koica;
+
+namespace Entities.Account
 {
     public class TeacherInfo
     {
@@ -8,5 +10,6 @@
         public string Degree { get; set; }
         public int UserId { get; set; }
         public AppUser AppUser { get; set; }
+        public List<Subject> Subjects { get; set; }
     }
 }

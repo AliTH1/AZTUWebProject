@@ -94,6 +94,18 @@ namespace WebApplication1.Areas.Koica.Controllers
 
             return View(homeVM);
         }
+
+        public async Task<IActionResult> Progress(int id)
+        {
+            HomeVM homeVM = new HomeVM()
+            {
+                Progresses = await _context.Progresses.Where(c => c.SubjectId == id).ToListAsync(),
+                Subject = await _context.Subjects.FirstOrDefaultAsync(c => c.Id == id)
+            };
+
+            return View(homeVM);
+        }
+
         public IActionResult DownloadFile(string fileName)
         {
             var filepath = Path.Combine(_webHostEnvironment.WebRootPath, "koica", "files", fileName);

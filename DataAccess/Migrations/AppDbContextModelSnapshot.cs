@@ -270,7 +270,12 @@ namespace DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("TeacherInfoId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("TeacherInfoId");
 
                     b.ToTable("Subjects");
                 });
@@ -783,6 +788,13 @@ namespace DataAccess.Migrations
                     b.Navigation("Subject");
                 });
 
+            modelBuilder.Entity("Entities.Koica.Subject", b =>
+                {
+                    b.HasOne("Entities.Account.TeacherInfo", null)
+                        .WithMany("Subjects")
+                        .HasForeignKey("TeacherInfoId");
+                });
+
             modelBuilder.Entity("Entities.Koica.SubjectMaterials.DidacticMaterial", b =>
                 {
                     b.HasOne("Entities.Koica.Subject", "Subject")
@@ -896,6 +908,11 @@ namespace DataAccess.Migrations
 
                     b.Navigation("TeacherInfo")
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Entities.Account.TeacherInfo", b =>
+                {
+                    b.Navigation("Subjects");
                 });
 
             modelBuilder.Entity("Entities.Koica.Subject", b =>

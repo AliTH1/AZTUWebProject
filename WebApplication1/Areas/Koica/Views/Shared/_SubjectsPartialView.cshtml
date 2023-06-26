@@ -1,6 +1,8 @@
 ﻿@using Entities.Koica;
 @model Subject
-
+@{
+    string getAction = (string) Url.ActionContext.RouteData.Values["action"];
+}
 <div class="container-fluid">
     <div class="row">
         <div class="col-12">
@@ -14,24 +16,22 @@
 
 
     <div class="button-list text-center">
-        <a asp-controller="Subjects" asp-action="Notification" asp-route-id="@Model.Id" class="btn btn-sm btn-rounded w-md waves-effect btn-danger">
+        <a asp-controller="Subjects" asp-action="Notification" asp-route-id="@Model.Id" class="btn btn-sm btn-rounded w-md waves-effect @(getAction == "Notification" ? "btn-danger": "btn-primary")">
             Bildiriş
         </a>
-
-        <a asp-controller="Subjects" asp-action="Forum" asp-route-id="@Model.Id" class="btn btn-sm btn-rounded w-md waves-effect btn-primary">
+        <a asp-controller="Subjects" asp-action="Forum" asp-route-id="@Model.Id" class="btn btn-sm btn-rounded w-md waves-effect @(getAction == "Forum" ? "btn-danger": "btn-primary")">
             Forum
         </a>
-
-        <a asp-controller="Subjects" asp-action="DidacticMaterials" asp-route-id="@Model.Id" class="btn btn-sm btn-rounded w-md waves-effect btn-primary">
+        <a asp-controller="Subjects" asp-action="DidacticMaterials" asp-route-id="@Model.Id" class="btn btn-sm btn-rounded w-md waves-effect @(getAction == "DidacticMaterials" ? "btn-danger": "btn-primary")">
             Didaktik materiallar
         </a>
 
 
-        <a asp-controller="Subjects" asp-action="Evaluation" asp-route-id="@Model.Id" class="btn btn-sm btn-rounded w-md waves-effect btn-primary">
+        <a asp-controller="Subjects" asp-action="Evaluation" asp-route-id="@Model.Id" class="btn btn-sm btn-rounded w-md waves-effect @(getAction == "Evaluation" ? "btn-danger": "btn-primary")">
             Qiymətləndirmə
         </a>
 
-        <a asp-controller="Subjects" asp-action="Notification" asp-route-id="@Model.Id" class="btn btn-sm btn-rounded w-md waves-effect btn-primary">
+        <a asp-controller="Subjects" asp-action="Progress" asp-route-id="@Model.Id" class="btn btn-sm btn-rounded w-md waves-effect @(getAction == "Progress" ? "btn-danger": "btn-primary")">
             Cari müvəffəqiyyət
         </a>
     </div>

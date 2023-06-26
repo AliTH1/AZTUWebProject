@@ -14,6 +14,10 @@ namespace WebApplication1.Areas.Koica.ViewModels
 
         public List<DidacticMaterial> DidacticMaterials { get; set; }
         public List<Evaluation> Evaluations { get; set; }
+        public List<Progress> Progresses { get; set; }
+
+
+
         public Subject Subject { get; set; }
     }
 }

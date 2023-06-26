@@ -1,0 +1,45 @@
+﻿@using WebApplication1.Areas.Koica.ViewModels;
+@model HomeVM
+@{
+    int count = 1;
+}
+@await Html.PartialAsync("_SubjectsPartialView", Model.Subject)
+
+
+<div class="container-fluid mt-3">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body table-responsive">
+
+                    <div class="text-right">
+                    </div>
+                    <table id="datatable-task" class="table  table-bordered" border="0" cellpadding="0" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th nowrap="" width="50px" height="50" align="center" class="list_title1">Nömrə</th>
+                                <th align="center" valign="middle" class="list_title1 text-center">Tədrisin növü</th>
+                                <th align="center" valign="middle" class="list_title1 text-center">Qiymətləndirmə</th>
+                                <th align="center" valign="middle" class="list_title1 text-center">Movzu</th>
+                                <th align="center" valign="middle" class="list_title1 text-center">Müəllif</th>
+                                <th align="center" valign="middle" class="list_title1 text-center">Başlanğıc</th>
+                                <th align="center" valign="middle" class="list_title1 text-center">Son gun</th>
+                            </tr>
+                        </thead>
+
+
+                        <tbody>
+                            <tr>
+                                <td align="center" colspan="7" class="list_text1">Qeyd olunmuş material yoxdur</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end row -->
+</div>

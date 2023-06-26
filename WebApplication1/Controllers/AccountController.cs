@@ -11,12 +11,14 @@ namespace WebApplication1.Controllers
         private readonly AppDbContext _context;
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
+        private readonly RoleManager<IdentityRole<int>> _roleManager;
 
-        public AccountController(AppDbContext context, UserManager<AppUser> userManager, SignInManager<AppUser> signInManager)
+        public AccountController(AppDbContext context, UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, RoleManager<IdentityRole<int>> roleManager)
         {
             _context = context;
             _userManager = userManager;
             _signInManager = signInManager;
+            _roleManager = roleManager;
         }
 
 
@@ -46,6 +48,9 @@ namespace WebApplication1.Controllers
                 }
                 return View(registerStudent);
             }
+
+            await _userManager.AddToRoleAsync(newUser, UserRoles.Student.ToString());
+
 
             StudentInfo studentInfo = new StudentInfo()
             {
@@ -89,6 +94,8 @@ namespace WebApplication1.Controllers
                 }
                 return View();
             }
+
+            await _userManager.AddToRoleAsync(newUser, UserRoles.Teacher.ToString());
 
             TeacherInfo teacherInfo = new()
             {
@@ -134,6 +141,28 @@ namespace WebApplication1.Controllers
             await _signInManager.SignInAsync(user, isPersistent: false);
 
             return RedirectToAction("Index", "Home", new {Area = "Koica"});
+        }
+
+
+        
+        //public async Task AddRoles()
+        //{
+        //    foreach (UserRoles role in Enum.GetValues(typeof(UserRoles)))
+        //    {
+        //        if (!await _roleManager.RoleExistsAsync(role.ToString()))
+        //        {
+        //            await _roleManager.CreateAsync(new IdentityRole<int> { Name = role.ToString() });
+        //        }
+        //    }
+        //}
+
+
+
+        public enum UserRoles
+        {
+            Teacher,
+            Student,
+            Admin
         }
     }
 }

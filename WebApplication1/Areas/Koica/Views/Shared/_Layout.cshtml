@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using static WebApplication1.Controllers.AccountController;
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -356,7 +357,14 @@
                             <span class="menu-title">Transkript</span>
                         </a>
                     </li>
-                    @await Component.InvokeAsync("ListSubject")
+
+                    @if (User.IsInRole(UserRoles.Student.ToString()))
+                    {
+                        @await Component.InvokeAsync("ListStudentSubject")
+                    }
+                    else{
+                        @await Component.InvokeAsync("ListTeacherSubject")
+                    }
 
                 </ul>
             </nav>
