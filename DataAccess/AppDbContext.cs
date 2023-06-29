@@ -60,7 +60,17 @@ public class AppDbContext : IdentityDbContext<AppUser, IdentityRole<int>, int>
 			.HasMany(n => n.Progresses)
 			.WithOne(n => n.Subject)
 			.HasForeignKey(f => f.SubjectId);
-	}
+
+        builder.Entity<Evaluation>()
+            .HasOne(c => c.StudentEvaluationFile)
+            .WithOne(c => c.Evaluation)
+            .HasForeignKey<StudentEvaluationFile>(c => c.EvaluationId);
+
+        builder.Entity<Evaluation>()
+            .HasOne(c => c.TeacherEvaluationFile)
+            .WithOne(c => c.Evaluation)
+            .HasForeignKey<TeacherEvaluationFile>(c => c.EvaluationId);
+    }
 
 
     //Entities
@@ -82,6 +92,8 @@ public class AppDbContext : IdentityDbContext<AppUser, IdentityRole<int>, int>
     public DbSet<DidacticMaterial> DidacticMaterials { get; set; }
     public DbSet<Evaluation> Evaluations { get; set; }
     public DbSet<Progress> Progresses { get; set; }
+    public DbSet<TeacherEvaluationFile> TeacherEvaluationFiles { get; set; }
+    public DbSet<StudentEvaluationFile> StudentEvaluationFiles { get; set; }
 
 
 

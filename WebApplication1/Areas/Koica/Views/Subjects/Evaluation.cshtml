@@ -55,8 +55,24 @@
                                     <tr>
                                         <td>@count</td>
                                         <td class="list_text1">@evaluation.TypeOfTeaching</td>
-                                        <td class="list_text1">@evaluation.EvaluationStudent</td>
-                                        <td class="list_text1">@evaluation.Topic</td>
+                                        @if (evaluation.EvaluationStudent == 0)
+                                        {
+                                            <td class="list_text1">
+                                                Bəli(hələ)
+                                            </td>
+                                        }
+                                        else
+                                        {
+                                            <td class="list_text1">
+                                                @evaluation.EvaluationStudent
+                                            </td>
+                                        }
+                                        <td class="list_text1">
+                                            <a href="#" data-toggle="modal" data-target="#getModal@(evaluation.Id)">
+                                                @evaluation.Topic
+                                            </a>
+                                            @await Html.PartialAsync("_GetEvaluationModalPartialView", evaluation)
+                                        </td>
                                         <td class="list_text1">@evaluation.Author</td>
                                         <td class="list_text1">@evaluation.Start.ToString("dd MMMM")</td>
                                         <td class="list_text1">@evaluation.End.ToString("dd MMMM")</td>
@@ -77,3 +93,26 @@
     </div>
     <!-- end row -->
 </div>
+
+<script src="~/tinymce/js/tinymce/tinymce.min.js"></script>
+
+<script>
+    tinymce.init({
+        selector: 'textarea#Content',
+        width: 650,
+        height: 400,
+        plugins: [
+            'advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'prewiew', 'anchor', 'pagebreak',
+            'searchreplace', 'wordcount', 'visualblocks', 'code', 'fullscreen', 'insertdatetime', 'media',
+            'table', 'emoticons', 'template', 'codesample'
+        ],
+        toolbar: 'undo redo | styles | bold italic underline | alignleft aligncenter alignright alignjustify |' +
+            'bullist numlist outdent indent | link image | print preview media fullscreen | ' +
+            'forecolor backcolor emoticons',
+        menu: {
+            favs: { title: 'menu', items: 'code visualaid | searchreplace | emoticons' }
+        },
+        menubar: 'edit insert format',
+        content_style: 'body{font-family:Helvetica,Arial,sans-serif; font-size:16px}'
+    });
+</script>

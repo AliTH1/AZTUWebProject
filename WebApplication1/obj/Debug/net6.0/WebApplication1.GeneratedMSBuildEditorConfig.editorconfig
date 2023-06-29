@@ -60,8 +60,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcS29pY2FcVmlld3NcU2hhcmVkXENvbXBvbmVudHNcTGlzdFRlYWNoZXJTdWJqZWN0XERlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alita/source/repos/AZTUWebProject/WebApplication1/Areas/Koica/Views/Shared/CreateEvaluationModalPartialView.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcS29pY2FcVmlld3NcU2hhcmVkXENyZWF0ZUV2YWx1YXRpb25Nb2RhbFBhcnRpYWxWaWV3LmNzaHRtbA==
+[C:/Users/alita/source/repos/AZTUWebProject/WebApplication1/Areas/Koica/Views/Shared/_CreateEvaluationModalPartialView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcS29pY2FcVmlld3NcU2hhcmVkXF9DcmVhdGVFdmFsdWF0aW9uTW9kYWxQYXJ0aWFsVmlldy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/alita/source/repos/AZTUWebProject/WebApplication1/Areas/Koica/Views/Shared/_CreateModalPartialView.cshtml]
@@ -70,6 +70,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/alita/source/repos/AZTUWebProject/WebApplication1/Areas/Koica/Views/Shared/_GetDidacticMaterialsModalPartialView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcS29pY2FcVmlld3NcU2hhcmVkXF9HZXREaWRhY3RpY01hdGVyaWFsc01vZGFsUGFydGlhbFZpZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alita/source/repos/AZTUWebProject/WebApplication1/Areas/Koica/Views/Shared/_GetEvaluationModalPartialView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcS29pY2FcVmlld3NcU2hhcmVkXF9HZXRFdmFsdWF0aW9uTW9kYWxQYXJ0aWFsVmlldy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/alita/source/repos/AZTUWebProject/WebApplication1/Areas/Koica/Views/Shared/_GetForumModalPartialView.cshtml]

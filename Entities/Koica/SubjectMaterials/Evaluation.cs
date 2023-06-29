@@ -10,10 +10,10 @@
         public string Author { get; set; }
         public DateTime Start { get; set; }
         public DateTime End { get; set; }
-        public string FilePath { get; set; }
+        public string? FilePath { get; set; }
         public int SubjectId { get; set; }
 		public Subject Subject { get; set; }
-
-
-	}
+        public TeacherEvaluationFile TeacherEvaluationFile { get; set; }
+        public StudentEvaluationFile StudentEvaluationFile { get; set; }
+    }
 }

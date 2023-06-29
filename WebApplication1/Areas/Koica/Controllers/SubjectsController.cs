@@ -134,6 +134,58 @@ namespace WebApplication1.Areas.Koica.Controllers
             return View(homeVM);
         }
 
+        public async Task<IActionResult> CreateEvaluation(CreateEvaluationVM createEvaluation)
+        {
+            if (createEvaluation.File == null)
+            {
+                Evaluation newEvaluationWithoutFile = new Evaluation()
+                {
+                    Topic = createEvaluation.Topic,
+                    TypeOfTeaching = createEvaluation.TypeOfTeaching,
+                    Start = createEvaluation.Start,
+                    End = createEvaluation.End,
+                    Content = createEvaluation.Content,
+                    Author = User.Identity.Name,
+                    SubjectId = createEvaluation.RouteId
+                };
+
+                await _context.Evaluations.AddAsync(newEvaluationWithoutFile);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(DidacticMaterials), new { id = createEvaluation.RouteId });
+            }
+
+
+
+            string rootPath = Path.Combine(_webHostEnvironment.WebRootPath, "koica", "files");
+            string fileName = Guid.NewGuid().ToString() + createEvaluation.File.FileName;
+            string resultPath = Path.Combine(rootPath, fileName);
+
+
+            using (FileStream fileStream = new FileStream(resultPath, FileMode.Create))
+            {
+                await createEvaluation.File.CopyToAsync(fileStream);
+            }
+
+            Evaluation newEvaluation = new Evaluation()
+            {
+                Topic = createEvaluation.Topic,
+                TypeOfTeaching = createEvaluation.TypeOfTeaching,
+                Start = createEvaluation.Start,
+                End = createEvaluation.End,
+                Content = createEvaluation.Content,
+                Author = User.Identity.Name,
+                FilePath = fileName,
+                SubjectId = createEvaluation.RouteId
+            };
+
+            await _context.Evaluations.AddAsync(newEvaluation);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(DidacticMaterials), new { id = createEvaluation.RouteId });
+        }
+
+
+
+
         public async Task<IActionResult> Progress(int id)
         {
             HomeVM homeVM = new HomeVM()

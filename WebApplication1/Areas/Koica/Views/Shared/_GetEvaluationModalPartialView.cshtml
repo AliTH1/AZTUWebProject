@@ -1,0 +1,86 @@
+﻿@using Entities.Koica.SubjectMaterials;
+@using WebApplication1.Areas.Koica.ViewModels;
+@model Evaluation
+
+
+<div id="getModal@(Model.Id)" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="getModal@(Model.Id)" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="getModalLabel@(Model.Id)">Forum</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <table border="1" cellspacing="0" cellpadding="0" width="100%" bordercolor="#b6bbc0" style="border-collapse:collapse;">
+                    <tbody>
+                        <tr>
+                            <td width="15%" bgcolor="#F9F9FB" align="center" height="25"><font class="title1">Movzu</font></td>
+                            <td colspan="3">@Model.Topic</td>
+                        </tr>
+                        <tr>
+                            <td width="15%" bgcolor="#F9F9FB" align="center" height="25"><font class="title1">Başlanğıc</font></td>
+                            <td>@Model.Start</td>
+                            <td width="15%" bgcolor="#F9F9FB" align="center" height="25"><font class="title1">Verilmə əlaməti</font></td>
+                            <td>&nbsp;qebul olunur</td>
+
+                        </tr>
+                        <tr>
+                            <td width="15%" bgcolor="#F9F9FB" align="center" height="25"><font class="title1">Tədrisin növü</font></td>
+                            <td>@Model.TypeOfTeaching</td>
+                            <td width="15%" bgcolor="#F9F9FB" align="center" height="25"><font class="title1">İşin verilmə vəziyyəti</font></td>
+                            <td>&nbsp;9/9</td>
+
+                        </tr>
+                        <tr>
+                            <td width="15%" bgcolor="#F9F9FB" align="center" height="25"><font class="title1">Qiymətləndirmə</font></td>
+                            <td colspan="3">&nbsp;Bəli</td>
+
+                        </tr>
+                        <tr>
+                            <td colspan="4" height="30">
+                                <textarea cols="50" asp-for="Content" rows="10">@Html.Raw(Model.Content)</textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="15%" bgcolor="#F9F9FB" height="25" align="center"><font class="title1">Qoşma1</font></td>
+                            <td colspan="3">
+                                <a href="#">
+                                    @Model.FilePath
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <form method="post" enctype="multipart/form-data">
+                    <table border="1" cellspacing="0" cellpadding="0" width="100%" bordercolor="#b6bbc0" style="border-collapse:collapse;">
+                        <tbody>
+                            <tr>
+                                <td width="15%" bgcolor="#F9F9FB" align="center">İşin verilməsi</td>
+                                <td style="padding-left: 5px;">
+                                    <input type="file" name="o_file1" class="inp1" size="80" fieldtext="İşin verilmə" fieldtext2="Seçmək"><br>
+                                    <hr>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                    <table border="0" cellspacing="0" cellpadding="0" width="100%" bordercolor="#b6bbc0" style="border-collapse:collapse;">
+                        <tbody>
+                            <tr>
+                                <td align="right" height="35" style="padding: 10px">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Əlavə et</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Bağla</button>
+            </div>
+        </div>
+    </div>
+</div>

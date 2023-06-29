@@ -4,6 +4,7 @@ using DataAccess;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccess.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230629083552_changedPropForEval2")]
+    partial class changedPropForEval2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -258,30 +260,6 @@ namespace DataAccess.Migrations
                     b.ToTable("GroupSubjects");
                 });
 
-            modelBuilder.Entity("Entities.Koica.StudentEvaluationFile", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int?>("EvaluationId")
-                        .IsRequired()
-                        .HasColumnType("int");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("EvaluationId")
-                        .IsUnique();
-
-                    b.ToTable("StudentEvaluationFiles");
-                });
-
             modelBuilder.Entity("Entities.Koica.Subject", b =>
                 {
                     b.Property<int>("Id")
@@ -506,30 +484,6 @@ namespace DataAccess.Migrations
                     b.HasIndex("SubjectId");
 
                     b.ToTable("Progresses");
-                });
-
-            modelBuilder.Entity("Entities.Koica.TeacherEvaluationFile", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int?>("EvaluationId")
-                        .IsRequired()
-                        .HasColumnType("int");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("EvaluationId")
-                        .IsUnique();
-
-                    b.ToTable("TeacherEvaluationFiles");
                 });
 
             modelBuilder.Entity("Entities.News", b =>
@@ -834,17 +788,6 @@ namespace DataAccess.Migrations
                     b.Navigation("Subject");
                 });
 
-            modelBuilder.Entity("Entities.Koica.StudentEvaluationFile", b =>
-                {
-                    b.HasOne("Entities.Koica.SubjectMaterials.Evaluation", "Evaluation")
-                        .WithOne("StudentEvaluationFile")
-                        .HasForeignKey("Entities.Koica.StudentEvaluationFile", "EvaluationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Evaluation");
-                });
-
             modelBuilder.Entity("Entities.Koica.Subject", b =>
                 {
                     b.HasOne("Entities.Account.TeacherInfo", null)
@@ -905,17 +848,6 @@ namespace DataAccess.Migrations
                         .IsRequired();
 
                     b.Navigation("Subject");
-                });
-
-            modelBuilder.Entity("Entities.Koica.TeacherEvaluationFile", b =>
-                {
-                    b.HasOne("Entities.Koica.SubjectMaterials.Evaluation", "Evaluation")
-                        .WithOne("TeacherEvaluationFile")
-                        .HasForeignKey("Entities.Koica.TeacherEvaluationFile", "EvaluationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Evaluation");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
@@ -994,15 +926,6 @@ namespace DataAccess.Migrations
                     b.Navigation("Notifications");
 
                     b.Navigation("Progresses");
-                });
-
-            modelBuilder.Entity("Entities.Koica.SubjectMaterials.Evaluation", b =>
-                {
-                    b.Navigation("StudentEvaluationFile")
-                        .IsRequired();
-
-                    b.Navigation("TeacherEvaluationFile")
-                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }
