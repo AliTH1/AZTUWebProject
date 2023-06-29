@@ -4,7 +4,7 @@
     {
         public int Id { get; set; }
         public string TypeOfTeaching { get; set; }
-        public string EvaluationStudent { get; set; }
+        public byte EvaluationStudent { get; set; }
         public string Topic { get; set; }
         public string Content { get; set; }
         public string Author { get; set; }

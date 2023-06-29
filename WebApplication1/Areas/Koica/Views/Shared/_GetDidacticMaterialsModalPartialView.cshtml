@@ -1,0 +1,49 @@
+﻿@using Entities.Koica.SubjectMaterials;
+@model DidacticMaterial
+
+<div id="getModal@(Model.Id)" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="getModalLabel@(Model.Id)" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="getModalLabel@(Model.Id)">Forum</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <table border="1" cellspacing="0" cellpadding="0" width="100%" bordercolor="#b6bbc0" style="border-collapse:collapse;">
+                    <tbody>
+                        <tr>
+                            <td bgcolor="#F9F9FB" align="center" height="25"><font class="title1">Movzu</font></td>
+                            <td colspan="3">@Model.Topic</td>
+                        </tr>
+                        <tr>
+                            <td width="15%" bgcolor="#F9F9FB" align="center" height="25"><font class="title1">Müəllif</font></td>
+                            <td colspan="3">@Model.Author</td>
+                        </tr>
+                        <tr>
+                            <td width="15%" bgcolor="#F9F9FB" align="center" height="25"><font class="title1">Tarix</font></td>
+                            <td>&nbsp;&nbsp;<font class="basic4">@Model.Date</font></td>
+                        </tr>
+                        <tr>
+                            <td width="15%" bgcolor="#F9F9FB" align="center" height="75"><font class="title1">Qoşma</font></td>
+                            <td colspan="3">
+                                <a asp-controller="Subjects" asp-action="DownloadFile" asp-route-fileName="@Model.FilePath"
+                                   class="btn btn-sm btn-primary btn-rounded btn-bordered waves-effect w-md waves-light">
+                                    <font class="basic4"> @Model.FilePath</font>
+                                </a>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <textarea cols="50" asp-for="Content" rows="10">@Html.Raw(Model.Content)</textarea>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Bağla</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -339,9 +339,8 @@ namespace DataAccess.Migrations
                     b.Property<DateTime>("End")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("EvaluationStudent")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<byte>("EvaluationStudent")
+                        .HasColumnType("tinyint");
 
                     b.Property<string>("FilePath")
                         .IsRequired()

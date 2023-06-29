@@ -1,5 +1,6 @@
 ﻿@using Entities.Koica.SubjectMaterials;
 @using WebApplication1.Areas.Koica.ViewModels;
+@using static WebApplication1.Controllers.AccountController;
 @model HomeVM
 @{
 	int count = 1;
@@ -11,8 +12,22 @@
 	<div class="row">
 		<div class="col-12">
 			<div class="card">
+				@if (User.IsInRole(UserRoles.Teacher.ToString()))
+				{
+					@await Html.PartialAsync("_CreateModalPartialView", new CreateSubjectVM())
+				}
 				<div class="card-body table-responsive">
 
+					@if (User.IsInRole(UserRoles.Teacher.ToString()))
+					{
+						<div class="text-right">
+							<button type="button" class="btn btn-primary btn-rounded btn-bordered waves-effect btn-sm waves-light" data-toggle="modal" data-target="#exampleModalLive">
+								Əlavə et
+							</button>
+						</div>
+					}
+
+					
 					<div id="preview" class="noprint">
 						<table id="t_list_item" border="1" cellspacing="0" cellpadding="0" width="100%" bordercolor="#b6bbc0" class="noprint" style="border-collapse:collapse; display:none;">
 							<tbody>
@@ -47,9 +62,6 @@
 							</tbody>
 						</table>
 					</div>
-					<!-- 		<table border="0" cellspacing="0" width="100%">
-						<tr><td height="3px"></td></tr>
-					</table> -->
 					<table id="op_list" class="table table-striped table-bordered" border="1" cellspacing="0" cellpadding="0" width="100%">
 						<thead class="text-center">
 							<tr>
@@ -73,9 +85,14 @@
                                 {
 									<tr>
 										<td>@count</td>
-										<td class="list_text1">@didacticMaterial.Topic</td>
+										<td class="list_text1">
+											<a href="#" data-toggle="modal" data-target="#getModal@(didacticMaterial.Id)">
+												@didacticMaterial.Topic
+											</a>
+											@await Html.PartialAsync("_GetDidacticMaterialsModalPartialView", didacticMaterial)
+										</td>
 										<td class="list_text1">@didacticMaterial.Author</td>
-										<td class="list_text1">@didacticMaterial.Date</td>
+										<td class="list_text1">@didacticMaterial.Date.ToString("dd MMMM")</td>
 										<td class="list_text1">@didacticMaterial.NumOfApplications</td>
 									</tr>
 
@@ -93,3 +110,28 @@
 	</div>
 
 </div>
+
+
+
+<script src="~/tinymce/js/tinymce/tinymce.min.js"></script>
+
+<script>
+	tinymce.init({
+		selector: 'textarea#Content',
+		width: 650,
+		height: 400,
+		plugins: [
+			'advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'prewiew', 'anchor', 'pagebreak',
+			'searchreplace', 'wordcount', 'visualblocks', 'code', 'fullscreen', 'insertdatetime', 'media',
+			'table', 'emoticons', 'template', 'codesample'
+		],
+		toolbar: 'undo redo | styles | bold italic underline | alignleft aligncenter alignright alignjustify |' +
+			'bullist numlist outdent indent | link image | print preview media fullscreen | ' +
+			'forecolor backcolor emoticons',
+		menu: {
+			favs: { title: 'menu', items: 'code visualaid | searchreplace | emoticons' }
+		},
+		menubar: 'edit insert format',
+		content_style: 'body{font-family:Helvetica,Arial,sans-serif; font-size:16px}'
+	});
+</script>

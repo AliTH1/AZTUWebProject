@@ -9,7 +9,7 @@ namespace WebApplication1.Areas.Koica.ViewModels
 
 
         public List<Forum> Forums { get; set; }
-        public CreateForumVM CreateForumVM { get; set; }
+        public CreateSubjectVM CreateSubjectVM { get; set; }
 
 
         public List<DidacticMaterial> DidacticMaterials { get; set; }

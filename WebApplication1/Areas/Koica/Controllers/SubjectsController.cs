@@ -1,6 +1,7 @@
 ﻿using DataAccess;
 using Entities.Koica;
 using Entities.Koica.SubjectMaterials;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
@@ -10,6 +11,7 @@ using WebApplication1.Areas.Koica.ViewModels;
 namespace WebApplication1.Areas.Koica.Controllers
 {
     [Area("Koica")]
+    [Authorize]
     public class SubjectsController : Controller
     {
         private readonly AppDbContext _context;
@@ -31,6 +33,8 @@ namespace WebApplication1.Areas.Koica.Controllers
         }
 
 
+
+        #region Forum
         public async Task<IActionResult> Forum(int id)
         {
             HomeVM homeVM = new HomeVM()
@@ -42,9 +46,8 @@ namespace WebApplication1.Areas.Koica.Controllers
             return View(homeVM);
         }
 
-
         [HttpPost]
-        public async Task<IActionResult> CreateForum(CreateForumVM createForum)
+        public async Task<IActionResult> CreateForum(CreateSubjectVM createForum)
         {
             string rootPath = Path.Combine(_webHostEnvironment.WebRootPath, "koica", "files");
             string fileName = Guid.NewGuid().ToString() + createForum.File.FileName;
@@ -71,8 +74,10 @@ namespace WebApplication1.Areas.Koica.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Forum), new { id = createForum.RouteId });
         }
+        #endregion
 
 
+        #region Didactic Materials
         public async Task<IActionResult> DidacticMaterials(int id)
         {
             HomeVM homeVM = new HomeVM()
@@ -83,6 +88,40 @@ namespace WebApplication1.Areas.Koica.Controllers
 
             return View(homeVM);
         }
+
+
+        [HttpPost]
+        public async Task<IActionResult> CreateDidacticMaterial(CreateSubjectVM createDidacticMaterial)
+        {
+            string rootPath = Path.Combine(_webHostEnvironment.WebRootPath, "koica", "files");
+            string fileName = Guid.NewGuid().ToString() + createDidacticMaterial.File.FileName;
+            string resultPath = Path.Combine(rootPath, fileName);
+
+
+            using (FileStream fileStream = new FileStream(resultPath, FileMode.Create))
+            {
+                await createDidacticMaterial.File.CopyToAsync(fileStream);
+            }
+
+            DidacticMaterial newDidactic = new DidacticMaterial()
+            {
+                Topic = createDidacticMaterial.Topic,
+                Content = createDidacticMaterial.Content,
+                Author = User.Identity.Name,
+                FilePath = fileName,
+                NumOfApplications = 0,
+                Date = DateTime.Now,
+                SubjectId = createDidacticMaterial.RouteId
+            };
+
+            await _context.DidacticMaterials.AddAsync(newDidactic);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(DidacticMaterials), new { id = createDidacticMaterial.RouteId });
+        }
+
+        #endregion
+
+
 
         public async Task<IActionResult> Evaluation(int id)
         {

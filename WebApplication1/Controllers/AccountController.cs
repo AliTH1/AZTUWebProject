@@ -144,6 +144,14 @@ namespace WebApplication1.Controllers
         }
 
 
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+
+            return RedirectToAction(nameof(Index), "Home");
+        }
+
+
         
         //public async Task AddRoles()
         //{
