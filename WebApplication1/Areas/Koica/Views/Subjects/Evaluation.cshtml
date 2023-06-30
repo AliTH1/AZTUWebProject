@@ -71,7 +71,14 @@
                                             <a href="#" data-toggle="modal" data-target="#getModal@(evaluation.Id)">
                                                 @evaluation.Topic
                                             </a>
-                                            @await Html.PartialAsync("_GetEvaluationModalPartialView", evaluation)
+                                            @if (User.IsInRole(UserRoles.Student.ToString()))
+                                            {
+                                                @await Html.PartialAsync("_GetStudentEvaluationModalPartialView", evaluation)
+                                            }
+                                            else
+                                            {
+                                                @await Html.PartialAsync("_GetTeacherEvaluationModalPartialView", evaluation)
+                                            }
                                         </td>
                                         <td class="list_text1">@evaluation.Author</td>
                                         <td class="list_text1">@evaluation.Start.ToString("dd MMMM")</td>

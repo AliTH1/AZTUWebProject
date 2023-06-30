@@ -42,6 +42,9 @@ builder.Services.AddScoped<IEventService, EventService>();
 builder.Services.AddScoped<IConferenceRepository, ConferenceRepository>();
 builder.Services.AddScoped<IConferenceService, ConferenceService>();
 
+builder.Services.AddScoped<ISliderRepository, SliderRepository>();
+builder.Services.AddScoped<ISliderService, SliderService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

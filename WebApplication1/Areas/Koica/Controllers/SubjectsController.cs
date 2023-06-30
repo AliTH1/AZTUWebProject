@@ -151,7 +151,7 @@ namespace WebApplication1.Areas.Koica.Controllers
 
                 await _context.Evaluations.AddAsync(newEvaluationWithoutFile);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(DidacticMaterials), new { id = createEvaluation.RouteId });
+                return RedirectToAction(nameof(Evaluation), new { id = createEvaluation.RouteId });
             }
 
 

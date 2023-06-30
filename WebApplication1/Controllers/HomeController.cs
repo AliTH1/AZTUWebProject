@@ -6,6 +6,7 @@ using Entities.Dtos.Events;
 using Entities.Dtos.News;
 using Entities.Dtos.Panel;
 using Entities.Dtos.Projects;
+using Entities.Dtos.Slider;
 using Microsoft.AspNetCore.Mvc;
 using WebApplication1.ViewModels;
 
@@ -20,14 +21,16 @@ public class HomeController : Controller
     private readonly IProjectService _projectService;
     private readonly IEventService _eventService;
     private readonly IConferenceService _conferenceService;
+    private readonly ISliderService _sliderService;
 
-    public HomeController(IPanelService panelService, INewsService newsService, IAnnouncementService announcementService, IProjectService projectService, IEventService eventService)
+    public HomeController(IPanelService panelService, INewsService newsService, IAnnouncementService announcementService, IProjectService projectService, IEventService eventService, ISliderService sliderService)
     {
         _panelService = panelService;
         _newsService = newsService;
         _announcementService = announcementService;
         _projectService = projectService;
         _eventService = eventService;
+        _sliderService = sliderService;
     }
 
     public async Task<IActionResult> Index()
@@ -37,6 +40,7 @@ public class HomeController : Controller
         List<AnnouncementGetDto> announcementGetDtos = await _announcementService.GetAllAsync();
         List<ProjectGetDto> projectGetDtos = await _projectService.GetAllAsync();
         List<EventGetDto> eventGetDtos = await _eventService.GetAllAsync();
+        List<SliderGetDto> sliderGetDtos = await _sliderService.GetAllAsync();
         //List<ConferenceGetDto> conferenceGetDtos = await _conferenceService.GetAllAsync();
 
         HomeVM homeVM = new HomeVM()
@@ -46,6 +50,7 @@ public class HomeController : Controller
             Announcements = announcementGetDtos,
             Projects = projectGetDtos,
             Events = eventGetDtos,
+            Sliders = sliderGetDtos
             //Conferences = conferenceGetDtos
         };
 

@@ -1,9 +1,11 @@
-﻿using Entities.Dtos.Announcement;
+﻿using Entities;
+using Entities.Dtos.Announcement;
 using Entities.Dtos.Conferences;
 using Entities.Dtos.Events;
 using Entities.Dtos.News;
 using Entities.Dtos.Panel;
 using Entities.Dtos.Projects;
+using Entities.Dtos.Slider;
 
 namespace WebApplication1.ViewModels
 {
@@ -15,6 +17,7 @@ namespace WebApplication1.ViewModels
         public List<ProjectGetDto> Projects { get; set; }
         public List<EventGetDto> Events { get; set; }
         public List<ConferenceGetDto> Conferences { get; set; }
+        public List<SliderGetDto> Sliders { get; set; }
 
     }
 }

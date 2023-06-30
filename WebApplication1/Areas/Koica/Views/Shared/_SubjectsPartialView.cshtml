@@ -1,4 +1,5 @@
 ﻿@using Entities.Koica;
+@using static WebApplication1.Controllers.AccountController;
 @model Subject
 @{
     string getAction = (string) Url.ActionContext.RouteData.Values["action"];
@@ -31,8 +32,11 @@
             Qiymətləndirmə
         </a>
 
-        <a asp-controller="Subjects" asp-action="Progress" asp-route-id="@Model.Id" class="btn btn-sm btn-rounded w-md waves-effect @(getAction == "Progress" ? "btn-danger": "btn-primary")">
-            Cari müvəffəqiyyət
-        </a>
+        @if(!User.IsInRole(UserRoles.Teacher.ToString()))
+        {
+            <a asp-controller="Subjects" asp-action="Progress" asp-route-id="@Model.Id" class="btn btn-sm btn-rounded w-md waves-effect @(getAction == "Progress" ? "btn-danger": "btn-primary")">
+                Cari müvəffəqiyyət
+            </a>
+        }
     </div>
 </div>

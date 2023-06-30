@@ -20,5 +20,7 @@ namespace Business.Utilities.Constants
         internal static string EventNotFound;
         internal static string ConferenceNotFound;
         internal static string? ConferenceAlreadyExists;
+        internal static string? SliderAlreadyExists;
+        internal static string SliderNotFound;
     }
 }

@@ -1,4 +1,4 @@
-﻿@using WebApplication1.Areas.Koica.ViewModels;
+﻿﻿@using WebApplication1.Areas.Koica.ViewModels;
 @model CreateEvaluationVM
 @{
     int getId = Convert.ToInt32(Url.ActionContext.RouteData.Values["id"]);
@@ -6,130 +6,59 @@
 }
 
 
+
+
+
 <div id="exampleModalLive" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLiveLabel" aria-hidden="true" style="display: none;">
     <div class="modal-dialog modal-lg" role="document">
 
 
-        <form method="post"
+        <form method="post" asp-controller="Subjects" asp-action="CreateEvaluation"
               enctype="multipart/form-data">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLiveLabel">Forum</h5>
+                    <h5 class="modal-title" id="exampleModalLiveLabel">Qiymətləndirmə</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <table border="0" cellspacing="0" width="100%" valign="top">
-                        <tbody>
-                            <tr>
-                                <td valign="top" style="padding-left:3px; padding-top:3px;">
+                    <input type="hidden" asp-for="RouteId"></>
 
 
-                                    <table border="1" cellspacing="0" cellpadding="0" width="100%" bordercolor="#b6bbc0" style="border-collapse:collapse;">
+                    <div class="form-group" style="width: 50%;">
+                        <select asp-for="TypeOfTeaching" class="form-select">
+                            <option selected>Tədris növü</option>
+                            <option value="Laboratoriya">Laboratoriya</option>
+                            <option value="Sərbəst">Sərbəst</option>
+                            <option value="Məşğələ">Three</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" style="width: 50%;">
+                        <label asp-for="Topic"></label>
+                        <input asp-for="Topic" class="form-control">
+                    </div>
+
+                    <div class="form-group" style="width: 50%;">
+                        <label asp-for="Start"></label>
+                        <input asp-for="Start" value="@DateTime.Now" class="form-control">
+                    </div>
+
+                    <div class="form-group" style="width: 50%;">
+                        <label asp-for="End"></label>
+                        <input asp-for="End" value="@DateTime.Now" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <textarea asp-for="Content" cols="50" rows="10"></textarea>
+                    </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                        <tbody>
-                                            <tr>
-                                                <td width="15%" bgcolor="#F9F9FB" align="center" height="25"><font class="title1">Movzu <!-- 과제제목 --></font></td>
-                                                <td colspan="3">&nbsp;Laboratoriya işi N3Исследование схемы двухполупериодного выпрямителя</td>
-                                            </tr>
-                                            <tr>
-                                                <td width="15%" bgcolor="#F9F9FB" align="center" height="25"><font class="title1">Başlanğıc <!-- 제출기간 --></font></td>
-                                                <td>&nbsp;20230212 ~ 20230525</td>
-                                                <td width="15%" bgcolor="#F9F9FB" align="center" height="25"><font class="title1">Verilmə əlaməti <!-- 기간이후 --></font></td>
-                                                <td>&nbsp;qebul olunur</td>
-
-                                            </tr>
-                                            <tr>
-                                                <td width="15%" bgcolor="#F9F9FB" align="center" height="25"><font class="title1">Tədrisin növü <!-- 과제유형 --></font></td>
-                                                <td>&nbsp;Laboratoriya</td>
-                                                <td width="15%" bgcolor="#F9F9FB" align="center" height="25"><font class="title1">İşin verilmə vəziyyəti <!-- 제출현황 --></font></td>
-                                                <td>&nbsp;9/9</td>
-
-                                            </tr>
-                                            <tr>
-                                                <td width="15%" bgcolor="#F9F9FB" align="center" height="25"><font class="title1">Qiymətləndirmə <!-- 과제구분 --></font></td>
-                                                <td colspan="3">&nbsp;Bəli</td>
-
-                                            </tr>
-                                            <tr>
-                                                <td colspan="4" height="30">
-                                                    <div class="ql-toolbar ql-snow"><span class="ql-formats"><span class="ql-header ql-picker"><span class="ql-picker-label" tabindex="0" role="button" aria-expanded="false" aria-controls="ql-picker-options-1"><svg viewBox="0 0 18 18"> <polygon class="ql-stroke" points="7 11 9 13 11 11 7 11"></polygon> <polygon class="ql-stroke" points="7 7 9 5 11 7 7 7"></polygon> </svg></span><span class="ql-picker-options" aria-hidden="true" tabindex="-1" id="ql-picker-options-1"><span tabindex="0" role="button" class="ql-picker-item" data-value="1"></span><span tabindex="0" role="button" class="ql-picker-item" data-value="2"></span><span tabindex="0" role="button" class="ql-picker-item" data-value="3"></span><span tabindex="0" role="button" class="ql-picker-item"></span></span></span><select class="ql-header" style="display: none;"><option value="1"></option><option value="2"></option><option value="3"></option><option selected="selected"></option></select></span><span class="ql-formats"><button type="button" class="ql-bold"><svg viewBox="0 0 18 18"> <path class="ql-stroke" d="M5,4H9.5A2.5,2.5,0,0,1,12,6.5v0A2.5,2.5,0,0,1,9.5,9H5A0,0,0,0,1,5,9V4A0,0,0,0,1,5,4Z"></path> <path class="ql-stroke" d="M5,9h5.5A2.5,2.5,0,0,1,13,11.5v0A2.5,2.5,0,0,1,10.5,14H5a0,0,0,0,1,0,0V9A0,0,0,0,1,5,9Z"></path> </svg></button><button type="button" class="ql-italic"><svg viewBox="0 0 18 18"> <line class="ql-stroke" x1="7" x2="13" y1="4" y2="4"></line> <line class="ql-stroke" x1="5" x2="11" y1="14" y2="14"></line> <line class="ql-stroke" x1="8" x2="10" y1="14" y2="4"></line> </svg></button><button type="button" class="ql-underline"><svg viewBox="0 0 18 18"> <path class="ql-stroke" d="M5,3V9a4.012,4.012,0,0,0,4,4H9a4.012,4.012,0,0,0,4-4V3"></path> <rect class="ql-fill" height="1" rx="0.5" ry="0.5" width="12" x="3" y="15"></rect> </svg></button><button type="button" class="ql-link"><svg viewBox="0 0 18 18"> <line class="ql-stroke" x1="7" x2="11" y1="7" y2="11"></line> <path class="ql-even ql-stroke" d="M8.9,4.577a3.476,3.476,0,0,1,.36,4.679A3.476,3.476,0,0,1,4.577,8.9C3.185,7.5,2.035,6.4,4.217,4.217S7.5,3.185,8.9,4.577Z"></path> <path class="ql-even ql-stroke" d="M13.423,9.1a3.476,3.476,0,0,0-4.679-.36,3.476,3.476,0,0,0,.36,4.679c1.392,1.392,2.5,2.542,4.679.36S14.815,10.5,13.423,9.1Z"></path> </svg></button></span><span class="ql-formats"><button type="button" class="ql-list" value="ordered"><svg viewBox="0 0 18 18"> <line class="ql-stroke" x1="7" x2="15" y1="4" y2="4"></line> <line class="ql-stroke" x1="7" x2="15" y1="9" y2="9"></line> <line class="ql-stroke" x1="7" x2="15" y1="14" y2="14"></line> <line class="ql-stroke ql-thin" x1="2.5" x2="4.5" y1="5.5" y2="5.5"></line> <path class="ql-fill" d="M3.5,6A0.5,0.5,0,0,1,3,5.5V3.085l-0.276.138A0.5,0.5,0,0,1,2.053,3c-0.124-.247-0.023-0.324.224-0.447l1-.5A0.5,0.5,0,0,1,4,2.5v3A0.5,0.5,0,0,1,3.5,6Z"></path> <path class="ql-stroke ql-thin" d="M4.5,10.5h-2c0-.234,1.85-1.076,1.85-2.234A0.959,0.959,0,0,0,2.5,8.156"></path> <path class="ql-stroke ql-thin" d="M2.5,14.846a0.959,0.959,0,0,0,1.85-.109A0.7,0.7,0,0,0,3.75,14a0.688,0.688,0,0,0,.6-0.736,0.959,0.959,0,0,0-1.85-.109"></path> </svg></button><button type="button" class="ql-list" value="bullet"><svg viewBox="0 0 18 18"> <line class="ql-stroke" x1="6" x2="15" y1="4" y2="4"></line> <line class="ql-stroke" x1="6" x2="15" y1="9" y2="9"></line> <line class="ql-stroke" x1="6" x2="15" y1="14" y2="14"></line> <line class="ql-stroke" x1="3" x2="3" y1="4" y2="4"></line> <line class="ql-stroke" x1="3" x2="3" y1="9" y2="9"></line> <line class="ql-stroke" x1="3" x2="3" y1="14" y2="14"></line> </svg></button></span><span class="ql-formats"><button type="button" class="ql-clean"><svg class="" viewBox="0 0 18 18"> <line class="ql-stroke" x1="5" x2="13" y1="3" y2="3"></line> <line class="ql-stroke" x1="6" x2="9.35" y1="12" y2="3"></line> <line class="ql-stroke" x1="11" x2="15" y1="11" y2="15"></line> <line class="ql-stroke" x1="15" x2="11" y1="11" y2="15"></line> <rect class="ql-fill" height="1" rx="0.5" ry="0.5" width="7" x="2" y="14"></rect> </svg></button></span></div><div style="height: 70px" name="wr_content" id="wr_content1" class="ql-container ql-snow ql-disabled"><div class="ql-editor ql-blank" data-gramm="false" contenteditable="false"><p><br></p></div><div class="ql-clipboard" contenteditable="true" tabindex="-1"></div><div class="ql-tooltip ql-hidden"><a class="ql-preview" target="_blank" href="about:blank"></a><input type="text" data-formula="e=mc^2" data-link="https://quilljs.com" data-video="Embed URL"><a class="ql-action"></a><a class="ql-remove"></a></div></div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td width="15%" bgcolor="#F9F9FB" height="25" align="center"><font class="title1">Qoşma1 <!-- 첨부파일1 --></font></td>
-                                                <td colspan="3">&nbsp;<a href="file_down.php?table=t_lecture_task&amp;wr_idx=580517&amp;wr_fno=1"></a></td>
-                                            </tr>
-                                            <tr>
-                                                <td width="15%" bgcolor="#F9F9FB" height="25" align="center">
-                                                    <font class="title1">Qoşma2 <!-- 첨부파일2 --></font>
-                                                </td>
-                                                <td colspan="3">&nbsp;<a href="file_down.php?table=t_lecture_task&amp;wr_idx=580517&amp;wr_fno=2"></a></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-
-                                    <table width="100%" cellpadding="0" cellspacing="0" border="0">
-                                        <tbody>
-                                            <tr>
-                                                <td align="right" height="10">
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table><br>
-
-
-                                    <form name="eeaa_new" id="form_id" method="post" enctype="multipart/form-data" action="lecture_task_present_proc.php">
-                                        <input type="hidden" name="idx" value="33671994">
-                                        <input type="hidden" name="t_idx" value="580517">
-                                        <input type="hidden" name="mode" value="edit">
-                                        <input type="hidden" name="sem_code" value="20231">
-                                        <input type="hidden" name="lec_open_idx" value="50980">
-                                        <table border="1" cellspacing="0" cellpadding="0" width="100%" bordercolor="#b6bbc0" style="border-collapse:collapse;">
-                                            <tbody>
-                                                <tr>
-
-                                                    <td width="15%" bgcolor="#F9F9FB" align="center">İşin verilmə</td>
-                                                    <td style="padding-left: 5px;">
-
-                                                        <br>&nbsp;EQQLab-3.docx <a href="file_down.php?table=t_lecture_task_present&amp;wr_idx=33671994&amp;wr_fno=1"><img src="/lib/skin/basic/img/icon/icon_attach.gif" border="0"></a> <input type="checkbox" name="file_del1" value="20230520_539294033.docx">  Sil<br><input type="file" name="o_file1" class="inp1" size="80" fieldtext="İşin verilmə" fieldtext2="Seçmək"><br>
-                                                        <input type="file" name="o_file2" class="inp1" size="80">
-                                                        <hr>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                        <br>
-                                        <table border="0" cellspacing="0" cellpadding="0" width="100%" bordercolor="#b6bbc0" style="border-collapse:collapse;">
-                                            <tbody>
-                                                <tr>
-                                                    <td align="right" height="35" style="padding-margin: 10px">
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </form>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="form-group">
+                        <label asp-for="File"></label>
+                        <input asp-for="File" class="form-control-file">
+                    </div>
 
 
                 </div>
