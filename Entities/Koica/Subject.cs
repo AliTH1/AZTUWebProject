@@ -21,6 +21,5 @@ namespace Entities.Koica
         public List<DidacticMaterial> DidacticMaterials { get; set; }
         public List<Evaluation> Evaluations { get; set; }
         public List<Progress> Progresses { get; set; }
-
     }
 }

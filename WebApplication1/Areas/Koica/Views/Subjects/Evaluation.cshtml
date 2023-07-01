@@ -58,11 +58,11 @@
                                 @foreach (Evaluation evaluation in Model.Evaluations)
                                 {
                                     <tr>
-                                        <td>@count</td>
+                                        <td class="text-center">@count</td>
                                         <td class="list_text1">@evaluation.TypeOfTeaching</td>
                                         @if (User.IsInRole(UserRoles.Student.ToString()))
                                         {
-                                            @if (evaluation.StudentEvaluations.FirstOrDefault(c => c.EvaluationId == evaluation.Id).Grade == null)
+                                            @if (evaluation.StudentEvaluations.FirstOrDefault(c => c.EvaluationId == evaluation.Id)?.Grade == null)
                                             {
                                                 <td class="list_text1">
                                                     Bəli(hələ)

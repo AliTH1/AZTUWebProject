@@ -16,7 +16,9 @@ namespace Entities.Account
         public int UserId { get; set; }
         public AppUser AppUser { get; set; }
 
-        public List<Evaluation> Evaluations { get; } = new();
-        public List<StudentEvaluation> StudentEvaluations { get; } = new();
+
+        public List<Evaluation> Evaluations { get; set; }
+        public List<StudentEvaluation> StudentEvaluations { get; set; }
+
     }
 }

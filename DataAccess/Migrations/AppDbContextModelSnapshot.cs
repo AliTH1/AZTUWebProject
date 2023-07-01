@@ -114,7 +114,7 @@ namespace DataAccess.Migrations
                     b.HasIndex("UserId")
                         .IsUnique();
 
-                    b.ToTable("StudentsInfo");
+                    b.ToTable("StudentsInfo", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Account.TeacherInfo", b =>
@@ -145,7 +145,7 @@ namespace DataAccess.Migrations
                     b.HasIndex("UserId")
                         .IsUnique();
 
-                    b.ToTable("TeachersInfo");
+                    b.ToTable("TeachersInfo", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Announcement", b =>
@@ -170,7 +170,7 @@ namespace DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Announcements");
+                    b.ToTable("Announcements", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Conference", b =>
@@ -198,7 +198,7 @@ namespace DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Conferences");
+                    b.ToTable("Conferences", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Event", b =>
@@ -223,7 +223,7 @@ namespace DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Events");
+                    b.ToTable("Events", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Koica.Group", b =>
@@ -240,7 +240,7 @@ namespace DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Groups");
+                    b.ToTable("Groups", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Koica.GroupSubject", b =>
@@ -255,26 +255,7 @@ namespace DataAccess.Migrations
 
                     b.HasIndex("SubjectId");
 
-                    b.ToTable("GroupSubjects");
-                });
-
-
-            modelBuilder.Entity("Entities.Koica.StudentEvaluation", b =>
-                {
-                    b.Property<int>("EvaluationId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("StudentInfoId")
-                        .HasColumnType("int");
-
-                    b.Property<byte?>("Grade")
-                        .HasColumnType("tinyint");
-
-                    b.HasKey("EvaluationId", "StudentInfoId");
-
-                    b.HasIndex("StudentInfoId");
-
-                    b.ToTable("StudentEvaluations");
+                    b.ToTable("GroupSubjects", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Koica.StudentEvaluationFile", b =>
@@ -298,7 +279,7 @@ namespace DataAccess.Migrations
                     b.HasIndex("EvaluationId")
                         .IsUnique();
 
-                    b.ToTable("StudentEvaluationFiles");
+                    b.ToTable("StudentEvaluationFiles", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Koica.Subject", b =>
@@ -320,7 +301,7 @@ namespace DataAccess.Migrations
 
                     b.HasIndex("TeacherInfoId");
 
-                    b.ToTable("Subjects");
+                    b.ToTable("Subjects", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Koica.SubjectMaterials.DidacticMaterial", b =>
@@ -360,7 +341,7 @@ namespace DataAccess.Migrations
 
                     b.HasIndex("SubjectId");
 
-                    b.ToTable("DidacticMaterials");
+                    b.ToTable("DidacticMaterials", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Koica.SubjectMaterials.Evaluation", b =>
@@ -381,9 +362,6 @@ namespace DataAccess.Migrations
 
                     b.Property<DateTime>("End")
                         .HasColumnType("datetime2");
-
-                    b.Property<byte>("EvaluationStudent")
-                        .HasColumnType("tinyint");
 
                     b.Property<string>("FilePath")
                         .HasColumnType("nvarchar(max)");
@@ -406,7 +384,7 @@ namespace DataAccess.Migrations
 
                     b.HasIndex("SubjectId");
 
-                    b.ToTable("Evaluations");
+                    b.ToTable("Evaluations", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Koica.SubjectMaterials.Forum", b =>
@@ -445,7 +423,7 @@ namespace DataAccess.Migrations
 
                     b.HasIndex("SubjectId");
 
-                    b.ToTable("Forums");
+                    b.ToTable("Forums", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Koica.SubjectMaterials.Notification", b =>
@@ -485,7 +463,7 @@ namespace DataAccess.Migrations
 
                     b.HasIndex("SubjectId");
 
-                    b.ToTable("Notifications");
+                    b.ToTable("Notifications", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Koica.SubjectMaterials.Progress", b =>
@@ -524,31 +502,7 @@ namespace DataAccess.Migrations
 
                     b.HasIndex("SubjectId");
 
-                    b.ToTable("Progresses");
-                });
-
-            modelBuilder.Entity("Entities.Koica.TeacherEvaluationFile", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int?>("EvaluationId")
-                        .IsRequired()
-                        .HasColumnType("int");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("EvaluationId")
-                        .IsUnique();
-
-                    b.ToTable("TeacherEvaluationFiles");
+                    b.ToTable("Progresses", (string)null);
                 });
 
             modelBuilder.Entity("Entities.News", b =>
@@ -579,7 +533,7 @@ namespace DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("News");
+                    b.ToTable("News", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Panel", b =>
@@ -600,7 +554,7 @@ namespace DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Panels");
+                    b.ToTable("Panels", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Project", b =>
@@ -629,7 +583,7 @@ namespace DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Projects");
+                    b.ToTable("Projects", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Service", b =>
@@ -653,7 +607,7 @@ namespace DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Services");
+                    b.ToTable("Services", (string)null);
                 });
 
             modelBuilder.Entity("Entities.Slider", b =>
@@ -676,7 +630,25 @@ namespace DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Sliders");
+                    b.ToTable("Sliders", (string)null);
+                });
+
+            modelBuilder.Entity("Entities.StudentEvaluation", b =>
+                {
+                    b.Property<int>("EvaluationId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("StudentInfoId")
+                        .HasColumnType("int");
+
+                    b.Property<byte?>("Grade")
+                        .HasColumnType("tinyint");
+
+                    b.HasKey("EvaluationId", "StudentInfoId");
+
+                    b.HasIndex("StudentInfoId");
+
+                    b.ToTable("StudentEvaluations", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole<int>", b =>
@@ -853,27 +825,6 @@ namespace DataAccess.Migrations
                     b.Navigation("Subject");
                 });
 
-
-            modelBuilder.Entity("Entities.Koica.StudentEvaluation", b =>
-                {
-                    b.HasOne("Entities.Koica.SubjectMaterials.Evaluation", "Evaluation")
-                        .WithMany("StudentEvaluations")
-                        .HasForeignKey("EvaluationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Entities.Account.StudentInfo", "StudentInfo")
-                        .WithMany("StudentEvaluations")
-                        .HasForeignKey("StudentInfoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Evaluation");
-
-                    b.Navigation("StudentInfo");
-                });
-
-
             modelBuilder.Entity("Entities.Koica.StudentEvaluationFile", b =>
                 {
                     b.HasOne("Entities.Koica.SubjectMaterials.Evaluation", "Evaluation")
@@ -947,15 +898,19 @@ namespace DataAccess.Migrations
                     b.Navigation("Subject");
                 });
 
-            modelBuilder.Entity("Entities.Koica.TeacherEvaluationFile", b =>
+            modelBuilder.Entity("Entities.StudentEvaluation", b =>
                 {
-                    b.HasOne("Entities.Koica.SubjectMaterials.Evaluation", "Evaluation")
-                        .WithOne("TeacherEvaluationFile")
-                        .HasForeignKey("Entities.Koica.TeacherEvaluationFile", "EvaluationId")
+                    b.HasOne("Entities.Koica.SubjectMaterials.Evaluation", null)
+                        .WithMany()
+                        .HasForeignKey("EvaluationId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Evaluation");
+                    b.HasOne("Entities.Account.StudentInfo", null)
+                        .WithMany()
+                        .HasForeignKey("StudentInfoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
@@ -1018,12 +973,6 @@ namespace DataAccess.Migrations
                         .IsRequired();
                 });
 
-
-            modelBuilder.Entity("Entities.Account.StudentInfo", b =>
-                {
-                    b.Navigation("StudentEvaluations");
-                });
-
             modelBuilder.Entity("Entities.Account.TeacherInfo", b =>
                 {
                     b.Navigation("Subjects");
@@ -1045,11 +994,6 @@ namespace DataAccess.Migrations
             modelBuilder.Entity("Entities.Koica.SubjectMaterials.Evaluation", b =>
                 {
                     b.Navigation("StudentEvaluationFile")
-                        .IsRequired();
-
-                    b.Navigation("StudentEvaluations");
-
-                    b.Navigation("TeacherEvaluationFile")
                         .IsRequired();
                 });
 #pragma warning restore 612, 618

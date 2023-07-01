@@ -43,14 +43,18 @@
                                 <textarea cols="50" asp-for="Content" rows="10">@Html.Raw(Model.Content)</textarea>
                             </td>
                         </tr>
-                        <tr>
-                            <td width="15%" bgcolor="#F9F9FB" height="25" align="center"><font class="title1">Qoşma1</font></td>
-                            <td colspan="3">
-                                <a href="#">
-                                    @Model.FilePath
-                                </a>
-                            </td>
-                        </tr>
+
+                        @if (Model.FilePath != null)
+                        {
+                            <tr>
+                                <td width="15%" bgcolor="#F9F9FB" height="25" align="center"><font class="title1">Qoşma</font></td>
+                                <td colspan="3">
+                                    <a asp-controller="Subjects" asp-action="DownloadFile" asp-route-fileName="@Model.FilePath">
+                                        @Model.FilePath?.Substring(36)
+                                    </a>
+                                </td>
+                            </tr>
+                        }
                     </tbody>
                 </table>
 

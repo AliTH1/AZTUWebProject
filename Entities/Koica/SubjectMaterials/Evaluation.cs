@@ -14,11 +14,11 @@ namespace Entities.Koica.SubjectMaterials
         public string? FilePath { get; set; }
         public int SubjectId { get; set; }
 		public Subject Subject { get; set; }
-        public TeacherEvaluationFile TeacherEvaluationFile { get; set; }
         public StudentEvaluationFile StudentEvaluationFile { get; set; }
 
 
-        public List<StudentInfo> StudentInfos { get; } = new();
-        public List<StudentEvaluation> StudentEvaluations { get; } = new();
+        public List<StudentInfo> StudentInfos { get; set; }
+        public List<StudentEvaluation> StudentEvaluations { get; set; }
+
     }
 }

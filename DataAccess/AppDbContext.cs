@@ -17,6 +17,8 @@ public class AppDbContext : IdentityDbContext<AppUser, IdentityRole<int>, int>
     public AppDbContext(DbContextOptions options) : base(options)
     {
     }
+
+
     protected override void OnModelCreating(ModelBuilder builder)
     {
         builder.Entity<AppUser>()
@@ -67,15 +69,9 @@ public class AppDbContext : IdentityDbContext<AppUser, IdentityRole<int>, int>
             .HasForeignKey<StudentEvaluationFile>(c => c.EvaluationId);
 
         builder.Entity<Evaluation>()
-            .HasOne(c => c.TeacherEvaluationFile)
-            .WithOne(c => c.Evaluation)
-            .HasForeignKey<TeacherEvaluationFile>(c => c.EvaluationId);
-
-
-        builder.Entity<StudentInfo>()
-    .HasMany(c => c.Evaluations)
-    .WithMany(c => c.StudentInfos)
-    .UsingEntity<StudentEvaluation>();
+            .HasMany(c => c.StudentInfos)
+            .WithMany(c => c.Evaluations)
+            .UsingEntity<StudentEvaluation>();
     }
 
 
@@ -98,12 +94,10 @@ public class AppDbContext : IdentityDbContext<AppUser, IdentityRole<int>, int>
     public DbSet<DidacticMaterial> DidacticMaterials { get; set; }
     public DbSet<Evaluation> Evaluations { get; set; }
     public DbSet<Progress> Progresses { get; set; }
-    public DbSet<TeacherEvaluationFile> TeacherEvaluationFiles { get; set; }
+    //public DbSet<TeacherEvaluationFile> TeacherEvaluationFiles { get; set; }
     public DbSet<StudentEvaluationFile> StudentEvaluationFiles { get; set; }
 
     public DbSet<StudentEvaluation> StudentEvaluations { get; set; }
-
-
 
 
     //Core
