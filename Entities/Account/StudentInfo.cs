@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Entities.Koica.SubjectMaterials;
+using Entities.Koica;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,5 +15,8 @@ namespace Entities.Account
         public string Group { get; set; }
         public int UserId { get; set; }
         public AppUser AppUser { get; set; }
+
+        public List<Evaluation> Evaluations { get; } = new();
+        public List<StudentEvaluation> StudentEvaluations { get; } = new();
     }
 }

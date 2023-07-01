@@ -55,17 +55,20 @@
                                     <tr>
                                         <td>@count</td>
                                         <td class="list_text1">@evaluation.TypeOfTeaching</td>
-                                        @if (evaluation.EvaluationStudent == 0)
+                                        @if (User.IsInRole(UserRoles.Student.ToString()))
                                         {
-                                            <td class="list_text1">
-                                                Bəli(hələ)
-                                            </td>
-                                        }
-                                        else
-                                        {
-                                            <td class="list_text1">
-                                                @evaluation.EvaluationStudent
-                                            </td>
+                                            @if (evaluation.StudentEvaluations.FirstOrDefault(c => c.EvaluationId == evaluation.Id).Grade == null)
+                                            {
+                                                <td class="list_text1">
+                                                    Bəli(hələ)
+                                                </td>
+                                            }
+                                            else
+                                            {
+                                                <td class="list_text1">
+                                                    @evaluation.StudentEvaluations.First(c => c.EvaluationId == evaluation.Id).Grade
+                                                </td>
+                                            }
                                         }
                                         <td class="list_text1">
                                             <a href="#" data-toggle="modal" data-target="#getModal@(evaluation.Id)">

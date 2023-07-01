@@ -127,7 +127,7 @@ namespace WebApplication1.Areas.Koica.Controllers
         {
             HomeVM homeVM = new HomeVM()
             {
-                Evaluations = await _context.Evaluations.Where(c => c.SubjectId == id).ToListAsync(),
+                Evaluations = await _context.Evaluations.Where(c => c.SubjectId == id).Include(c => c.StudentInfos).ToListAsync(),
                 Subject = await _context.Subjects.FirstOrDefaultAsync(c => c.Id == id)
             };
 

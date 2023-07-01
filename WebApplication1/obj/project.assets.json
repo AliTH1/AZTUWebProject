@@ -11064,11 +11064,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\alita\\source\\repos\\AZTUWebProject\\WebApplication1\\WebApplication1.csproj",
+      "projectUniqueName": "C:\\Users\\alita\\Desktop\\AZTUWebProject\\WebApplication1\\WebApplication1.csproj",
       "projectName": "WebApplication1",
-      "projectPath": "C:\\Users\\alita\\source\\repos\\AZTUWebProject\\WebApplication1\\WebApplication1.csproj",
+      "projectPath": "C:\\Users\\alita\\Desktop\\AZTUWebProject\\WebApplication1\\WebApplication1.csproj",
       "packagesPath": "C:\\Users\\alita\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\alita\\source\\repos\\AZTUWebProject\\WebApplication1\\obj\\",
+      "outputPath": "C:\\Users\\alita\\Desktop\\AZTUWebProject\\WebApplication1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\alita\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -11086,11 +11086,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\alita\\source\\repos\\AZTUWebProject\\Business\\Business.csproj": {
-              "projectPath": "C:\\Users\\alita\\source\\repos\\AZTUWebProject\\Business\\Business.csproj"
+            "C:\\Users\\alita\\Desktop\\AZTUWebProject\\Business\\Business.csproj": {
+              "projectPath": "C:\\Users\\alita\\Desktop\\AZTUWebProject\\Business\\Business.csproj"
             },
-            "C:\\Users\\alita\\source\\repos\\AZTUWebProject\\DataAccess\\DataAccess.csproj": {
-              "projectPath": "C:\\Users\\alita\\source\\repos\\AZTUWebProject\\DataAccess\\DataAccess.csproj"
+            "C:\\Users\\alita\\Desktop\\AZTUWebProject\\DataAccess\\DataAccess.csproj": {
+              "projectPath": "C:\\Users\\alita\\Desktop\\AZTUWebProject\\DataAccess\\DataAccess.csproj"
             }
           }
         }

@@ -1,10 +1,11 @@
-﻿namespace Entities.Koica.SubjectMaterials
+﻿using Entities.Account;
+
+namespace Entities.Koica.SubjectMaterials
 {
     public class Evaluation
     {
         public int Id { get; set; }
         public string TypeOfTeaching { get; set; }
-        public byte EvaluationStudent { get; set; }
         public string Topic { get; set; }
         public string Content { get; set; }
         public string Author { get; set; }
@@ -15,5 +16,9 @@
 		public Subject Subject { get; set; }
         public TeacherEvaluationFile TeacherEvaluationFile { get; set; }
         public StudentEvaluationFile StudentEvaluationFile { get; set; }
+
+
+        public List<StudentInfo> StudentInfos { get; } = new();
+        public List<StudentEvaluation> StudentEvaluations { get; } = new();
     }
 }

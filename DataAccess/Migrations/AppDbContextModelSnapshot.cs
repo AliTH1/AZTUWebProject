@@ -258,6 +258,25 @@ namespace DataAccess.Migrations
                     b.ToTable("GroupSubjects");
                 });
 
+
+            modelBuilder.Entity("Entities.Koica.StudentEvaluation", b =>
+                {
+                    b.Property<int>("EvaluationId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("StudentInfoId")
+                        .HasColumnType("int");
+
+                    b.Property<byte?>("Grade")
+                        .HasColumnType("tinyint");
+
+                    b.HasKey("EvaluationId", "StudentInfoId");
+
+                    b.HasIndex("StudentInfoId");
+
+                    b.ToTable("StudentEvaluations");
+                });
+
             modelBuilder.Entity("Entities.Koica.StudentEvaluationFile", b =>
                 {
                     b.Property<int>("Id")
@@ -834,6 +853,27 @@ namespace DataAccess.Migrations
                     b.Navigation("Subject");
                 });
 
+
+            modelBuilder.Entity("Entities.Koica.StudentEvaluation", b =>
+                {
+                    b.HasOne("Entities.Koica.SubjectMaterials.Evaluation", "Evaluation")
+                        .WithMany("StudentEvaluations")
+                        .HasForeignKey("EvaluationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Entities.Account.StudentInfo", "StudentInfo")
+                        .WithMany("StudentEvaluations")
+                        .HasForeignKey("StudentInfoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Evaluation");
+
+                    b.Navigation("StudentInfo");
+                });
+
+
             modelBuilder.Entity("Entities.Koica.StudentEvaluationFile", b =>
                 {
                     b.HasOne("Entities.Koica.SubjectMaterials.Evaluation", "Evaluation")
@@ -978,6 +1018,12 @@ namespace DataAccess.Migrations
                         .IsRequired();
                 });
 
+
+            modelBuilder.Entity("Entities.Account.StudentInfo", b =>
+                {
+                    b.Navigation("StudentEvaluations");
+                });
+
             modelBuilder.Entity("Entities.Account.TeacherInfo", b =>
                 {
                     b.Navigation("Subjects");
@@ -1000,6 +1046,8 @@ namespace DataAccess.Migrations
                 {
                     b.Navigation("StudentEvaluationFile")
                         .IsRequired();
+
+                    b.Navigation("StudentEvaluations");
 
                     b.Navigation("TeacherEvaluationFile")
                         .IsRequired();

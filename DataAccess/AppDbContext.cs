@@ -41,25 +41,25 @@ public class AppDbContext : IdentityDbContext<AppUser, IdentityRole<int>, int>
             .WithOne(n => n.Subject)
             .HasForeignKey(f => f.SubjectId);
 
-		builder.Entity<Subject>()
-			.HasMany(n => n.Forums)
-			.WithOne(n => n.Subject)
-			.HasForeignKey(f => f.SubjectId);
+        builder.Entity<Subject>()
+            .HasMany(n => n.Forums)
+            .WithOne(n => n.Subject)
+            .HasForeignKey(f => f.SubjectId);
 
-		builder.Entity<Subject>()
-			.HasMany(n => n.DidacticMaterials)
-			.WithOne(n => n.Subject)
-			.HasForeignKey(f => f.SubjectId);
+        builder.Entity<Subject>()
+            .HasMany(n => n.DidacticMaterials)
+            .WithOne(n => n.Subject)
+            .HasForeignKey(f => f.SubjectId);
 
-		builder.Entity<Subject>()
-			.HasMany(n => n.Evaluations)
-			.WithOne(n => n.Subject)
-			.HasForeignKey(f => f.SubjectId);
+        builder.Entity<Subject>()
+            .HasMany(n => n.Evaluations)
+            .WithOne(n => n.Subject)
+            .HasForeignKey(f => f.SubjectId);
 
-		builder.Entity<Subject>()
-			.HasMany(n => n.Progresses)
-			.WithOne(n => n.Subject)
-			.HasForeignKey(f => f.SubjectId);
+        builder.Entity<Subject>()
+            .HasMany(n => n.Progresses)
+            .WithOne(n => n.Subject)
+            .HasForeignKey(f => f.SubjectId);
 
         builder.Entity<Evaluation>()
             .HasOne(c => c.StudentEvaluationFile)
@@ -70,6 +70,12 @@ public class AppDbContext : IdentityDbContext<AppUser, IdentityRole<int>, int>
             .HasOne(c => c.TeacherEvaluationFile)
             .WithOne(c => c.Evaluation)
             .HasForeignKey<TeacherEvaluationFile>(c => c.EvaluationId);
+
+
+        builder.Entity<StudentInfo>()
+    .HasMany(c => c.Evaluations)
+    .WithMany(c => c.StudentInfos)
+    .UsingEntity<StudentEvaluation>();
     }
 
 
@@ -95,6 +101,7 @@ public class AppDbContext : IdentityDbContext<AppUser, IdentityRole<int>, int>
     public DbSet<TeacherEvaluationFile> TeacherEvaluationFiles { get; set; }
     public DbSet<StudentEvaluationFile> StudentEvaluationFiles { get; set; }
 
+    public DbSet<StudentEvaluation> StudentEvaluations { get; set; }
 
 
 
