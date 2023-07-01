@@ -1,4 +1,6 @@
 ﻿using DataAccess;
+using Entities;
+using Entities.Account;
 using Entities.Koica;
 using Entities.Koica.SubjectMaterials;
 using Microsoft.AspNetCore.Authorization;
@@ -181,9 +183,20 @@ namespace WebApplication1.Areas.Koica.Controllers
 
             await _context.Evaluations.AddAsync(newEvaluation);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(DidacticMaterials), new { id = createEvaluation.RouteId });
+            return RedirectToAction(nameof(Evaluation), new { id = createEvaluation.RouteId });
         }
 
+
+        [HttpPost]
+        public async Task EvaluateTheWork(byte value, int studentInfoId, int evalId)
+        {
+            StudentEvaluation studentEvaluation = await _context.StudentEvaluations
+                .FirstAsync(c => c.EvaluationId == evalId && studentInfoId == c.StudentInfoId);
+
+            studentEvaluation.Grade = value;
+
+            await _context.SaveChangesAsync();
+        }
 
 
 

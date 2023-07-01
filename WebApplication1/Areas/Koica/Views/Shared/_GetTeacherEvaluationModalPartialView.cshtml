@@ -7,72 +7,98 @@
 <div id="getModal@(Model.Id)" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="getModal@(Model.Id)" aria-hidden="true" style="display: none;">
     <div class="modal-dialog modal-lg" role="document">
 
-        <form method="post">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="getModalLabel@(Model.Id)">Forum</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <table border="1" cellspacing="0" cellpadding="0" width="100%" bordercolor="#b6bbc0" style="border-collapse:collapse;">
-                        <tbody>
-                            <tr>
-                                <td width="15%" bgcolor="#F9F9FB" align="center" height="25"><font class="title1">Movzu</font></td>
-                                <td colspan="3">@Model.Topic</td>
-                            </tr>
-                            <tr>
-                                <td width="15%" bgcolor="#F9F9FB" align="center" height="25"><font class="title1">Başlanğıc</font></td>
-                                <td>@Model.Start</td>
-                                <td width="15%" bgcolor="#F9F9FB" align="center" height="25"><font class="title1">Verilmə əlaməti</font></td>
-                                <td>&nbsp;qebul olunur</td>
-
-                            </tr>
-                            <tr>
-                                <td width="15%" bgcolor="#F9F9FB" align="center" height="25"><font class="title1">Tədrisin növü</font></td>
-                                <td>@Model.TypeOfTeaching</td>
-                            </tr>
-                            <tr>
-                                <td width="15%" bgcolor="#F9F9FB" align="center" height="25"><font class="title1">Qiymətləndirmə</font></td>
-                                <td colspan="3">&nbsp;Bəli</td>
-
-                            </tr>
-                            <tr>
-                                <td colspan="4" height="30">
-                                    <div class="form-group">
-
-                                    </div>
-                                    <ul class="list-group d-flex flex-row" style="width: 30%;">
-                                        @foreach (StudentInfo studentInfo in Model.StudentInfos.Where(c => c.StudentEvaluations.Where(c => c.EvaluationId == Model.Id).First().EvaluationId == Model.Id))
-                                        {
-                                            <li class="list-group-item d-flex flex-row justify-content-center">
-                                                @studentInfo.FullName
-                                                <input style="width: 40px; margin-left: 10px;" asp-for="@studentInfo.StudentEvaluations.Where(c => c.EvaluationId == Model.Id).First().Grade" />
-                                            </li>
-                                        }
-                                    </ul>
-                                </td>
-                            </tr>
-
-                            @if (Model.FilePath != null)
-                            {
-                                <tr>
-                                    <td width="15%" bgcolor="#F9F9FB" height="25" align="center"><font class="title1">Qoşma</font></td>
-                                    <td colspan="3"><a asp-controller="Subjects" asp-action="DownloadFile" asp-route-fileName="@Model.FilePath">@Model.FilePath?.Substring(36)</a></td>
-                                </tr>
-                            }
-                        </tbody>
-                    </table>
-                </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary">Əlavə et</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Bağla</button>
-                </div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="getModalLabel@(Model.Id)">Forum</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
             </div>
-        </form>
+            <div class="modal-body">
+                <table border="1" cellspacing="0" cellpadding="0" width="100%" bordercolor="#b6bbc0" style="border-collapse:collapse;">
+                    <tbody>
+                        <tr>
+                            <td width="15%" bgcolor="#F9F9FB" align="center" height="25"><font class="title1">Movzu</font></td>
+                            <td colspan="3">@Model.Topic</td>
+                        </tr>
+                        <tr>
+                            <td width="15%" bgcolor="#F9F9FB" align="center" height="25"><font class="title1">Başlanğıc</font></td>
+                            <td>@Model.Start</td>
+                            <td width="15%" bgcolor="#F9F9FB" align="center" height="25"><font class="title1">Verilmə əlaməti</font></td>
+                            <td>&nbsp;qebul olunur</td>
+
+                        </tr>
+                        <tr>
+                            <td width="15%" bgcolor="#F9F9FB" align="center" height="25"><font class="title1">Tədrisin növü</font></td>
+                            <td>@Model.TypeOfTeaching</td>
+                        </tr>
+                        <tr>
+                            <td width="15%" bgcolor="#F9F9FB" align="center" height="25"><font class="title1">Qiymətləndirmə</font></td>
+                            <td colspan="3">&nbsp;Bəli</td>
+
+                        </tr>
+                        <tr>
+                            <td colspan="4" height="30">
+                                <div class="form-group">
+                                </div>
+                                <input type="hidden" asp-for="StudentInfos">
+                                <ul class="list-group d-flex flex-row" style="width: 30%;">
+                                    @foreach (StudentInfo studentInfo in Model.StudentInfos.Where(c => c.StudentEvaluations.Where(c => c.EvaluationId == Model.Id).First().EvaluationId == Model.Id))
+                                    {
+                                        <li class="list-group-item d-flex flex-row justify-content-center">
+                                            @studentInfo.FullName
+                                            <input onchange="setValue(this, @studentInfo.Id, @Model.Id)" min="0" max="4" style="width: 40px; margin-left: 10px;" asp-for="@studentInfo.StudentEvaluations.Where(c => c.EvaluationId == Model.Id).First().Grade" />
+                                        </li>
+                                    }
+                                </ul>
+                            </td>
+                        </tr>
+
+                        @if (Model.FilePath != null)
+                        {
+                            <tr>
+                                <td width="15%" bgcolor="#F9F9FB" height="25" align="center"><font class="title1">Qoşma</font></td>
+                                <td colspan="3"><a asp-controller="Subjects" asp-action="DownloadFile" asp-route-fileName="@Model.FilePath">@Model.FilePath?.Substring(36)</a></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" data-dismiss="modal" class="btn btn-primary">Əlavə et</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Bağla</button>
+            </div>
+        </div>
 
     </div>
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+        integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"></script>
 
+<script>
+    function setValue(e, studentInfoId1, evalId1) {
+
+        var data = {
+            value: e.value,
+            studentInfoId: studentInfoId1,
+            evalId: evalId1
+        };
+        console.log(data)
+
+        $.ajax({
+            type: "POST",
+            url: "../../Subjects/EvaluateTheWork",
+            content: "application/json; charset=utf-8",
+            data: data,
+            success: function () {
+                console.log("Hello")
+            },
+            error: function (xhr, textStatus, errorThrown) {
+                alert("Salam")
+            }
+        });
+    }
+</script>
