@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TXZSxBoTbbA4WK4NRC6NHeTiF4vXDCxAxE9TXTLTiZcpxr7BYy1MumQgKhCetFuz/+n4oH2MivXaSuz1ZxViLg==",
+  "dgSpecHash": "kXj+TAxd7SkrMPPSX3qqiIQkFg1JI4Edk359CSPHeWQIZPTAHffoJ7OJYC7VRgxCbb3Uc4K+kJ2xbiGiZT/EoA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\alita\\Desktop\\AZTUWebProject\\Business\\Business.csproj",
+  "projectFilePath": "C:\\Users\\alita\\source\\repos\\AZTUWebProject\\Business\\Business.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alita\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\alita\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

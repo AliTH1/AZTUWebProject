@@ -727,11 +727,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\alita\\Desktop\\AZTUWebProject\\Core\\Core.csproj",
+      "projectUniqueName": "C:\\Users\\alita\\source\\repos\\AZTUWebProject\\Core\\Core.csproj",
       "projectName": "Core",
-      "projectPath": "C:\\Users\\alita\\Desktop\\AZTUWebProject\\Core\\Core.csproj",
+      "projectPath": "C:\\Users\\alita\\source\\repos\\AZTUWebProject\\Core\\Core.csproj",
       "packagesPath": "C:\\Users\\alita\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\alita\\Desktop\\AZTUWebProject\\Core\\obj\\",
+      "outputPath": "C:\\Users\\alita\\source\\repos\\AZTUWebProject\\Core\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\alita\\AppData\\Roaming\\NuGet\\NuGet.Config",

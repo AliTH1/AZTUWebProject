@@ -1,9 +1,11 @@
 ﻿@using Entities.Koica.SubjectMaterials;
+@using System.Globalization;
 @using WebApplication1.Areas.Koica.ViewModels;
 @using static WebApplication1.Controllers.AccountController;
 @model HomeVM
 @{
     int count = 1;
+    CultureInfo ci = new CultureInfo("az-AZ");
 }
 @await Html.PartialAsync("_SubjectsPartialView", Model.Subject)
 
@@ -25,14 +27,17 @@
                             </button>
                         </div>
                     }
-                    <div class="text-right">
-                    </div>
-                    <table id="datatable-task" class="table  table-bordered" border="0" cellpadding="0" cellspacing="0" width="100%">
+
+
+                    <table id="datatable-task" class="table  table-bordered mt-3" border="0" cellpadding="0" cellspacing="0" width="100%">
                         <thead>
                             <tr>
                                 <th nowrap="" width="50px" height="50" align="center" class="list_title1">Nömrə</th>
                                 <th align="center" valign="middle" class="list_title1 text-center">Tədrisin növü</th>
-                                <th align="center" valign="middle" class="list_title1 text-center">Qiymətləndirmə</th>
+                                @if (User.IsInRole(UserRoles.Student.ToString()))
+                                {
+                                    <th align="center" valign="middle" class="list_title1 text-center">Qiymətləndirmə</th>
+                                }
                                 <th align="center" valign="middle" class="list_title1 text-center">Movzu</th>
                                 <th align="center" valign="middle" class="list_title1 text-center">Müəllif</th>
                                 <th align="center" valign="middle" class="list_title1 text-center">Başlanğıc</th>
@@ -84,8 +89,8 @@
                                             }
                                         </td>
                                         <td class="list_text1">@evaluation.Author</td>
-                                        <td class="list_text1">@evaluation.Start.ToString("dd MMMM")</td>
-                                        <td class="list_text1">@evaluation.End.ToString("dd MMMM")</td>
+                                        <td class="list_text1">@evaluation.Start.ToString("dd MMMM", ci)</td>
+                                        <td class="list_text1">@evaluation.End.ToString("dd MMMM", ci)</td>
 
                                     </tr>
 

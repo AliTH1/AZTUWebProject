@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zF4h5CbewhC7rDQ+qZH8sLTDV8nxBe09rPBrgvx8msWanFOZBrDa/e4FdImd+KhzZXjfHAUb7lTUE6QuDFcv1A==",
+  "dgSpecHash": "mS26w0TJ2cFtgnM7Mjjau4w+jrDLjaPFmDAJk8a8WkJZ2zrrC+uOqIx2NQsRZE2eBKBzato2AZEfIFQqEsp60A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\alita\\Desktop\\AZTUWebProject\\WebApplication1\\WebApplication1.csproj",
+  "projectFilePath": "C:\\Users\\alita\\source\\repos\\AZTUWebProject\\WebApplication1\\WebApplication1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alita\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\alita\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
