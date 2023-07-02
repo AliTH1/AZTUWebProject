@@ -1,4 +1,5 @@
-﻿using Entities.Koica.SubjectMaterials;
+﻿using Entities.Account;
+using Entities.Koica.SubjectMaterials;
 
 namespace Entities.Koica
 {
@@ -8,5 +9,8 @@ namespace Entities.Koica
         public string Name { get; set; }
         public Evaluation Evaluation { get; set; }
         public int? EvaluationId { get; set; }
+
+        public StudentInfo StudentInfo { get; set; }
+        public int? StudentInfoId { get; set; }
     }
 }

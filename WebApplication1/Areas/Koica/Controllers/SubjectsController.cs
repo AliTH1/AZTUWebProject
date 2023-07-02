@@ -4,6 +4,7 @@ using Entities.Account;
 using Entities.Koica;
 using Entities.Koica.SubjectMaterials;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
@@ -18,10 +19,12 @@ namespace WebApplication1.Areas.Koica.Controllers
     {
         private readonly AppDbContext _context;
         private readonly IWebHostEnvironment _webHostEnvironment;
-        public SubjectsController(AppDbContext context, IWebHostEnvironment webHostEnvironment)
+        private readonly UserManager<AppUser> _userManager;
+        public SubjectsController(AppDbContext context, IWebHostEnvironment webHostEnvironment, UserManager<AppUser> userManager)
         {
             _context = context;
             _webHostEnvironment = webHostEnvironment;
+            _userManager = userManager;
         }
 
         public async Task<IActionResult> Notification(int id)
@@ -129,8 +132,12 @@ namespace WebApplication1.Areas.Koica.Controllers
         {
             HomeVM homeVM = new HomeVM()
             {
-                Evaluations = await _context.Evaluations.Where(c => c.SubjectId == id).Include(c => c.StudentInfos)
-                .Include(c => c.StudentEvaluations).ToListAsync(),
+                Evaluations = await _context.Evaluations
+                .Where(c => c.SubjectId == id)
+                .Include(c => c.StudentInfos)
+                .Include(c => c.StudentEvaluations)
+                .ToListAsync(),
+
                 Subject = await _context.Subjects.FirstOrDefaultAsync(c => c.Id == id)
             };
 
@@ -151,6 +158,7 @@ namespace WebApplication1.Areas.Koica.Controllers
                     Author = User.Identity.Name,
                     SubjectId = createEvaluation.RouteId
                 };
+
 
                 await _context.Evaluations.AddAsync(newEvaluationWithoutFile);
                 await _context.SaveChangesAsync();
@@ -197,6 +205,7 @@ namespace WebApplication1.Areas.Koica.Controllers
 
             await _context.SaveChangesAsync();
         }
+
 
 
 

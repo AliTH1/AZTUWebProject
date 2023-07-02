@@ -16,7 +16,6 @@ namespace Entities.Koica.SubjectMaterials
 		public Subject Subject { get; set; }
         public StudentEvaluationFile StudentEvaluationFile { get; set; }
 
-
         public List<StudentInfo> StudentInfos { get; set; }
         public List<StudentEvaluation> StudentEvaluations { get; set; }
 

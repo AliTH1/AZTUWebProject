@@ -72,6 +72,11 @@ public class AppDbContext : IdentityDbContext<AppUser, IdentityRole<int>, int>
             .HasMany(c => c.StudentInfos)
             .WithMany(c => c.Evaluations)
             .UsingEntity<StudentEvaluation>();
+
+        builder.Entity<StudentEvaluationFile>()
+            .HasOne(c => c.StudentInfo)
+            .WithMany(c => c.StudentEvaluationFiles)
+            .HasForeignKey(c => c.StudentInfoId);
     }
 
 

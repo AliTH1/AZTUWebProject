@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "pTXNauzZyJDvi8LG8GCiOru03rhn0d9M/vJq2bCZ6AU=",
+  "Hash": "8JjgY0sgR4zV7BmKr+vEhlAVfRVknPYs6ZFbh7s8AdY=",
   "Source": "WebApplication1",
   "BasePath": "_content/WebApplication1",
   "Mode": "Default",
@@ -64974,6 +64974,23 @@
       "OriginalItemSpec": "wwwroot\\koica\\css\\vertical-layout-light\\style.css"
     },
     {
+      "Identity": "C:\\Users\\alita\\source\\repos\\AZTUWebProject\\WebApplication1\\wwwroot\\koica\\files\\19ff7df5-96d1-42b9-bac9-18e5dfe4f49dAli's Resume (1).pdf",
+      "SourceId": "WebApplication1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\alita\\source\\repos\\AZTUWebProject\\WebApplication1\\wwwroot\\",
+      "BasePath": "_content/WebApplication1",
+      "RelativePath": "koica/files/19ff7df5-96d1-42b9-bac9-18e5dfe4f49dAli's Resume (1).pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\koica\\files\\19ff7df5-96d1-42b9-bac9-18e5dfe4f49dAli's Resume (1).pdf"
+    },
+    {
       "Identity": "C:\\Users\\alita\\source\\repos\\AZTUWebProject\\WebApplication1\\wwwroot\\koica\\files\\31512341-3530-4c10-8717-e06efa2617e4Ali's Resume.pdf",
       "SourceId": "WebApplication1",
       "SourceType": "Discovered",
@@ -65006,6 +65023,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\koica\\files\\34bbaef3-2d98-42dd-93a3-7a5e71e1ca184k abstract wallpaper minimalist abstract hexagon colorful a1949.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\alita\\source\\repos\\AZTUWebProject\\WebApplication1\\wwwroot\\koica\\files\\4e79f85b-3f92-4d48-a94d-9eb158879378Ali's Resume (1).pdf",
+      "SourceId": "WebApplication1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\alita\\source\\repos\\AZTUWebProject\\WebApplication1\\wwwroot\\",
+      "BasePath": "_content/WebApplication1",
+      "RelativePath": "koica/files/4e79f85b-3f92-4d48-a94d-9eb158879378Ali's Resume (1).pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\koica\\files\\4e79f85b-3f92-4d48-a94d-9eb158879378Ali's Resume (1).pdf"
     },
     {
       "Identity": "C:\\Users\\alita\\source\\repos\\AZTUWebProject\\WebApplication1\\wwwroot\\koica\\files\\52d76bd6-eff3-4ac5-a96a-d3de322265abNovoe-estestvennoe-bogoslovie.pdf",

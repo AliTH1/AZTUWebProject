@@ -17,6 +17,8 @@ namespace Entities.Account
         public AppUser AppUser { get; set; }
 
 
+        public List<StudentEvaluationFile> StudentEvaluationFiles { get; set; }
+
         public List<Evaluation> Evaluations { get; set; }
         public List<StudentEvaluation> StudentEvaluations { get; set; }
 

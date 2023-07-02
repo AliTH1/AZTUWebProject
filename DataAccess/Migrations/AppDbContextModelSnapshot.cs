@@ -114,7 +114,7 @@ namespace DataAccess.Migrations
                     b.HasIndex("UserId")
                         .IsUnique();
 
-                    b.ToTable("StudentsInfo", (string)null);
+                    b.ToTable("StudentsInfo");
                 });
 
             modelBuilder.Entity("Entities.Account.TeacherInfo", b =>
@@ -145,7 +145,7 @@ namespace DataAccess.Migrations
                     b.HasIndex("UserId")
                         .IsUnique();
 
-                    b.ToTable("TeachersInfo", (string)null);
+                    b.ToTable("TeachersInfo");
                 });
 
             modelBuilder.Entity("Entities.Announcement", b =>
@@ -170,7 +170,7 @@ namespace DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Announcements", (string)null);
+                    b.ToTable("Announcements");
                 });
 
             modelBuilder.Entity("Entities.Conference", b =>
@@ -198,7 +198,7 @@ namespace DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Conferences", (string)null);
+                    b.ToTable("Conferences");
                 });
 
             modelBuilder.Entity("Entities.Event", b =>
@@ -223,7 +223,7 @@ namespace DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Events", (string)null);
+                    b.ToTable("Events");
                 });
 
             modelBuilder.Entity("Entities.Koica.Group", b =>
@@ -240,7 +240,7 @@ namespace DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Groups", (string)null);
+                    b.ToTable("Groups");
                 });
 
             modelBuilder.Entity("Entities.Koica.GroupSubject", b =>
@@ -255,7 +255,7 @@ namespace DataAccess.Migrations
 
                     b.HasIndex("SubjectId");
 
-                    b.ToTable("GroupSubjects", (string)null);
+                    b.ToTable("GroupSubjects");
                 });
 
             modelBuilder.Entity("Entities.Koica.StudentEvaluationFile", b =>
@@ -274,12 +274,18 @@ namespace DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("StudentInfoId")
+                        .IsRequired()
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("EvaluationId")
                         .IsUnique();
 
-                    b.ToTable("StudentEvaluationFiles", (string)null);
+                    b.HasIndex("StudentInfoId");
+
+                    b.ToTable("StudentEvaluationFiles");
                 });
 
             modelBuilder.Entity("Entities.Koica.Subject", b =>
@@ -301,7 +307,7 @@ namespace DataAccess.Migrations
 
                     b.HasIndex("TeacherInfoId");
 
-                    b.ToTable("Subjects", (string)null);
+                    b.ToTable("Subjects");
                 });
 
             modelBuilder.Entity("Entities.Koica.SubjectMaterials.DidacticMaterial", b =>
@@ -341,7 +347,7 @@ namespace DataAccess.Migrations
 
                     b.HasIndex("SubjectId");
 
-                    b.ToTable("DidacticMaterials", (string)null);
+                    b.ToTable("DidacticMaterials");
                 });
 
             modelBuilder.Entity("Entities.Koica.SubjectMaterials.Evaluation", b =>
@@ -384,7 +390,7 @@ namespace DataAccess.Migrations
 
                     b.HasIndex("SubjectId");
 
-                    b.ToTable("Evaluations", (string)null);
+                    b.ToTable("Evaluations");
                 });
 
             modelBuilder.Entity("Entities.Koica.SubjectMaterials.Forum", b =>
@@ -423,7 +429,7 @@ namespace DataAccess.Migrations
 
                     b.HasIndex("SubjectId");
 
-                    b.ToTable("Forums", (string)null);
+                    b.ToTable("Forums");
                 });
 
             modelBuilder.Entity("Entities.Koica.SubjectMaterials.Notification", b =>
@@ -463,7 +469,7 @@ namespace DataAccess.Migrations
 
                     b.HasIndex("SubjectId");
 
-                    b.ToTable("Notifications", (string)null);
+                    b.ToTable("Notifications");
                 });
 
             modelBuilder.Entity("Entities.Koica.SubjectMaterials.Progress", b =>
@@ -502,7 +508,7 @@ namespace DataAccess.Migrations
 
                     b.HasIndex("SubjectId");
 
-                    b.ToTable("Progresses", (string)null);
+                    b.ToTable("Progresses");
                 });
 
             modelBuilder.Entity("Entities.News", b =>
@@ -533,7 +539,7 @@ namespace DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("News", (string)null);
+                    b.ToTable("News");
                 });
 
             modelBuilder.Entity("Entities.Panel", b =>
@@ -554,7 +560,7 @@ namespace DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Panels", (string)null);
+                    b.ToTable("Panels");
                 });
 
             modelBuilder.Entity("Entities.Project", b =>
@@ -583,7 +589,7 @@ namespace DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Projects", (string)null);
+                    b.ToTable("Projects");
                 });
 
             modelBuilder.Entity("Entities.Service", b =>
@@ -607,7 +613,7 @@ namespace DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Services", (string)null);
+                    b.ToTable("Services");
                 });
 
             modelBuilder.Entity("Entities.Slider", b =>
@@ -630,7 +636,7 @@ namespace DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Sliders", (string)null);
+                    b.ToTable("Sliders");
                 });
 
             modelBuilder.Entity("Entities.StudentEvaluation", b =>
@@ -648,7 +654,7 @@ namespace DataAccess.Migrations
 
                     b.HasIndex("StudentInfoId");
 
-                    b.ToTable("StudentEvaluations", (string)null);
+                    b.ToTable("StudentEvaluations");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole<int>", b =>
@@ -833,7 +839,15 @@ namespace DataAccess.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Entities.Account.StudentInfo", "StudentInfo")
+                        .WithMany("StudentEvaluationFiles")
+                        .HasForeignKey("StudentInfoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Evaluation");
+
+                    b.Navigation("StudentInfo");
                 });
 
             modelBuilder.Entity("Entities.Koica.Subject", b =>
@@ -901,13 +915,13 @@ namespace DataAccess.Migrations
             modelBuilder.Entity("Entities.StudentEvaluation", b =>
                 {
                     b.HasOne("Entities.Koica.SubjectMaterials.Evaluation", null)
-                        .WithMany()
+                        .WithMany("StudentEvaluations")
                         .HasForeignKey("EvaluationId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Entities.Account.StudentInfo", null)
-                        .WithMany()
+                        .WithMany("StudentEvaluations")
                         .HasForeignKey("StudentInfoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -973,6 +987,13 @@ namespace DataAccess.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("Entities.Account.StudentInfo", b =>
+                {
+                    b.Navigation("StudentEvaluationFiles");
+
+                    b.Navigation("StudentEvaluations");
+                });
+
             modelBuilder.Entity("Entities.Account.TeacherInfo", b =>
                 {
                     b.Navigation("Subjects");
@@ -995,6 +1016,8 @@ namespace DataAccess.Migrations
                 {
                     b.Navigation("StudentEvaluationFile")
                         .IsRequired();
+
+                    b.Navigation("StudentEvaluations");
                 });
 #pragma warning restore 612, 618
         }
