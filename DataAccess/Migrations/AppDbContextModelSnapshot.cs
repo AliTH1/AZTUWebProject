@@ -363,7 +363,6 @@ namespace DataAccess.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Content")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("End")
@@ -914,7 +913,7 @@ namespace DataAccess.Migrations
 
             modelBuilder.Entity("Entities.StudentEvaluation", b =>
                 {
-                    b.HasOne("Entities.Koica.SubjectMaterials.Evaluation", null)
+                    b.HasOne("Entities.Koica.SubjectMaterials.Evaluation", "Evaluation")
                         .WithMany("StudentEvaluations")
                         .HasForeignKey("EvaluationId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -925,6 +924,8 @@ namespace DataAccess.Migrations
                         .HasForeignKey("StudentInfoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Evaluation");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>

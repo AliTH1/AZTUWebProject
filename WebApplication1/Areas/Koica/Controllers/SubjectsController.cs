@@ -160,7 +160,18 @@ namespace WebApplication1.Areas.Koica.Controllers
                 };
 
 
-                await _context.Evaluations.AddAsync(newEvaluationWithoutFile);
+                foreach (StudentInfo studentInfo in await _context.StudentsInfo.ToListAsync())
+                {
+                    StudentEvaluation studentEvaluationWithoutFile = new StudentEvaluation()
+                    {
+                        Evaluation = newEvaluationWithoutFile,
+                        StudentInfoId = studentInfo.Id
+                    };
+
+                    await _context.StudentEvaluations.AddAsync(studentEvaluationWithoutFile);
+                }
+
+
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Evaluation), new { id = createEvaluation.RouteId });
             }
@@ -189,7 +200,19 @@ namespace WebApplication1.Areas.Koica.Controllers
                 SubjectId = createEvaluation.RouteId
             };
 
-            await _context.Evaluations.AddAsync(newEvaluation);
+
+
+            foreach (StudentInfo studentInfo in await _context.StudentsInfo.ToListAsync())
+            {
+                StudentEvaluation studentEvaluationWithoutFile = new StudentEvaluation()
+                {
+                    Evaluation = newEvaluation,
+                    StudentInfoId = studentInfo.Id
+                };
+
+                await _context.StudentEvaluations.AddAsync(studentEvaluationWithoutFile);
+            }
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Evaluation), new { id = createEvaluation.RouteId });
         }

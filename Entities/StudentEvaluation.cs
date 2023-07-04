@@ -14,5 +14,8 @@ namespace Entities
         public int EvaluationId { get; set; }
 
         public byte? Grade { get; set; }
+
+
+        public Evaluation Evaluation { get; set; }
     }
 }
